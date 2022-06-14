@@ -15,8 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('landing.page');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//admin
+Route::prefix('admin')->group(function () {
+    Route::get('/posts/image/{id}', [App\Http\Controllers\Admin\PostController::class, 'file'])->name('post.file');
+    Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
+    Route::resource('files', \App\Http\Controllers\Admin\PostController::class);
+});
