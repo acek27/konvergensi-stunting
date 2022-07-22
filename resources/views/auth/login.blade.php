@@ -43,12 +43,12 @@
 					</span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Masukkan Email">
-                    <input class="input100" type="text" name="email" placeholder="email">
+                    <input class="input100" type="text" value="{{old('email')}}" name="email" placeholder="email" autofocus>
                     <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Masukkan Password">
-                    <input class="input100" type="password" name="password" placeholder="password">
+                    <input class="input100" type="password" name="password" placeholder="password" autofocus>
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
 

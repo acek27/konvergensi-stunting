@@ -33,18 +33,18 @@
                         <div class="col-12 form-group">
                             <label>Judul:</label>
                             <input type="text" name="title" id="freelance-quote-name"
-                                   class="form-control required">
+                                   class="form-control" required>
                         </div>
                         <div class="col-12 form-group">
                             <label>Editor:</label>
                             <input type="text" name="editor" id="freelance-quote-email"
-                                   class="form-control required">
+                                   class="form-control" required>
                         </div>
 
                         <div class="col-12 form-group">
                             <label>Upload Gambar:</label>
                             <input type="file" accept=".png,.jpg, .jpeg" id="image" name="image"
-                                   class="file-loading" data-show-preview="false"/>
+                                   class="file-loading" data-show-preview="false" required>
                         </div>
                         <div class="col-sm-6 col-md-4 divpreview" style="display: none">
                             <div class="card-box">
@@ -57,7 +57,7 @@
                         <div class="col-12 form-group">
                             <label>Konten:</label>
                             <textarea name="content" id="content-editor"
-                                      class="form-control" cols="30" rows="8"></textarea>
+                                      class="form-control" cols="30" rows="8" required></textarea>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-secondary">Simpan
