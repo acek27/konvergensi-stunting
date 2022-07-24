@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -20,5 +21,8 @@ class Post extends Model
     {
         $this->attributes['title'] = $value;
         $this->attributes['slug'] = Str::slug($value.'-'.uniqid(), '-');
+    }
+    public function getCreatedAtAttribute($value){
+        return Carbon::parse($value)->isoFormat('D MMMM Y');
     }
 }

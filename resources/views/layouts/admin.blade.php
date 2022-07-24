@@ -3,29 +3,36 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="adminlte/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="{{asset('canvas/css/font-icons.css')}}" type="text/css"/>
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="adminlte/plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/jqvmap/jqvmap.min.css')}}}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="adminlte/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="adminlte/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
     <!-- summernote -->
-    <link rel="stylesheet" href="adminlte/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
+    <!-- Bootstrap File Upload CSS -->
+    <link rel="stylesheet" href="{{asset('canvas/css/components/bs-filestyle.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{url('https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css')}}">
+    <link href="{{asset('adminlte/plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
     @stack('css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -33,7 +40,7 @@
 
     <!-- Preloader -->
     <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="adminlte/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        <img class="animation__shake" src="{{asset('preloader.png')}}" alt="AdminLTELogo" height="80" width="60">
     </div>
 
     <!-- Navbar -->
@@ -65,28 +72,18 @@
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-bell"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
+                    <i class="far fa-user"></i>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <span class="dropdown-item dropdown-header">15 Notifications</span>
+                    <span class="dropdown-item dropdown-header">Administator</span>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-envelope mr-2"></i> 4 new messages
-                        <span class="float-right text-muted text-sm">3 mins</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> 8 friend requests
-                        <span class="float-right text-muted text-sm">12 hours</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-file mr-2"></i> 3 new reports
-                        <span class="float-right text-muted text-sm">2 days</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                    <a href="{{route('logout')}}" class="dropdown-item dropdown-footer"
+                          onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                          style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </li>
             <li class="nav-item">
@@ -127,27 +124,21 @@
                         <a href="#" class="nav-link active">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
-                                Dashboard
+                                BERITA/INFORMASI
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link active">
+                                <a href="{{route('posts.index')}}" class="nav-link active">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v1</p>
+                                    <p>Kelola Data</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index2.html" class="nav-link">
+                                <a href="{{route('posts.create')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v2</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="./index3.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Dashboard v3</p>
+                                    <p>Buat Baru</p>
                                 </a>
                             </li>
                         </ul>
@@ -214,36 +205,56 @@
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="adminlte/plugins/jquery/jquery.min.js"></script>
+<script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
 <!-- jQuery UI 1.11.4 -->
-<script src="adminlte/plugins/jquery-ui/jquery-ui.min.js"></script>
+<script src="{{asset('adminlte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
-<script src="adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- ChartJS -->
-<script src="adminlte/plugins/chart.js/Chart.min.js"></script>
+<script src="{{asset('adminlte/plugins/chart.js/Chart.min.js')}}"></script>
 <!-- Sparkline -->
-<script src="adminlte/plugins/sparklines/sparkline.js"></script>
+<script src="{{asset('adminlte/plugins/sparklines/sparkline.js')}}"></script>
 <!-- JQVMap -->
-<script src="adminlte/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<script src="{{asset('adminlte/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
 <!-- jQuery Knob Chart -->
-<script src="adminlte/plugins/jquery-knob/jquery.knob.min.js"></script>
+<script src="{{asset('adminlte/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
 <!-- daterangepicker -->
-<script src="adminlte/plugins/moment/moment.min.js"></script>
-<script src="adminlte/plugins/daterangepicker/daterangepicker.js"></script>
+<script src="{{asset('adminlte/plugins/moment/moment.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="{{asset('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
 <!-- Summernote -->
-<script src="adminlte/plugins/summernote/summernote-bs4.min.js"></script>
+<script src="{{asset('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
 <!-- overlayScrollbars -->
-<script src="adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="{{asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="adminlte/dist/js/adminlte.js"></script>
+<script src="{{asset('adminlte/dist/js/adminlte.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{{asset('adminlte/plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+
+<!-- Bootstrap File Upload Plugin -->
+<script src="{{asset('canvas/js/components/bs-filestyle.js')}}"></script>
+
+<!-- TinyMCE Plugin -->
+<script src="{{asset('canvas/js/components/tinymce/tinymce.min.js')}}"></script>
+<script src="{{asset('adminlte/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+<script src="{{url('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js')}}"></script>
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $(document).ready(function () {
+        $('.select2').select2();
+    });
+</script>
 @stack('js')
 </body>
 </html>
