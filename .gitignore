@@ -1,6 +1,8 @@
 /node_modules
+/public
 /public/hot
 /public/canvas
+/public/adminlte
 /public/storage
 /storage/*.key
 /vendor

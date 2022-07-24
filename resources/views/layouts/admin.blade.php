@@ -121,7 +121,7 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item menu-open">
-                        <a href="#" class="nav-link active">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
                             <p>
                                 BERITA/INFORMASI
@@ -130,9 +130,32 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('posts.index')}}" class="nav-link active">
+                                <a href="{{route('posts.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Kelola Data</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('posts.create')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Buat Baru</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>
+                                LEGALITAS/PERATURAN
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{route('posts.index')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Data Legalitas/Peraturan</p>
                                 </a>
                             </li>
                             <li class="nav-item">
