@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Galeri extends Model
 {
-    protected $fillable = ["judul", "path", "tanggal_penetapan", "nomor", "status", "path"];
+    protected $fillable = ["judul", "kategori", "path"];
 }

@@ -11,10 +11,8 @@
                     <table class="table table-head-fixed text-nowrap" id="posts">
                         <thead>
                         <tr>
-                            <th>Legalitas/Peraturan</th>
-                            <th>Nomor</th>
-                            <th>Tentang</th>
-                            <th>Tanggal Penetapan</th>
+                            <th>Judul</th>
+                            <th>Kategori</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
@@ -34,12 +32,10 @@
             var dt = $('#posts').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{route('peraturan.data')}}',
+                ajax: '{{route('galeri.data')}}',
                 columns: [
-                    {data: 'nama_peraturan', name: 'nama_peraturan'},
-                    {data: 'nomor', name: 'nomor'},
-                    {data: 'tentang', name: 'tentang'},
-                    {data: 'tanggal_penetapan', name: 'tanggal_penetapan'},
+                    {data: 'judul', name: 'judul'},
+                    {data: 'kategori', name: 'kategori'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],
             });
@@ -55,7 +51,7 @@
                 }).then(
                     function (result) {
                         $.ajax({
-                            url: "{{route('peraturan.index')}}/" + id,
+                            url: "{{route('galeri.index')}}/" + id,
                             method: "DELETE",
                         }).done(function (msg) {
                             dt.ajax.reload();

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Galeri;
+use App\Models\Peraturan;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class GaleriController extends Controller
 {
@@ -14,7 +17,7 @@ class GaleriController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.galeri.index');
     }
 
     /**
@@ -24,7 +27,7 @@ class GaleriController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.galeri.create');
     }
 
     /**
@@ -35,7 +38,13 @@ class GaleriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $filename = uniqid() . '-' . uniqid() . '.' . $request->path->
+            getClientOriginalExtension();
+        $path = $request->path->storeAs('galeri', $filename);
+        $data['path'] = $path;
+        Galeri::create($data);
+        return redirect()->route('galeri.index');
     }
 
     /**
@@ -80,6 +89,36 @@ class GaleriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Galeri::findOrFail($id);
+        $file = storage_path('app/' . $data->path);
+        unlink($file);
+        Galeri::destroy($id);
+    }
+
+    public function file($id)
+    {
+        $poster = Galeri::find($id);
+        $file = storage_path('app/' . $poster->path);
+        return response()
+            ->file($file, [
+                'Cache-Control' => 'no-cache, no-store, must-revalidate',
+                'Pragma' => 'no-cache',
+                'Expires' => '0'
+            ]);
+    }
+
+    public function anyData()
+    {
+        return DataTables::of(Galeri::query())
+            ->addColumn('action', function ($data) {
+                $edit = '<a href="#"><i class="fa fa-edit text-primary"></i></a>';
+                $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
+                return $edit . '&nbsp' . $del;
+            })
+            ->addColumn('kategori', function ($data) {
+                return $data->kategori == 1? 'Gambar' : 'Video';
+            })
+
+            ->make(true);
     }
 }
