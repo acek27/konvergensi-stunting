@@ -153,13 +153,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{route('posts.index')}}" class="nav-link">
+                                <a href="{{route('peraturan.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Data Legalitas/Peraturan</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('posts.create')}}" class="nav-link">
+                                <a href="{{route('peraturan.create')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Buat Baru</p>
                                 </a>

@@ -1,21 +1,5 @@
 @extends('layouts.admin')
-@section('page-title')
-<!-- Page Title
-============================================= -->
-<section id="page-title">
 
-    <div class="container clearfix">
-        <h1>POSTING BERITA/INFORMASI</h1>
-        <span>Form berita/informasi</span>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Widgets</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Freelance Quote Form</li>
-        </ol>
-    </div>
-
-</section><!-- #page-title end -->
-@endsection
 @section('content')
 <div class="container clearfix">
     <div class="form-widget">
@@ -44,16 +28,9 @@
                     <div class="col-12 form-group">
                         <label>Upload Gambar:</label>
                         <input type="file" accept=".png,.jpg, .jpeg" id="image" name="image"
-                               class="file-loading" data-show-preview="false" required>
+                               class="file-loading" data-show-preview="true" required>
                     </div>
-                    <div class="col-sm-6 col-md-4 divpreview" style="display: none">
-                        <div class="card-box">
-                            <div class="img-container">
-                                <img id="preview" src="http://via.placeholder.com/1028x760" alt=""
-                                     style="width:100%;max-width: 100%;max-height: 100%">
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="col-12 form-group">
                         <label>Konten:</label>
                         <textarea name="content" id="content-editor"
@@ -103,13 +80,6 @@
             }
         }
 
-        $('#image').change(function () {
-            $('.divpreview').fadeIn();
-            readURL(this);
-        });
-        $('.removefile').click(function () {
-            $('.divpreview').fadeOut();
-        });
     })
 </script>
 @endpush

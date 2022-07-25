@@ -25,5 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/posts/data', [App\Http\Controllers\Admin\PostController::class, 'anyData'])->name('posts.data');
 Route::get('/posts/image/{id}', [App\Http\Controllers\Admin\PostController::class, 'file'])->name('post.file');
 Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
-Route::resource('files', \App\Http\Controllers\Admin\PostController::class);
+
+Route::get('/peraturan/data', [App\Http\Controllers\Admin\PeraturanController::class, 'anyData'])->name('peraturan.data');
+Route::get('/peraturan/file/{id}', [App\Http\Controllers\Admin\PeraturanController::class, 'file'])->name('post.file');
+Route::resource('peraturan', \App\Http\Controllers\Admin\PeraturanController::class);
 

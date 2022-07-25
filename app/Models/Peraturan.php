@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Peraturan extends Model
 {
-    protected $fillable = ["jenis_peraturan", "tentang", "tanggal_penetapan", "nomor", "status", "path"];
+    protected $fillable = ["nama_peraturan", "tentang", "tanggal_penetapan", "nomor", "status", "path"];
+    protected $attributes = [
+      'status' => 1
+    ];
 }
