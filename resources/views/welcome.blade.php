@@ -2,7 +2,6 @@
 @section('carousel')
     <section id="slider" class="slider-element swiper_wrapper min-vh-60 min-vh-md-100">
         <div class="slider-inner">
-
             <div class="swiper-container swiper-parent">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide dark">
@@ -68,9 +67,6 @@
                         <h3>Berita/Informasi</h3>
                     </div>
 
-                    <p class="mb-0">Lasting change, stakeholders development Angelina Jolie world problem
-                        solving progressive. Courageous; social entrepreneurship change; accelerate resolve
-                        pursue these aspirations asylum.</p>
                 </div>
 
                 <div class="col-lg-3">
@@ -85,50 +81,25 @@
     <div class="container clearfix">
 
         <div class="row justify-content-center col-mb-50">
-            <div class="col-sm-6 col-lg-4">
-                <div class="feature-box media-box">
-                    <div class="fbox-media">
-                        <img src="images/services/1.jpg" alt="Why choose Us?">
-                    </div>
-                    <div class="fbox-content px-0">
-                        <h3>Berita 1<span class="subtitle">Because we are Reliable.</span></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi rem, facilis nobis
-                            voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-4">
-                <div class="feature-box media-box">
-                    <div class="fbox-media">
-                        <img src="images/services/2.jpg" alt="Why choose Us?">
-                    </div>
-                    <div class="fbox-content px-0">
-                        <h3>Informasi 1<span class="subtitle">To Redefine your Brand.</span></h3>
-                        <p>Quos, non, esse eligendi ab accusantium voluptatem. Maxime eligendi beatae, atque
-                            tempora ullam. Vitae delectus quia, consequuntur rerum molestias quo.</p>
+            @foreach($posts as $post)
+                <div class="col-sm-6 col-lg-4">
+                    <div class="feature-box media-box">
+                        <div class="fbox-media">
+                            <img src="{{route('posts.file', $post->id)}}" alt="Why choose Us?">
+                        </div>
+                        <div class="fbox-content px-0">
+                            <h3>{{$post->title}}</h3>
+                            {!! $post->content !!}
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col-sm-6 col-lg-4">
-                <div class="feature-box media-box">
-                    <div class="fbox-media">
-                        <img src="images/services/3.jpg" alt="Why choose Us?">
-                    </div>
-                    <div class="fbox-content px-0">
-                        <h3>Ini berita<span class="subtitle">Make our Customers Happy.</span></h3>
-                        <p>Porro repellat vero sapiente amet vitae quibusdam necessitatibus consectetur, labore
-                            totam. Accusamus perspiciatis asperiores labore esse ab accusantium ea modi ut.</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
 
     </div>
 
     <div class="section parallax bottommargin-lg"
-         style="background-image: url('images/parallax/3.jpg'); padding: 100px 0;"
+         style="background-image: {{asset('preloader.png')}}; padding: 100px 0;"
          data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
         <div class="heading-block center border-bottom-0 mb-0">
             <h2>"PERATURAN/LEGALITAS"</h2>
