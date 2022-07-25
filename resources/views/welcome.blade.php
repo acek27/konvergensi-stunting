@@ -65,7 +65,7 @@
 
                 <div class="col-lg-9">
                     <div class="heading-block bottommargin-sm">
-                        <h3>We specialize in Robust Software Solutions</h3>
+                        <h3>Berita/Informasi</h3>
                     </div>
 
                     <p class="mb-0">Lasting change, stakeholders development Angelina Jolie world problem
@@ -75,7 +75,7 @@
 
                 <div class="col-lg-3">
                     <a href="#" class="button button-3d button-dark button-large w-100 center"
-                       style="margin-top: 30px;">Check our Services</a>
+                       style="margin-top: 30px;">Lihat selengkapnya</a>
                 </div>
 
             </div>
@@ -91,7 +91,7 @@
                         <img src="images/services/1.jpg" alt="Why choose Us?">
                     </div>
                     <div class="fbox-content px-0">
-                        <h3>Why choose Us.<span class="subtitle">Because we are Reliable.</span></h3>
+                        <h3>Berita 1<span class="subtitle">Because we are Reliable.</span></h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi rem, facilis nobis
                             voluptatum est voluptatem accusamus molestiae eaque perspiciatis mollitia.</p>
                     </div>
@@ -104,7 +104,7 @@
                         <img src="images/services/2.jpg" alt="Why choose Us?">
                     </div>
                     <div class="fbox-content px-0">
-                        <h3>Our Mission.<span class="subtitle">To Redefine your Brand.</span></h3>
+                        <h3>Informasi 1<span class="subtitle">To Redefine your Brand.</span></h3>
                         <p>Quos, non, esse eligendi ab accusantium voluptatem. Maxime eligendi beatae, atque
                             tempora ullam. Vitae delectus quia, consequuntur rerum molestias quo.</p>
                     </div>
@@ -117,7 +117,7 @@
                         <img src="images/services/3.jpg" alt="Why choose Us?">
                     </div>
                     <div class="fbox-content px-0">
-                        <h3>What we Do.<span class="subtitle">Make our Customers Happy.</span></h3>
+                        <h3>Ini berita<span class="subtitle">Make our Customers Happy.</span></h3>
                         <p>Porro repellat vero sapiente amet vitae quibusdam necessitatibus consectetur, labore
                             totam. Accusamus perspiciatis asperiores labore esse ab accusantium ea modi ut.</p>
                     </div>
@@ -131,7 +131,7 @@
          style="background-image: url('images/parallax/3.jpg'); padding: 100px 0;"
          data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
         <div class="heading-block center border-bottom-0 mb-0">
-            <h2>"Everything is designed, but some things are designed well."</h2>
+            <h2>"PERATURAN/LEGALITAS"</h2>
         </div>
     </div>
 
@@ -139,7 +139,7 @@
 
         <div class="row gutter-40 mb-0">
 
-            <div class="col-lg-5">
+            <div class="col-lg-12">
 
                 <div class="accordion accordion-border mb-0">
 
@@ -149,7 +149,7 @@
                             <i class="accordion-open icon-remove-circle"></i>
                         </div>
                         <div class="accordion-title">
-                            Our Company's Values
+                            Peraturan Nomor x
                         </div>
                     </div>
                     <div class="accordion-content">Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -163,7 +163,7 @@
                             <i class="accordion-open icon-remove-circle"></i>
                         </div>
                         <div class="accordion-title">
-                            How to get Support?
+                            Keputusan Nomor x
                         </div>
                     </div>
                     <div class="accordion-content">Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -177,7 +177,7 @@
                             <i class="accordion-open icon-remove-circle"></i>
                         </div>
                         <div class="accordion-title">
-                            Where can you find us?
+                            Keputusan x
                         </div>
                     </div>
                     <div class="accordion-content">Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -191,7 +191,7 @@
                             <i class="accordion-open icon-remove-circle"></i>
                         </div>
                         <div class="accordion-title">
-                            Why you choose our Company?
+                            Suat edaran x
                         </div>
                     </div>
                     <div class="accordion-content">Nullam id dolor id nibh ultricies vehicula ut id elit.
@@ -203,153 +203,6 @@
 
             </div>
 
-            <div class="col-lg-3 col-md-6">
-
-                <div class="fancy-title title-border">
-                    <h4>Our Skills</h4>
-                </div>
-
-                <ul class="skills">
-                    <li data-percent="80">
-                        <span>Wordpress</span>
-                        <div class="progress">
-                            <div class="progress-percent">
-                                <div class="counter counter-inherit counter-instant"><span data-from="0"
-                                                                                           data-to="80"
-                                                                                           data-refresh-interval="30"
-                                                                                           data-speed="1000"></span>%
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-percent="60">
-                        <span>CSS3</span>
-                        <div class="progress">
-                            <div class="progress-percent">
-                                <div class="counter counter-inherit counter-instant"><span data-from="0"
-                                                                                           data-to="60"
-                                                                                           data-refresh-interval="30"
-                                                                                           data-speed="1000"></span>%
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-percent="90">
-                        <span>HTML5</span>
-                        <div class="progress">
-                            <div class="progress-percent">
-                                <div class="counter counter-inherit counter-instant"><span data-from="0"
-                                                                                           data-to="90"
-                                                                                           data-refresh-interval="30"
-                                                                                           data-speed="1000"></span>%
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-percent="85">
-                        <span>PHP</span>
-                        <div class="progress">
-                            <div class="progress-percent">
-                                <div class="counter counter-inherit counter-instant"><span data-from="0"
-                                                                                           data-to="85"
-                                                                                           data-refresh-interval="30"
-                                                                                           data-speed="1000"></span>%
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li data-percent="70">
-                        <span>jQuery</span>
-                        <div class="progress">
-                            <div class="progress-percent">
-                                <div class="counter counter-inherit counter-instant"><span data-from="0"
-                                                                                           data-to="70"
-                                                                                           data-refresh-interval="30"
-                                                                                           data-speed="1000"></span>%
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-
-                <div class="fancy-title title-border">
-                    <h4>Recently Posted</h4>
-                </div>
-
-                <div class="posts-sm row col-mb-30" id="home-recent-news">
-                    <div class="entry col-12">
-                        <div class="grid-inner row g-0">
-                            <div class="col-auto">
-                                <div class="entry-image">
-                                    <a href="#"><img src="images/magazine/small/5.jpg" alt="Image"></a>
-                                </div>
-                            </div>
-                            <div class="col ps-3">
-                                <div class="entry-title">
-                                    <h4><a href="#">A Baseball Team Blew Up A Bunch Of Justin Bieber And Miley
-                                            Cyrus Merch</a></h4>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li><i class="icon-calendar3"></i> 10th July 2021</li>
-                                        <li><a href="#"><i class="icon-comments"></i> 43</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="entry col-12">
-                        <div class="grid-inner row g-0">
-                            <div class="col-auto">
-                                <div class="entry-image">
-                                    <a href="#"><img src="images/magazine/small/6.jpg" alt="Image"></a>
-                                </div>
-                            </div>
-                            <div class="col ps-3">
-                                <div class="entry-title">
-                                    <h4><a href="#">Want To Know The New 'Star Wars' Plot? Then This Is The Post
-                                            For You</a></h4>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li><i class="icon-calendar3"></i> 10th July 2021</li>
-                                        <li><a href="#"><i class="icon-comments"></i> 43</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="entry col-12">
-                        <div class="grid-inner row g-0">
-                            <div class="col-auto">
-                                <div class="entry-image">
-                                    <a href="#"><img src="images/magazine/small/movie/4.jpg" alt="Image"></a>
-                                </div>
-                            </div>
-                            <div class="col ps-3">
-                                <div class="entry-title">
-                                    <h4><a href="#">Planes: Fire And Rescue</a></h4>
-                                </div>
-                                <div class="entry-meta">
-                                    <ul>
-                                        <li class="color"><i class="icon-star3"></i><i class="icon-star3"></i><i
-                                                class="icon-star-empty"></i><i class="icon-star-empty"></i><i
-                                                class="icon-star-empty"></i></li>
-                                        <li><i class="icon-heart3 text-warning"></i> 45%</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
         </div>
     </div>
 

@@ -73,48 +73,6 @@
 
                         <!-- Top Cart
                         ============================================= -->
-                        <div id="top-cart" class="header-misc-icon d-none d-sm-block">
-                            <a href="#" id="top-cart-trigger"><i class="icon-line-bag"></i><span
-                                    class="top-cart-number">5</span></a>
-                            <div class="top-cart-content">
-                                <div class="top-cart-title">
-                                    <h4>Shopping Cart</h4>
-                                </div>
-                                <div class="top-cart-items">
-                                    <div class="top-cart-item">
-                                        <div class="top-cart-item-image">
-                                            <a href="#"><img src="images/shop/small/1.jpg"
-                                                             alt="Blue Round-Neck Tshirt"/></a>
-                                        </div>
-                                        <div class="top-cart-item-desc">
-                                            <div class="top-cart-item-desc-title">
-                                                <a href="#">Blue Round-Neck Tshirt with a Button</a>
-                                                <span class="top-cart-item-price d-block">$19.99</span>
-                                            </div>
-                                            <div class="top-cart-item-quantity">x 2</div>
-                                        </div>
-                                    </div>
-                                    <div class="top-cart-item">
-                                        <div class="top-cart-item-image">
-                                            <a href="#"><img src="images/shop/small/6.jpg"
-                                                             alt="Light Blue Denim Dress"/></a>
-                                        </div>
-                                        <div class="top-cart-item-desc">
-                                            <div class="top-cart-item-desc-title">
-                                                <a href="#">Light Blue Denim Dress</a>
-                                                <span class="top-cart-item-price d-block">$24.99</span>
-                                            </div>
-                                            <div class="top-cart-item-quantity">x 3</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="top-cart-action">
-                                    <span class="top-checkout-price">$114.95</span>
-                                    <a href="#" class="button button-3d button-small m-0">View Cart</a>
-                                </div>
-                            </div>
-                        </div><!-- #top-cart end -->
-
                     </div>
 
                     <div id="primary-menu-trigger">
@@ -134,41 +92,35 @@
                             <li class="menu-item">
                                 <a class="menu-link" href="{{route('landing.page')}}">
                                     <div>BERANDA</div>
-                                    <span>Home</span></a>
+                                </a>
                             </li>
                             @guest
                                 <li class="menu-item">
                                     <a class="menu-link" href="#">
                                         <div>INFORMASI</div>
-                                        <span>Information</span></a>
+                                    </a>
                                 </li>
                                 <li class="menu-item">
                                     <a class="menu-link" href="#">
-                                        <div>UNDUHAN</div>
-                                        <span>Download</span></a>
+                                        <div>TPPS</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a class="menu-link" href="#">
+                                        <div>GALERI</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a class="menu-link" href="#">
+                                        <div>LEGALITAS</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a class="menu-link" href="#">
+                                        <div>AGENDA</div>
+                                    </a>
                                 </li>
                             @endguest
-                            @auth
-                                <li class="menu-item">
-                                    <a class="menu-link" href="{{route('posts.index')}}">
-                                        <div>INFORMASI</div>
-                                        <span>Information</span></a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="{{route('files.index')}}">
-                                        <div>UNDUHAN</div>
-                                        <span>Download</span></a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="{{route('logout')}}" class="menu-link"
-                                       onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">Logout</a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;">
-                                        @csrf
-                                    </form>
-                                </li>
-                            @endauth
                         </ul>
                     </nav><!-- #primary-menu end -->
 
