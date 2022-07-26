@@ -7,40 +7,44 @@
 
     <!-- Stylesheets
     ============================================= -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap"
-        rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Sansita:400,700|Roboto:400,500&display=swap" rel="stylesheet"
+          type="text/css"/>
     <link rel="stylesheet" href="{{asset('canvas/css/bootstrap.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{asset('canvas/style.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('canvas/css/swiper.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{asset('canvas/css/dark.css')}}" type="text/css"/>
+
+    <!-- Yoga Demo Specific Stylesheet -->
+    <link rel="stylesheet" href="{{asset('canvas/css/colors.php?color=7E9680')}}" type="text/css"/>
+    <!-- Yoga Theme Color -->
+    <link rel="stylesheet" href="{{asset('canvas/demos/yoga/css/fonts.css')}}" type="text/css"/><!-- Yoga Theme Font -->
+    <link rel="stylesheet" href="{{asset('canvas/demos/yoga/yoga.css')}}" type="text/css"/>
+    <!-- Yoga Theme Custom CSS -->
+    <!-- / -->
+
     <link rel="stylesheet" href="{{asset('canvas/css/font-icons.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{asset('canvas/css/animate.css')}}" type="text/css"/>
-    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('canvas/css/magnific-popup.css')}}" type="text/css"/>
 
-    <!-- Range Slider CSS -->
-    <link rel="stylesheet" href="{{asset('canvas/css/components/ion.rangeslider.css')}}" type="text/css"/>
-
-    <!-- Bootstrap File Upload CSS -->
-    <link rel="stylesheet" href="{{asset('canvas/css/components/bs-filestyle.css')}}" type="text/css"/>
-
-    <link rel="stylesheet" href="{{asset('canvas/css/custom.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-    <!-- Document Title
-    ============================================= -->
-    <title>Freelance Quote - Forms | Canvas</title>
-
     <style>
-        .file-caption.icon-visible .file-caption-name {
-            font-family: 'Lato', sans-serif;
-            color: #666;
+        .img-fit {
+            display: block;
+            max-width: 400px;
+            max-height: 200px;
+            width: auto;
+            height: auto;
+            object-fit: cover;
         }
     </style>
+    <!-- Document Title
+    ============================================= -->
+    <title>Yoga | Canvas</title>
 
 </head>
 
-
-<body class="stretched">
+<body class="stretched sticky-footer">
 
 <!-- Document Wrapper
 ============================================= -->
@@ -48,31 +52,36 @@
 
     <!-- Header
     ============================================= -->
-    <header id="header" class="full-header" data-sticky-logo-height="74" data-menu-padding="32">
+    <header id="header" class="border-full-header header-size-custom" data-sticky-shrink="false"
+            data-sticky-offset="52">
         <div id="header-wrap">
             <div class="container">
-                <div class="header-row">
+                <div class="header-row justify-content-lg-between">
 
                     <!-- Logo
                     ============================================= -->
-                    <div id="logo">
-                        <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img
-                                src="{{asset('preloader.png')}}" alt="Canvas Logo"></a>
-                        <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img
-                                src="images/logo@2x.png" alt="Canvas Logo"></a>
+                    <div id="logo" class="order-lg-2 col-auto px-0 me-lg-0">
+                        <a href="#" class="standard-logo"
+                           data-dark-logo="{{asset('canvas/demos/yoga/images/logo-dark.png')}}"><img
+                                src="{{asset('canvas/demos/yoga/images/logo.png')}}" alt="Canvas Logo"></a>
+                        <a href="#" class="retina-logo"
+                           data-dark-logo="{{asset('canvas/demos/yoga/images/logo-dark@2x.png')}}"><img
+                                src="{{asset('canvas/demos/yoga/images/logo@2x.png')}}" alt="Canvas Logo"></a>
                     </div><!-- #logo end -->
 
-                    <div class="header-misc">
-
-                        <!-- Top Search
-                        ============================================= -->
-                        <div id="top-search" class="header-misc-icon">
-                            <a href="#" id="top-search-trigger"><i class="icon-line-search"></i><i
-                                    class="icon-line-cross"></i></a>
-                        </div><!-- #top-search end -->
-
-                        <!-- Top Cart
-                        ============================================= -->
+                    <div class="header-misc order-lg-3 col-auto col-lg-2 px-0 justify-content-end">
+                        <a href="demo-yoga-login.html" class="button-link">
+                            <div>Login</div>
+                        </a>
+                        <a href="https://www.facebook.com/semicolonweb/" target="_blank"
+                           class="social-icon si-facebook si-small si-light mb-0"><i class="icon-facebook"></i><i
+                                class="icon-facebook"></i></a>
+                        <a href="https://www.instagram.com/semicolonweb/" target="_blank"
+                           class="social-icon si-instagram si-small si-light mb-0"><i class="icon-instagram"></i><i
+                                class="icon-instagram"></i></a>
+                        <a href="https://twitter.com/__SemiColon" target="_blank"
+                           class="social-icon si-paypal si-small si-light mb-0"><i class="icon-paypal"></i><i
+                                class="icon-paypal"></i></a>
                     </div>
 
                     <div id="primary-menu-trigger">
@@ -87,325 +96,1168 @@
 
                     <!-- Primary Navigation
                     ============================================= -->
-                    <nav class="primary-menu sub-title">
-                        <ul class="menu-container">
-                            <li class="menu-item">
-                                <a class="menu-link" href="{{route('index')}}">
-                                    <div>BERANDA</div>
-                                </a>
-                            </li>
-                            @guest
-                                <li class="menu-item">
-                                    <a class="menu-link" href="#">
-                                        <div>INFORMASI</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="#">
-                                        <div>TPPS</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="#">
-                                        <div>GALERI</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="#">
-                                        <div>LEGALITAS</div>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a class="menu-link" href="#">
-                                        <div>AGENDA</div>
-                                    </a>
-                                </li>
-                            @endguest
-                        </ul>
-                    </nav><!-- #primary-menu end -->
+                    <nav class="primary-menu order-lg-1 col-lg-8 px-0">
 
-                    <form class="top-search-form" action="search.html" method="get">
-                        <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.."
-                               autocomplete="off">
-                    </form>
+                        <!-- Menu Left -->
+                        <ul class="menu-container">
+                            <li class="current menu-item"><a class="menu-link" href="#">
+                                    <div>Beranda</div>
+                                </a></li>
+                            <li class="menu-item"><a class="menu-link" href="demo-yoga-pricing.html">
+                                    <div>TPPS</div>
+                                </a>
+                                <ul class="sub-menu-container">
+                                    <li class="menu-item"><a class="menu-link" href="#">
+                                            <div>Kabupaten</div>
+                                        </a></li>
+                                    <li class="menu-item"><a class="menu-link" href="#">
+                                            <div>Kecamatan</div>
+                                        </a></li>
+                                    <li class="menu-item"><a class="menu-link" href="#">
+                                            <div>Desa</div>
+                                        </a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="demo-yoga-pricing.html">
+                                    <div>Data Stunting</div>
+                                </a>
+                                <ul class="sub-menu-container">
+                                    <li class="menu-item"><a class="menu-link" href="#">
+                                            <div>Jumlah & pereverensi Stunting</div>
+                                        </a></li>
+                                    <li class="menu-item"><a class="menu-link" href="#">
+                                            <div>Capaian Indikator</div>
+                                        </a></li>
+                                    <li class="menu-item"><a class="menu-link" href="#">
+                                            <div>Lokus Stunting</div>
+                                        </a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="demo-yoga-pricing.html">
+                                    <div>Aksi Konvergensi</div>
+                                </a>
+                                <ul class="sub-menu-container">
+                                    <li class="menu-item"><a class="menu-link" href="#">
+                                            <div>Program Kegiatan</div>
+                                        </a></li>
+                                    <li class="menu-item"><a class="menu-link" href="#">
+                                            <div>Rembuk Stunting</div>
+                                        </a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a class="menu-link" href="demo-yoga-contact-us.html">
+                                    <div>Galeri</div>
+                                </a></li>
+                            <li class="menu-item"><a class="menu-link" href="demo-yoga-contact-us.html">
+                                    <div>Legalitas/Peraturan</div>
+                                </a></li>
+                            <li class="menu-item"><a class="menu-link" href="demo-yoga-contact-us.html">
+                                    <div>Agenda</div>
+                                </a></li>
+                        </ul>
+
+                    </nav><!-- #primary-menu end -->
 
                 </div>
             </div>
         </div>
         <div class="header-wrap-clone"></div>
     </header><!-- #header end -->
-    @yield('page-title')
-    @yield('carousel')
+
+    <!-- Slider
+    ============================================= -->
+    <section id="slider" class="slider-element swiper_wrapper min-vh-100" data-effect="fade">
+        <div class="slider-inner">
+
+            <div class="swiper-container swiper-parent">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide hero-diagonal dark bg-color"
+                         style="background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0, 0.1)), url('canvas/demos/yoga/images/slider/hero-1.jpg') no-repeat center right / auto 100%;">
+                        <div class="container" style="z-index: 2;">
+                            <div class="row h-100 align-items-center py-5">
+                                <div class="col-md-6">
+                                    <div class="heading-block border-bottom-0 bottommargin-sm">
+                                        <h5 class="text-uppercase ls4 fw-light mb-2 text-white-50"
+                                            data-animate="fadeInUp" data-delay="100">Yoga &amp; Meditation</h5>
+                                        <h2 class="fw-bold nott ls0" data-animate="fadeInUp" data-delay="200"
+                                            style="font-size: 46px;">Yoga is the perfect opportunity to be curious about
+                                            who you are.</h2>
+                                    </div>
+                                    <p class="mb-5 fw-normal lead" data-animate="fadeInUp" data-delay="400"
+                                       style="line-height: 1.6;">Monotonectally pursue intuitive catalysts for change
+                                        for extensible materials. Intrinsicly fabricate principle-centered web-readiness
+                                        with virtual.</p>
+                                    <a href="#" data-scrollto="#section-about" data-offset="70" data-animate="fadeInUp"
+                                       data-delay="600"
+                                       class="btn rounded bg-white color text-uppercase fw-semibold ls1 py-3 px-4">Get
+                                        Started <i class="icon-line-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide hero-diagonal dark bg-color"
+                         style="background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0, 0.1)), url('canvas/demos/yoga/images/slider/hero-2.jpg') no-repeat bottom right / auto 100%;">
+                        <div class="container" style="z-index: 2;">
+                            <div class="row h-100 align-items-center py-5">
+                                <div class="col-md-6">
+                                    <div class="heading-block border-bottom-0 bottommargin-sm">
+                                        <h5 class="text-uppercase ls4 fw-light mb-2 text-white-50"
+                                            data-animate="fadeInUp" data-delay="100">Yoga &amp; Meditation</h5>
+                                        <h2 class="fw-bold nott ls0" data-animate="fadeInUp" data-delay="200"
+                                            style="font-size: 42px;">Yoga is the perfect opportunity to be curious about
+                                            who you are.</h2>
+                                    </div>
+                                    <p class="mb-5 fw-normal lead" data-animate="fadeInUp" data-delay="400"
+                                       style="line-height: 1.6;">Monotonectally pursue intuitive catalysts for change
+                                        for extensible materials. Intrinsicly fabricate principle-centered web-readiness
+                                        with virtual.</p>
+                                    <a href="#" data-scrollto="#section-about" data-offset="70" data-animate="fadeInUp"
+                                       data-delay="600"
+                                       class="btn rounded bg-white color text-uppercase fw-semibold ls1 py-3 px-4">Get
+                                        Started <i class="icon-line-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
+                <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>
+                <div class="slide-number">
+                    <div class="slide-number-current"></div>
+                    <span>/</span>
+                    <div class="slide-number-total"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Content
     ============================================= -->
-    <section id="content">
-        <div class="content-wrap">
-            @yield('content')
+    <section id="content" class="bg-white">
+        <div class="content-wrap pt-0" style="overflow: visible">
+
+            <div class="position-relative">
+                <div class="container">
+                    <div class="row py-0 py-lg-5">
+                        <div class="col-lg-5 py-5">
+                            <div class="heading-block border-bottom-0 bottommargin-sm">
+                                <div class="fancy-title title-border mb-3"><h5 class="fw-normal color font-body">
+                                        Stunting</h5></div>
+                                <h3 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;">Apa itu <span>Stuntig</span>
+                                    ?</h3>
+                            </div>
+                            <p class="mb-5">Monotonectally pursue intuitive catalysts for change for extensible
+                                materials intrinsicly fabricate.</p>
+
+                            <div class="feature-box fbox-plain bottommargin-sm">
+                                <div class="fbox-icon">
+                                    <i class="icon-line-circle-check text-primary"></i>
+                                </div>
+                                <div class="fbox-content">
+                                    <h3 class="fw-normal nott">Classes Every Week.</h3>
+                                    <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width
+                                        Background.</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-box fbox-plain bottommargin-sm">
+                                <div class="fbox-icon">
+                                    <i class="icon-line-circle-check text-warning"></i>
+                                </div>
+                                <div class="fbox-content">
+                                    <h3 class="fw-normal nott">10+ Years Experienced.</h3>
+                                    <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width
+                                        Background.</p>
+                                </div>
+                            </div>
+
+                            <div class="feature-box fbox-plain">
+                                <div class="fbox-icon">
+                                    <i class="icon-line-circle-check text-info"></i>
+                                </div>
+                                <div class="fbox-content">
+                                    <h3 class="fw-normal nott">2100+ Members Active.</h3>
+                                    <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width
+                                        Background.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="section-img"
+                     style="background: radial-gradient(ellipse at center, rgba(255,221,148,.7),rgba(255,221,148,1)), url('/canvas/demos/yoga/images/yoga-about.jpg') no-repeat center center / cover">
+                    <img class="section-img-sm" src="canvas/demos/yoga/images/yoga-about-sm.jpg" alt="Section Img">
+                </div>
+            </div>
+
+
+            <div class="section mb-0 bg-transparent">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 mb-5 mb-md-0">
+                            <div class="yoga-video position-relative">
+                                <img src="canvas/demos/yoga/images/yoga-video.svg" alt="Yoga Image">
+                                <a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" data-lightbox="iframe"
+                                   class="play-icon"><i class="icon-play1"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="heading-block border-bottom-0 bottommargin-sm">
+                                <div class="fancy-title title-border mb-3"><h5
+                                        class="fw-normal color font-body text-uppercase ls1">8 Aksi Konvergensi</h5>
+                                </div>
+                                <h2 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;">8 Aksi
+                                    Konvergensi</h2>
+                            </div>
+                            <p class="mb-5 lead mb-0" style="line-height: 1.7;">Monotonectally pursue intuitive
+                                catalysts for change for extensible materials. Intrinsicly fabricate principle-centered
+                                web-readiness with virtual.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-yogas mb-0" style="background-color: rgba(126, 150, 128,0.2);">
+                <div class="container">
+                    <div class="row">
+                        <h3 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;">High<span>light</span>
+                        </h3>
+                        <div class="col-md-4 mt-0">
+                            <div class="card">
+                                <div class="posts-md">
+                                    <div class="entry">
+                                        <div class="entry-image">
+                                            <a href="demo-news-single.html"><img class="img-fit"
+                                                                                 src="canvas/demos/yoga/images/yoga-about-sm.jpg"
+                                                                                 alt="Image 3"></a>
+                                        </div>
+                                        <div class="entry-title title-sm nott">
+                                            <h3 class="mb-2"><a href="demo-news-single.html">Death, lifestyle And
+                                                    Taxes</a>
+                                            </h3>
+                                        </div>
+                                        <div class="entry-meta">
+                                            <ul>
+                                                <li><span>by</span> <a href="#">John Doe</a></li>
+                                                <li><i class="icon-time"></i><a href="#">11 Mar 2021</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="entry-content clearfix">
+                                            <p class="mb-0">Pellentesque hic illo beatae rhoncus sint, quis, fugiat
+                                                imperdiet unde architecto magna dui hymenaeos autem lorem eligendi,
+                                                quae!
+                                                Orci commodo, aute reiciendis, scelerisque inceptos, quibusdam iste
+                                                debitis?
+                                                Venenatis. Alias porta?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mt-0">
+                            <div class="card">
+                            <div class="posts-md">
+                                <div class="entry">
+                                    <div class="entry-image">
+                                        <a href="demo-news-single.html"><img class="img-fit"
+                                                                             src="canvas/demos/yoga/images/yoga-about.jpg"
+                                                                             alt="Image"></a>
+                                    </div>
+                                    <div class="entry-title title-sm nott">
+                                        <h3 class="mb-2"><a href="demo-news-single.html">The Ultimate Guide To
+                                                Fashion</a></h3>
+                                    </div>
+                                    <div class="entry-meta">
+                                        <ul>
+                                            <li><span>by</span> <a href="#">John Doe</a></li>
+                                            <li><i class="icon-time"></i><a href="#">11 Mar 2021</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="entry-content">
+                                        <p class="mb-0">Tempus nullam sed ullam doloremque unde habitasse auctor tortor.
+                                            Cursus, culpa numquam ut esse, harum alias? Lorem. Mattis eum, placeat eius
+                                            turpis quam dapibus, eius quia atque tristique nostrud reiciendis</p>
+                                    </div>
+                                    <a href="#" class="entity float-left"><i>read more..</i></a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section bg-transparent my-0 pb-1">
+                <div class="container">
+                    <div class="heading-block" style="max-width: 500px">
+                        <h3 class="fw-bold nott mb-4" style="font-size: 42px; letter-spacing: -1px;">Certified Yoga
+                            <span>Teachers</span>.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt tenetur iste odit
+                            animi mollitia amet autem alias ea dicta!</p>
+                    </div>
+                </div>
+                <div id="oc-teachers" class="owl-carousel owl-carousel-full image-carousel carousel-widget customjs">
+                    <div class="oc-item">
+                        <div class="jumbotron m-0 dark p-5 d-flex justify-content-center align-items-md-end flex-column"
+                             style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0, 0.8)), url('demos/yoga/images/teacher/1.jpg') no-repeat center center / cover;">
+                            <div class="jumbotron-text mt-0 mt-md-auto row align-items-center">
+                                <div class="col-md-8">
+                                    <div class="testimonial bg-transparent shadow-none border-0 p-0">
+                                        <h2 class="mb-1">Ruby Von Rails</h2>
+                                        <div class="testi-meta ls1 mb-4 text-light fw-normal"> Professional Trainer
+                                        </div>
+                                        <div class="testi-content">
+                                            <p>Assertively leverage existing integrated communities after turnkey
+                                                quality vectors. Assertively coordinate sustainable quality.</p>
+                                        </div>
+                                    </div>
+                                    <div class="social-icons topmargin-sm">
+                                        <a href="https://www.facebook.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-facebook si-small si-light">
+                                            <i class="icon-facebook"></i><i class="icon-facebook"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-instagram si-small si-light">
+                                            <i class="icon-instagram"></i><i class="icon-instagram"></i>
+                                        </a>
+                                        <a href="#" target="_blank" class="social-icon si-youtube si-small si-light">
+                                            <i class="icon-youtube"></i><i class="icon-youtube"></i>
+                                        </a>
+                                        <a href="#" target="_blank" class="social-icon si-dribbble si-small si-light">
+                                            <i class="icon-dribbble"></i><i class="icon-dribbble"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex justify-content-md-center mt-3 mt-md-0">
+                                    <a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" data-lightbox="iframe"
+                                       class="play-icon"><i class="icon-play1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oc-item">
+                        <div class="jumbotron m-0 dark p-5 d-flex justify-content-center align-items-md-end flex-column"
+                             style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0, 0.8)), url('demos/yoga/images/teacher/2.jpg') no-repeat center center / cover;">
+                            <div class="jumbotron-text mt-0 mt-md-auto row align-items-center">
+                                <div class="col-md-8">
+                                    <div class="testimonial bg-transparent shadow-none border-0 p-0">
+                                        <h2 class="mb-1">Theodore Handle</h2>
+                                        <div class="testi-meta ls1 mb-4 text-light fw-normal"> International Trainer
+                                        </div>
+                                        <div class="testi-content">
+                                            <p>Assertively leverage existing integrated communities after turnkey
+                                                quality vectors. Assertively coordinate sustainable quality.</p>
+                                        </div>
+                                    </div>
+                                    <div class="social-icons topmargin-sm">
+                                        <a href="https://www.facebook.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-facebook si-small si-light">
+                                            <i class="icon-facebook"></i><i class="icon-facebook"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-instagram si-small si-light">
+                                            <i class="icon-instagram"></i><i class="icon-instagram"></i>
+                                        </a>
+                                        <a href="#" target="_blank" class="social-icon si-youtube si-small si-light">
+                                            <i class="icon-youtube"></i><i class="icon-youtube"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex justify-content-md-center mt-3 mt-md-0">
+                                    <a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" data-lightbox="iframe"
+                                       class="play-icon"><i class="icon-play1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oc-item">
+                        <div class="jumbotron m-0 dark p-5 d-flex justify-content-center align-items-md-end flex-column"
+                             style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0, 0.8)), url('demos/yoga/images/teacher/3.jpg') no-repeat center center / cover;">
+                            <div class="jumbotron-text mt-0 mt-md-auto row align-items-center">
+                                <div class="col-md-8">
+                                    <div class="testimonial bg-transparent shadow-none border-0 p-0">
+                                        <h2 class="mb-1">Norman Gordon</h2>
+                                        <div class="testi-meta ls1 mb-4 text-light fw-normal"> Professional Trainer
+                                        </div>
+                                        <div class="testi-content">
+                                            <p>Assertively leverage existing integrated communities after turnkey
+                                                quality vectors. Assertively coordinate sustainable quality.</p>
+                                        </div>
+                                    </div>
+                                    <div class="social-icons topmargin-sm">
+                                        <a href="https://www.facebook.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-facebook si-small si-light">
+                                            <i class="icon-facebook"></i><i class="icon-facebook"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-instagram si-small si-light">
+                                            <i class="icon-instagram"></i><i class="icon-instagram"></i>
+                                        </a>
+                                        <a href="#" target="_blank" class="social-icon si-dribbble si-small si-light">
+                                            <i class="icon-dribbble"></i><i class="icon-dribbble"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex justify-content-md-center mt-3 mt-md-0">
+                                    <a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" data-lightbox="iframe"
+                                       class="play-icon"><i class="icon-play1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oc-item">
+                        <div class="jumbotron m-0 dark p-5 d-flex justify-content-center align-items-md-end flex-column"
+                             style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0, 0.8)), url('demos/yoga/images/teacher/4.jpg') no-repeat center center / cover;">
+                            <div class="jumbotron-text mt-0 mt-md-auto row align-items-center">
+                                <div class="col-md-8">
+                                    <div class="testimonial bg-transparent shadow-none border-0 p-0">
+                                        <h2 class="mb-1">Jason Response</h2>
+                                        <div class="testi-meta ls1 mb-4 text-light fw-normal"> International Trainer
+                                        </div>
+                                        <div class="testi-content">
+                                            <p>Assertively leverage existing integrated communities after turnkey
+                                                quality vectors. Assertively coordinate sustainable quality.</p>
+                                        </div>
+                                    </div>
+                                    <div class="social-icons topmargin-sm">
+                                        <a href="https://www.facebook.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-facebook si-small si-light">
+                                            <i class="icon-facebook"></i><i class="icon-facebook"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-instagram si-small si-light">
+                                            <i class="icon-instagram"></i><i class="icon-instagram"></i>
+                                        </a>
+                                        <a href="#" target="_blank" class="social-icon si-dropbox si-small si-light">
+                                            <i class="icon-dropbox"></i><i class="icon-dropbox"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex justify-content-md-center mt-3 mt-md-0">
+                                    <a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" data-lightbox="iframe"
+                                       class="play-icon"><i class="icon-play1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="oc-item">
+                        <div class="jumbotron m-0 dark p-5 d-flex justify-content-center align-items-md-end flex-column"
+                             style="background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0, 0.8)), url('demos/yoga/images/teacher/5.jpg') no-repeat center center / cover;">
+                            <div class="jumbotron-text mt-0 mt-md-auto row align-items-center">
+                                <div class="col-md-8">
+                                    <div class="testimonial bg-transparent shadow-none border-0 p-0">
+                                        <h2 class="mb-1">Abraham Pigeon</h2>
+                                        <div class="testi-meta ls1 mb-4 text-light fw-normal"> Professional Trainer
+                                        </div>
+                                        <div class="testi-content">
+                                            <p>Assertively leverage existing integrated communities after turnkey
+                                                quality vectors. Assertively coordinate sustainable quality.</p>
+                                        </div>
+                                    </div>
+                                    <div class="social-icons topmargin-sm">
+                                        <a href="https://www.facebook.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-facebook si-small si-light">
+                                            <i class="icon-facebook"></i><i class="icon-facebook"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/semicolonweb/" target="_blank"
+                                           class="social-icon si-instagram si-small si-light">
+                                            <i class="icon-instagram"></i><i class="icon-instagram"></i>
+                                        </a>
+                                        <a href="#" target="_blank" class="social-icon si-email3 si-small si-light">
+                                            <i class="icon-email3"></i><i class="icon-email3"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex justify-content-md-center mt-3 mt-md-0">
+                                    <a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" data-lightbox="iframe"
+                                       class="play-icon"><i class="icon-play1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section-schedule"
+                 style="background: linear-gradient(to bottom, rgba(126, 150, 128, 0) 0%, rgba(126, 150, 128, 0.8) 70%) left top; padding: 100px 0; background-size: 100% 100%">
+                <div class="container">
+                    <div class="heading-block border-bottom-0 bottommargin-lg" style="max-width: 700px">
+                        <h2 class="fw-bold mb-2 nott" style="font-size: 42px; letter-spacing: -1px">Yoga
+                            <span>Schedule</span>.</h2>
+                        <p class="lead">Energistically syndicate team building synergy after efficient human capital.
+                            Assertively underwhelm sticky solutions.</p>
+                    </div>
+                    <div class="row justify-content-between">
+                        <div class="col-lg-4 col-md-5 mt-4 mt-md-0 sticky-sidebar-wrap">
+                            <div class="sticky-sidebar">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                     aria-orientation="vertical">
+                                    <a class="nav-link active" id="sc-mon-tab" data-bs-toggle="pill" href="#sc-mon"
+                                       role="tab" aria-controls="sc-mon" aria-selected="true">Monday</a>
+                                    <a class="nav-link" id="sc-tue-tab" data-bs-toggle="pill" href="#sc-tue" role="tab"
+                                       aria-controls="sc-tue" aria-selected="false">Tuesday</a>
+                                    <a class="nav-link" id="sc-wed-tab" data-bs-toggle="pill" href="#sc-wed" role="tab"
+                                       aria-controls="sc-wed" aria-selected="false">Wednesday</a>
+                                    <a class="nav-link" id="sc-thu-tab" data-bs-toggle="pill" href="#sc-thu" role="tab"
+                                       aria-controls="sc-thu" aria-selected="false">Thursday</a>
+                                    <a class="nav-link" id="sc-fri-tab" data-bs-toggle="pill" href="#sc-fri" role="tab"
+                                       aria-controls="sc-fri" aria-selected="false">Friday</a>
+                                    <a class="nav-link" id="sc-sat-tab" data-bs-toggle="pill" href="#sc-sat" role="tab"
+                                       aria-controls="sc-sat" aria-selected="false">Saturday</a>
+                                    <a class="nav-link mb-0" id="sc-sun-tab" data-bs-toggle="pill" href="#sc-sun"
+                                       role="tab" aria-controls="sc-sun" aria-selected="false">Sunday</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 mt-5 mt-md-0">
+                            <h5 id="week-details" class="font-body text-black-50 d-inline-block">Date</h5><span
+                                class="text-black-50"> (Monday - Sunday)</span>
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane schedule-wrap fade show active" id="sc-mon" role="tabpanel"
+                                     aria-labelledby="sc-mon-tab">
+                                    <dl class="row g-0 table mb-0">
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">8:30 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Namaste Yoga<small>- Ruby Vov
+                                                    Rails</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/1.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">9.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Vrikshasana (Tree Pose)<small>-
+                                                    Thodore Handle</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/2.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">10.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Naukasana (Boat Pose)<small>- Norman
+                                                    Gordon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/3.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">11:30 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Lunch Break</div>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">12.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Paschimottanasana<small>- Jason
+                                                    Response</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/4.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">2.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Bandha Sarvangasana Yoga<small>-
+                                                    Abraham Piegon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/5.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">4.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Vrikshasana (Tree Pose)<small>-
+                                                    Thodore Handle</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/2.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                    </dl>
+                                </div>
+
+                                <div class="tab-pane schedule-wrap fade" id="sc-tue" role="tabpanel"
+                                     aria-labelledby="sc-tue-tab">
+                                    <dl class="row table mb-0">
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">9.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Vrikshasana (Tree Pose)<small>-
+                                                    Thodore Handle</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/2.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">10.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Naukasana (Boat Pose)<small>- Norman
+                                                    Gordon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/3.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">12.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Paschimottanasana<small>- Jason
+                                                    Response</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/4.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">2.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Bandha Sarvangasana Yoga<small>-
+                                                    Abraham Piegon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/5.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                    </dl>
+                                </div>
+
+                                <div class="tab-pane schedule-wrap fade" id="sc-wed" role="tabpanel"
+                                     aria-labelledby="sc-wed-tab">
+                                    <dl class="row table mb-0">
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">8:30 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Namaste Yoga<small>- Ruby Vov
+                                                    Rails</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/1.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">9.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Vrikshasana (Tree Pose)<small>-
+                                                    Thodore Handle</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/2.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">10.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Naukasana (Boat Pose)<small>- Norman
+                                                    Gordon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/3.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">11:30 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Lunch Break</div>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">12.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Paschimottanasana<small>- Jason
+                                                    Response</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/4.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">2.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Bandha Sarvangasana Yoga<small>-
+                                                    Abraham Piegon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/5.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                    </dl>
+                                </div>
+
+                                <div class="tab-pane schedule-wrap fade" id="sc-thu" role="tabpanel"
+                                     aria-labelledby="sc-thu-tab">
+                                    <dl class="row table mb-0">
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">10.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Naukasana (Boat Pose)<small>- Norman
+                                                    Gordon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/3.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">11:30 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Lunch Break</div>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">12.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Paschimottanasana<small>- Jason
+                                                    Response</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/4.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">3.00 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Bandha Sarvangasana Yoga<small>-
+                                                    Abraham Piegon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/5.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                    </dl>
+                                </div>
+                                <div class="tab-pane schedule-wrap fade" id="sc-fri" role="tabpanel"
+                                     aria-labelledby="sc-fri-tab">
+                                    <dl class="row table mb-0">
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">6.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Paschimottanasana<small>- Jason
+                                                    Response</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/4.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">8:30 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Namaste Yoga<small>- Ruby Vov
+                                                    Rails</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/1.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">9.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Vrikshasana (Tree Pose)<small>-
+                                                    Thodore Handle</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/2.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">10.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Naukasana (Boat Pose)<small>- Norman
+                                                    Gordon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/3.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">2.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Bandha Sarvangasana Yoga<small>-
+                                                    Abraham Piegon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/5.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                    </dl>
+                                </div>
+
+                                <div class="tab-pane schedule-wrap fade" id="sc-sat" role="tabpanel"
+                                     aria-labelledby="sc-sat-tab">
+                                    <dl class="row table mb-0">
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">7.20 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Naukasana (Boat Pose)<small>- Norman
+                                                    Gordon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/3.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">8:30 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Namaste Yoga<small>- Ruby Vov
+                                                    Rails</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/1.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">9.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Vrikshasana (Tree Pose)<small>-
+                                                    Thodore Handle</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/2.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">10.00 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Naukasana (Boat Pose)<small>- Norman
+                                                    Gordon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/3.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">2.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Bandha Sarvangasana Yoga<small>-
+                                                    Abraham Piegon</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/5.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                    </dl>
+                                </div>
+                                <div class="tab-pane schedule-wrap fade" id="sc-sun" role="tabpanel"
+                                     aria-labelledby="sc-sun-tab">
+                                    <dl class="row table mb-0">
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">6.30 pm</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Paschimottanasana<small>- Jason
+                                                    Response</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/4.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary">8:30 am</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary">Namaste Yoga<small>- Ruby Vov
+                                                    Rails</small></div>
+                                            <a href="#"><img src="demos/yoga/images/teacher/thumbs/1.jpg" alt=""
+                                                             class="schedule-teacher"></a>
+                                        </dd>
+
+                                        <dt class="col-sm-3">
+                                            <div class="schedule-time font-primary color">- Closed -</div>
+                                        </dt>
+                                        <dd class="col-sm-9 d-flex justify-content-between align-items-center">
+                                            <div class="schedule-desc font-primary color">Rest of the Time</div>
+                                        </dd>
+
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section section-price bg-transparent">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center bottommargin-lg">
+                        <div class="heading-block border-bottom-0 mb-0" style="max-width: 700px">
+                            <div class="fancy-title title-border mb-3"><h5
+                                    class="fw-normal color font-body text-uppercase ls1">Best Price for Everyone</h5>
+                            </div>
+                            <h2 class="fw-bold mb-2 nott" style="font-size: 42px; letter-spacing: -1px">Your
+                                <span>Yoga</span> Plan.</h2>
+                            <p class="lead mb-0">Energistically syndicate team building synergy after efficient human
+                                capital. Assertively underwhelm sticky solutions.</p>
+                        </div>
+                        <img src="demos/yoga/images/yoga-img.svg" alt="Yoga Image" class="d-none d-sm-flex" width="300">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-5">
+                            <h2 class="fw-normal">
+                                1 Free Class.<br>
+                                Free Diet Plan.<br>
+                                All Classes.<br>
+                                24x7 Available.
+                            </h2>
+                            <p class="text-black-50">Sign up and Get your free 1 Day Trial Class.</p>
+                            <a href="#"
+                               class="btn rounded bg-color text-white shadow text-uppercase fw-semibold ls1 py-3 px-4">Start
+                                Class Today</a>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="card pricing border-0 shadow text-center">
+                                <div class="card-body rounded pt-5 pb-0">
+                                    <img src="demos/yoga/images/yoga-icons/color/svg/mudra_surya.svg" class="mb-3"
+                                         alt="" height="40">
+                                    <h3>Monthly Subscription</h3>
+                                    <ul class="list-unstyled">
+                                        <li class="text-black-50 my-1">New Classes Included</li>
+                                        <li class="text-black-50 my-1">Any Studio Accessable</li>
+                                        <li class="text-black-50 my-1">cancel Any Time</li>
+                                    </ul>
+                                    <h3 class="mb-3 h2 color">$19.99</h3>
+                                    <a href="#"
+                                       class="btn rounded bg-color text-white text-uppercase fw-semibold ls1 py-2 px-4">Get
+                                        Started</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card pricing border-0 shadow text-center">
+                                <div class="card-body rounded pt-5 pb-0">
+                                    <img src="demos/yoga/images/yoga-icons/color/svg/mudra_anjali.svg" class="mb-3"
+                                         alt="" height="40">
+                                    <h3>Annual Subscription</h3>
+                                    <ul class="list-unstyled">
+                                        <li class="text-black-50 my-1">1 Month Free</li>
+                                        <li class="text-black-50 my-1">New Classes Included</li>
+                                        <li class="text-black-50 my-1">Any Studio Accessable</li>
+                                        <li class="text-black-50 my-1">Free Towel and Juices</li>
+                                        <li class="text-black-50 my-1">24x7 Accesable</li>
+                                        <li class="text-black-50 my-1">cancel Any Time</li>
+                                    </ul>
+                                    <h3 class="mb-3 h2">$219.99</h3>
+                                    <a href="#"
+                                       class="btn rounded bg-dark text-white text-uppercase fw-semibold ls1 py-2 px-4">Get
+                                        Started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clear bottommargin"></div>
+
+                    <div class="center text-title"><h3><img src="demos/yoga/images/yoga-icons/outlined/svg/sahasara.svg"
+                                                            alt="" width="20" height="20">Additional Features For Annual
+                            Subscriber</h3></div>
+                    <div class="price-features">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <ul class="iconlist mb-0">
+                                    <li><i class="icon-line-circle-check color"></i> 24x7 Available</li>
+                                    <li><i class="icon-line-circle-check color"></i> Free Lunch Per Day</li>
+                                    <li><i class="icon-line-circle-check color"></i> All Classes in One Price</li>
+                                    <li><i class="icon-line-circle-check color"></i> Special Event Access</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="iconlist mb-0">
+                                    <li><i class="icon-line-circle-check color"></i> Free Towel Provide</li>
+                                    <li><i class="icon-line-circle-check color"></i> Free Lockers</li>
+                                    <li><i class="icon-line-circle-check color"></i> Free Lockers</li>
+                                    <li><i class="icon-line-circle-check color"></i> Free Yoga Mat*</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <ul class="iconlist mb-0">
+                                    <li><i class="icon-line-circle-check color"></i> 1 Month Free</li>
+                                    <li><i class="icon-line-circle-check color"></i> Any Studio Accessable</li>
+                                    <li><i class="icon-line-circle-check color"></i> Cancel Anytime</li>
+                                    <li><i class="icon-line-circle-check color"></i> No Hidden Charges</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="section bg-transparent border-top mb-0">
+                <div class="container">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="heading-block border-bottom-0 mb-0" style="max-width: 700px">
+                            <div class="fancy-title title-border mb-3"><h5
+                                    class="fw-normal color font-body text-uppercase ls1">Beautiful Captured</h5></div>
+                            <h2 class="fw-bold mb-2 nott" style="font-size: 42px; letter-spacing: -1px">Our
+                                <span>Yoga</span> Gallery.</h2>
+                            <p class="lead mb-0">Energistically syndicate team building synergy after efficient human
+                                capital. Assertively underwhelm sticky solutions.</p>
+                        </div>
+                        <img src="{{asset('canvas/demos/yoga/images/yoga-2.svg')}}" alt="Yoga Image"
+                             class="d-none d-sm-flex" width="300">
+                    </div>
+                </div>
+            </div>
+            <div class="section p-0 m-0">
+                <div class="masonry-thumbs grid-container grid-2 grid-sm-3 grid-md-4" data-lightbox="gallery">
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/1.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/1.jpg')}}"
+                                                         alt="Gallery Thumb 1"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/2.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/2.jpg')}}"
+                                                         alt="Gallery Thumb 2"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/3.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/3.jpg')}}"
+                                                         alt="Gallery Thumb 3"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/4.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/4.jpg')}}"
+                                                         alt="Gallery Thumb 4"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/5.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/5.jpg')}}"
+                                                         alt="Gallery Thumb 5"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/6.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/6.jpg')}}"
+                                                         alt="Gallery Thumb 6"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/7.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/7.jpg')}}"
+                                                         alt="Gallery Thumb 7"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/8.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/8.jpg')}}"
+                                                         alt="Gallery Thumb 8"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/9.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/9.jpg')}}"
+                                                         alt="Gallery Thumb 9"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/10.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/10.jpg')}}"
+                                                         alt="Gallery Thumb 10"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/11.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/11.jpg')}}"
+                                                         alt="Gallery Thumb 11"></a>
+                    <a class="grid-item" href="{{asset('canvas/demos/yoga/images/gallery/12.jpg')}}"
+                       data-lightbox="gallery-item"><img src="{{asset('canvas/demos/yoga/images/gallery/12.jpg')}}"
+                                                         alt="Gallery Thumb 12"></a>
+                </div>
+            </div>
+
         </div>
+
     </section><!-- #content end -->
 
     <!-- Footer
     ============================================= -->
-    <footer id="footer" class="dark">
+    <footer id="footer" class="bg-color dark">
         <div class="container">
 
             <!-- Footer Widgets
             ============================================= -->
             <div class="footer-widgets-wrap">
+                <div class="row">
 
-                <div class="row col-mb-50">
-                    <div class="col-lg-8">
-
-                        <div class="row col-mb-50">
-                            <div class="col-md-4">
-
-                                <div class="widget clearfix">
-
-                                    <img src="images/footer-widget-logo.png" alt="Image" class="footer-logo">
-
-                                    <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong>
-                                        Design Standards.</p>
-
-                                    <div
-                                        style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
-                                        <address>
-                                            <strong>Headquarters:</strong><br>
-                                            795 Folsom Ave, Suite 600<br>
-                                            San Francisco, CA 94107<br>
-                                        </address>
-                                        <abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547 632521<br>
-                                        <abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>
-                                        <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-4">
-
-                                <div class="widget widget_links clearfix">
-
-                                    <h4>Blogroll</h4>
-
-                                    <ul>
-                                        <li><a href="https://codex.wordpress.org/">Documentation</a></li>
-                                        <li>
-                                            <a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>
-                                        </li>
-                                        <li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>
-                                        <li><a href="https://wordpress.org/support/">Support Forums</a></li>
-                                        <li><a href="https://wordpress.org/extend/themes/">Themes</a></li>
-                                        <li><a href="https://wordpress.org/news/">Canvas Blog</a></li>
-                                        <li><a href="https://planet.wordpress.org/">Canvas Planet</a></li>
-                                    </ul>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col-md-4">
-
-                                <div class="widget clearfix">
-                                    <h4>Recent Posts</h4>
-
-                                    <div class="posts-sm row col-mb-30" id="post-list-footer">
-                                        <div class="entry col-12">
-                                            <div class="grid-inner row">
-                                                <div class="col">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>
-                                                    </div>
-                                                    <div class="entry-meta">
-                                                        <ul>
-                                                            <li>10th July 2021</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="entry col-12">
-                                            <div class="grid-inner row">
-                                                <div class="col">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>
-                                                    </div>
-                                                    <div class="entry-meta">
-                                                        <ul>
-                                                            <li>10th July 2021</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="entry col-12">
-                                            <div class="grid-inner row">
-                                                <div class="col">
-                                                    <div class="entry-title">
-                                                        <h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>
-                                                    </div>
-                                                    <div class="entry-meta">
-                                                        <ul>
-                                                            <li>10th July 2021</li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
+                    <div class="col-lg-3 col-md-3 col-6">
+                        <a href="#"><img src="{{asset('canvas/demos/yoga/images/logo-dark@2x.png')}}" alt="Logo Footer"
+                                         height="80"></a>
+                        <p class="text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus,
+                            nesciunt excepturi dolor. Animi, voluptate.</p>
                     </div>
 
-                    <div class="col-lg-4">
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div class="widget clearfix">
 
-                        <div class="row col-mb-50">
-                            <div class="col-md-4 col-lg-12">
-                                <div class="widget clearfix" style="margin-bottom: -20px;">
+                            <h3 class="ls0 h5 mb-4">Features</h3>
 
-                                    <div class="row">
-                                        <div class="col-lg-6 bottommargin-sm">
-                                            <div class="counter counter-small"><span data-from="50" data-to="15065421"
-                                                                                     data-refresh-interval="80"
-                                                                                     data-speed="3000"
-                                                                                     data-comma="true"></span></div>
-                                            <h5 class="mb-0">Total Downloads</h5>
-                                        </div>
+                            <ul class="list-unstyled iconlist ms-0">
+                                <li class="mb-2"><a href="#" class="text-white-50">All Poses</a></li>
+                                <li class="mb-2"><a href="#" class="text-white-50">Instructors</a></li>
+                                <li class="mb-2"><a href="#" class="text-white-50">Gallery</a></li>
+                                <li class="mb-2"><a href="#" class="text-white-50">Price</a></li>
+                                <li class="mb-2"><a href="#" class="text-white-50">FAQs</a></li>
+                            </ul>
 
-                                        <div class="col-lg-6 bottommargin-sm">
-                                            <div class="counter counter-small"><span data-from="100" data-to="18465"
-                                                                                     data-refresh-interval="50"
-                                                                                     data-speed="2000"
-                                                                                     data-comma="true"></span></div>
-                                            <h5 class="mb-0">Clients</h5>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div class="widget clearfix">
 
-                                </div>
-                            </div>
+                            <h3 class="ls0 h5 mb-4">Connect With Us</h3>
 
-                            <div class="col-md-5 col-lg-12">
-                                <div class="widget subscribe-widget clearfix">
-                                    <h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing
-                                        Offers &amp; Inside Scoops:</h5>
-                                    <div class="widget-subscribe-form-result"></div>
-                                    <form id="widget-subscribe-form" action="include/subscribe.php" method="post"
-                                          class="mb-0">
-                                        <div class="input-group mx-auto">
-                                            <div class="input-group-text"><i class="icon-email2"></i></div>
-                                            <input type="email" id="widget-subscribe-form-email"
-                                                   name="widget-subscribe-form-email"
-                                                   class="form-control required email" placeholder="Enter your Email">
-                                            <button class="btn btn-success" type="submit">Subscribe</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+                            <ul class="list-unstyled iconlist ms-0">
+                                <li class="mb-2"><a href="#" class="text-white-50">Facebook</a></li>
+                                <li class="mb-2"><a href="#" class="text-white-50">Instagram</a></li>
+                                <li class="mb-2"><a href="#" class="text-white-50">Twitter</a></li>
+                                <li class="mb-2"><a href="#" class="text-white-50">Email</a></li>
+                            </ul>
 
-                            <div class="col-md-3 col-lg-12">
-                                <div class="widget clearfix" style="margin-bottom: -20px;">
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <div class="widget clearfix">
 
-                                    <div class="row">
-                                        <div class="col-6 col-md-12 col-lg-6 clearfix bottommargin-sm">
-                                            <a href="#" class="social-icon si-dark si-colored si-facebook mb-0"
-                                               style="margin-right: 10px;">
-                                                <i class="icon-facebook"></i>
-                                                <i class="icon-facebook"></i>
-                                            </a>
-                                            <a href="#"><small style="display: block; margin-top: 3px;"><strong>Like
-                                                        us</strong><br>on Facebook</small></a>
-                                        </div>
-                                        <div class="col-6 col-md-12 col-lg-6 clearfix">
-                                            <a href="#" class="social-icon si-dark si-colored si-rss mb-0"
-                                               style="margin-right: 10px;">
-                                                <i class="icon-rss"></i>
-                                                <i class="icon-rss"></i>
-                                            </a>
-                                            <a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to
-                                                    RSS Feeds</small></a>
-                                        </div>
-                                    </div>
+                            <h3 class="ls0 h5 mb-4">Open Hours</h3>
 
-                                </div>
+                            <ul class="list-unstyled iconlist ms-0">
+                                <li class="mb-2"><a href="#" class="text-white-50">Monday - Saturday</a></li>
+                                <li class="mb-2"><a href="#" class="text-white-50">6:30 - 20:00</a></li>
+                                <li class="mb-2"><a href="#" class="text-white-50">Sunday Closed</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="widget clearfix">
+
+                            <h3 class="ls0 h5 mb-4">Studio:</h3>
+
+                            <div>
+                                <address class="font-primary">
+                                    795 Folsom Ave, Suite 600<br>
+                                    San Francisco, CA 94107<br>
+                                </address>
+                                <h3 class="mb-3"><a href="tel:+01273123456" class="text-white"><i
+                                            class="icon-call me-1 position-relative"
+                                            style="font-size: 22px; top:2px;"></i> +111 22-33-44</a></h3>
                             </div>
 
                         </div>
-
                     </div>
                 </div>
 
-            </div><!-- .footer-widgets-wrap end -->
-
+            </div>
         </div>
 
         <!-- Copyrights
         ============================================= -->
-        <div id="copyrights">
+        <div id="copyrights" class="center dark">
             <div class="container">
 
-                <div class="row col-mb-30">
-
-                    <div class="col-md-6 text-center text-md-start">
-                        Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>
-                        <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-2 text-white-50">Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.</p>
+                        <div class="copyright-links text-white-50"><a href="#" class="text-white-50">Terms of Use</a> /
+                            <a href="#" class="text-white-50">Privacy Policy</a></div>
                     </div>
-
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="d-flex justify-content-center justify-content-md-end">
-                            <a href="#" class="social-icon si-small si-borderless si-facebook">
-                                <i class="icon-facebook"></i>
-                                <i class="icon-facebook"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-twitter">
-                                <i class="icon-twitter"></i>
-                                <i class="icon-twitter"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-gplus">
-                                <i class="icon-gplus"></i>
-                                <i class="icon-gplus"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-pinterest">
-                                <i class="icon-pinterest"></i>
-                                <i class="icon-pinterest"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-vimeo">
-                                <i class="icon-vimeo"></i>
-                                <i class="icon-vimeo"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-github">
-                                <i class="icon-github"></i>
-                                <i class="icon-github"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-yahoo">
-                                <i class="icon-yahoo"></i>
-                                <i class="icon-yahoo"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-linkedin">
-                                <i class="icon-linkedin"></i>
-                                <i class="icon-linkedin"></i>
-                            </a>
-                        </div>
-
-                        <div class="clear"></div>
-
-                        <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i
-                            class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span> <i
-                            class="icon-skype2"></i> CanvasOnSkype
-                    </div>
-
                 </div>
 
             </div>
@@ -423,18 +1275,48 @@
 <script src="{{asset('canvas/js/jquery.js')}}"></script>
 <script src="{{asset('canvas/js/plugins.min.js')}}"></script>
 
-<!-- Range Slider Plugin -->
-<script src="{{asset('canvas/js/components/rangeslider.min.js')}}"></script>
-
-<!-- Bootstrap File Upload Plugin -->
-<script src="{{asset('canvas/js/components/bs-filestyle.js')}}"></script>
-
-<!-- TinyMCE Plugin -->
-<script src="{{asset('canvas/js/components/tinymce/tinymce.min.js')}}"></script>
+<!-- For Countdown -->
+<script src="{{asset('canvas/js/components/moment.js')}}"></script>
 
 <!-- Footer Scripts
 ============================================= -->
+<script src="{{asset('canvas/js/functions.js')}}"></script>
 
-@stack('js')
+<script>
+    // Owl Carousel Scripts
+    jQuery(window).on('pluginCarouselReady', function () {
+        $('#oc-teachers').owlCarousel({
+            items: 1,
+            margin: 30,
+            nav: true,
+            navText: ['<i class="icon-line-arrow-left"></i>', '<i class="icon-line-arrow-right"></i>'],
+            dots: false,
+            smartSpeed: 300,
+            stagePadding: 60,
+            responsive: {
+                768: {stagePadding: 100, margin: 30, items: 1},
+                991: {stagePadding: 100, margin: 40, smartSpeed: 400, items: 2},
+                1200: {stagePadding: 100, margin: 40, smartSpeed: 400, items: 2}
+            },
+        });
+    });
+
+    //Current Week
+    Date.prototype.getWeek = function (start) {
+        //Calcing the starting point
+        start = start || 0;
+        var today = new Date(this.setHours(0, 0, 0, 0));
+        var day = today.getDay() - start;
+        var date = today.getDate() - day;
+
+        // Grabbing Start/End Dates
+        var StartDate = new Date(today.setDate(date));
+        var EndDate = new Date(today.setDate(date + 6));
+        return [StartDate, EndDate];
+    }
+    var Dates = new Date().getWeek();
+    $("#week-details").text(Dates[0].toLocaleDateString() + ' - ' + Dates[1].toLocaleDateString());
+</script>
+
 </body>
 </html>
