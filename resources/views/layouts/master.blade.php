@@ -99,10 +99,10 @@
 
                         <!-- Menu Left -->
                         <ul class="menu-container">
-                            <li class="current menu-item"><a class="menu-link" href="#">
+                            <li class="current menu-item"><a class="menu-link" href="{{route('index')}}">
                                     <div>Beranda</div>
                                 </a></li>
-                            <li class="menu-item"><a class="menu-link" href="demo-yoga-pricing.html">
+                            <li class="menu-item"><a class="menu-link" href="#">
                                     <div>TPPS</div>
                                 </a>
                                 <ul class="sub-menu-container">
@@ -117,37 +117,37 @@
                                         </a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a class="menu-link" href="demo-yoga-pricing.html">
+                            <li class="menu-item"><a class="menu-link" href="{{route('stunting.index')}}">
                                     <div>Data Stunting</div>
                                 </a>
-                                <ul class="sub-menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="#">
-                                            <div>Jumlah & pereverensi Stunting</div>
-                                        </a></li>
-                                    <li class="menu-item"><a class="menu-link" href="#">
-                                            <div>Capaian Indikator</div>
-                                        </a></li>
-                                    <li class="menu-item"><a class="menu-link" href="#">
-                                            <div>Lokus Stunting</div>
-                                        </a></li>
-                                </ul>
+{{--                                <ul class="sub-menu-container">--}}
+{{--                                    <li class="menu-item"><a class="menu-link" href="#">--}}
+{{--                                            <div>Jumlah & pereverensi Stunting</div>--}}
+{{--                                        </a></li>--}}
+{{--                                    <li class="menu-item"><a class="menu-link" href="#">--}}
+{{--                                            <div>Capaian Indikator</div>--}}
+{{--                                        </a></li>--}}
+{{--                                    <li class="menu-item"><a class="menu-link" href="#">--}}
+{{--                                            <div>Lokus Stunting</div>--}}
+{{--                                        </a></li>--}}
+{{--                                </ul>--}}
                             </li>
-                            <li class="menu-item"><a class="menu-link" href="demo-yoga-pricing.html">
+                            <li class="menu-item"><a class="menu-link" href="#">
                                     <div>Aksi Konvergensi</div>
                                 </a>
                                 <ul class="sub-menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="#">
+                                    <li class="menu-item"><a class="menu-link" href="{{route('program.index')}}">
                                             <div>Program Kegiatan</div>
                                         </a></li>
-                                    <li class="menu-item"><a class="menu-link" href="#">
+                                    <li class="menu-item"><a class="menu-link" href="{{route('rembuk.index')}}">
                                             <div>Rembuk Stunting</div>
                                         </a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a class="menu-link" href="demo-yoga-contact-us.html">
+                            <li class="menu-item"><a class="menu-link" href="{{route('media.index')}}">
                                     <div>Galeri</div>
                                 </a></li>
-                            <li class="menu-item"><a class="menu-link" href="demo-yoga-contact-us.html">
+                            <li class="menu-item"><a class="menu-link" href="{{route('legalitas.index')}}">
                                     <div>Legalitas/Peraturan</div>
                                 </a></li>
                             <li class="menu-item"><a class="menu-link" href="demo-yoga-contact-us.html">

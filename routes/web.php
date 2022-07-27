@@ -22,6 +22,14 @@ Auth::routes();
 //guest
     //stunting
 Route::resource('stunting', \App\Http\Controllers\Guest\StuntingController::class);
+    //program kegiatan
+Route::resource('program', \App\Http\Controllers\Guest\ProgramController::class);
+    //rembuk
+Route::resource('rembuk', \App\Http\Controllers\Guest\RembukController::class);
+    //media
+Route::resource('media', \App\Http\Controllers\Guest\MediaController::class);
+    //legalitas
+Route::resource('legalitas', \App\Http\Controllers\Guest\LegalitasController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //admin

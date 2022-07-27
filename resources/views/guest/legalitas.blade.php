@@ -47,8 +47,8 @@
                         <div class="col-lg-12 py-5">
                             <div class="heading-block border-bottom-0 bottommargin-sm">
                                 <div class="fancy-title title-border mb-3"><h5 class="fw-normal color font-body">
-                                        DATA STUNTING</h5></div>
-                                <h3 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;"><span>Data Stunting</span>
+                                        LEGALITAS/PERATURAN</h5></div>
+                                <h3 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;"><span>Legalitas/Peraturan</span>
                                 </h3>
                             </div>
                             <div class="row">
@@ -61,20 +61,26 @@
                                            aria-controls="v-pills-home" aria-selected="true">
                                             <i class="fa fa-user-circle-o mr-2"></i>
                                             <span
-                                                class="font-weight-bold small text-uppercase">Jumlah & Pereverensi Stunting</span></a>
+                                                class="font-weight-bold small text-uppercase">PERPRES</span></a>
 
                                         <a class="nav-link mb-3 p-3 shadow" id="v-pills-profile-tab" data-toggle="pill"
                                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
                                            aria-selected="false">
                                             <i class="fa fa-calendar-minus-o mr-2"></i>
-                                            <span class="font-weight-bold small text-uppercase">Capaian Indikator</span></a>
+                                            <span class="font-weight-bold small text-uppercase">PERKA</span></a>
 
                                         <a class="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill"
                                            href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
                                            aria-selected="false">
                                             <i class="fa fa-star mr-2"></i>
                                             <span
-                                                class="font-weight-bold small text-uppercase">Lokus Stunting</span></a>
+                                                class="font-weight-bold small text-uppercase">BKKBN</span></a>
+                                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"
+                                           href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
+                                           aria-selected="false">
+                                            <i class="fa fa-check mr-2"></i>
+                                            <span
+                                                class="font-weight-bold small text-uppercase">PERBUP</span></a>
                                     </div>
                                 </div>
 
@@ -96,8 +102,10 @@
                                                         Peraturan Nomor x
                                                     </div>
                                                 </div>
-                                                <div class="accordion-content">Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                    Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis,
+                                                <div class="accordion-content">Nullam id dolor id nibh ultricies
+                                                    vehicula ut id elit.
+                                                    Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                                                    Duis mollis,
                                                     est
                                                     non commodo luctus. Aenean lacinia bibendum nulla sed consectetur.
                                                 </div>
@@ -111,8 +119,10 @@
                                                         Keputusan Nomor x
                                                     </div>
                                                 </div>
-                                                <div class="accordion-content">Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                    Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis,
+                                                <div class="accordion-content">Nullam id dolor id nibh ultricies
+                                                    vehicula ut id elit.
+                                                    Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                                                    Duis mollis,
                                                     est
                                                     non commodo luctus. Aenean lacinia bibendum nulla sed consectetur.
                                                 </div>
@@ -126,8 +136,10 @@
                                                         Keputusan x
                                                     </div>
                                                 </div>
-                                                <div class="accordion-content">Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                    Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis,
+                                                <div class="accordion-content">Nullam id dolor id nibh ultricies
+                                                    vehicula ut id elit.
+                                                    Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                                                    Duis mollis,
                                                     est
                                                     non commodo luctus. Aenean lacinia bibendum nulla sed consectetur.
                                                 </div>
@@ -141,8 +153,10 @@
                                                         Suat edaran x
                                                     </div>
                                                 </div>
-                                                <div class="accordion-content">Nullam id dolor id nibh ultricies vehicula ut id elit.
-                                                    Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis,
+                                                <div class="accordion-content">Nullam id dolor id nibh ultricies
+                                                    vehicula ut id elit.
+                                                    Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+                                                    Duis mollis,
                                                     est
                                                     non commodo luctus. Aenean lacinia bibendum nulla sed consectetur.
                                                 </div>
@@ -175,6 +189,18 @@
                                                 proident, sunt in culpa qui officia deserunt mollit anim id est
                                                 laborum.</p>
                                         </div>
+                                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-settings"
+                                             role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                            <h4 class="font-italic mb-4">Confirm booking</h4>
+                                            <p class="font-italic text-muted mb-2">Lorem ipsum dolor sit amet,
+                                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                proident, sunt in culpa qui officia deserunt mollit anim id est
+                                                laborum.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -182,6 +208,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section><!-- #content end -->
 @endsection
