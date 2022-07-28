@@ -12,6 +12,7 @@
                         <thead>
                         <tr>
                             <th>Legalitas/Peraturan</th>
+                            <th>Jenis</th>
                             <th>Nomor</th>
                             <th>Tentang</th>
                             <th>Tanggal Penetapan</th>
@@ -37,6 +38,7 @@
                 ajax: '{{route('peraturan.data')}}',
                 columns: [
                     {data: 'nama_peraturan', name: 'nama_peraturan'},
+                    {data: 'jenis', name: 'jenis'},
                     {data: 'nomor', name: 'nomor'},
                     {data: 'tentang', name: 'tentang'},
                     {data: 'tanggal_penetapan', name: 'tanggal_penetapan'},

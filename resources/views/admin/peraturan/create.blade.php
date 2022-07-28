@@ -27,6 +27,16 @@
                                    class="form-control" required>
                         </div>
                         <div class="col-12 form-group">
+                            <label>Kategori:</label>
+                            <select class="form-control" name="kategori" id="kategori" required>
+                                <option value="">--pilih kategori--</option>
+                                <option value="1">Perpres</option>
+                                <option value="2">Perka</option>
+                                <option value="3">BKKBN</option>
+                                <option value="4">Perbup</option>
+                            </select>
+                        </div>
+                        <div class="col-12 form-group">
                             <label>Taggal Penetapan:</label>
                             <input type="text" name="tanggal_penetapan" class="form-control datepicker"/>
                         </div>

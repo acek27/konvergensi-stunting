@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
+use App\Models\Peraturan;
 use Illuminate\Http\Request;
 
 class LegalitasController extends Controller
@@ -14,7 +15,8 @@ class LegalitasController extends Controller
      */
     public function index()
     {
-        return view('guest.legalitas');
+        $data = Peraturan::all();
+        return view('guest.legalitas', compact('data'));
     }
 
     /**

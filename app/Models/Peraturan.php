@@ -7,8 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Peraturan extends Model
 {
-    protected $fillable = ["nama_peraturan", "tentang", "tanggal_penetapan", "nomor", "status", "path"];
+    protected $fillable = ["nama_peraturan", "kategori", "tentang", "tanggal_penetapan", "nomor", "status", "path"];
     protected $attributes = [
-      'status' => 1
+        'status' => 1
     ];
+
+    protected $appends = ["jenis"];
+
+    public function getJenisAttribute()
+    {
+        $jenis = "";
+        if ($this->kategori == 1) {
+            $jenis = "Perpres";
+        } elseif ($this->kategori == 2) {
+            $jenis = "Perka";
+        } elseif ($this->kategori == 3) {
+            $jenis = "BKKBN";
+        } elseif ($this->kategori == 4) {
+            $jenis = "PERBUP";
+        }
+        return $jenis;
+    }
 }
