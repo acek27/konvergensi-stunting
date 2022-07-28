@@ -48,7 +48,7 @@
                             <div class="heading-block border-bottom-0 bottommargin-sm">
                                 <div class="fancy-title title-border mb-3"><h5 class="fw-normal color font-body">
                                         AKSI KONVERGENSI</h5></div>
-                                <h3 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;"><span>Program Kegiatan</span>
+                                <h3 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;"><span>Rembuk Stunting</span>
                                 </h3>
                             </div>
                             <div class="row">
@@ -77,28 +77,68 @@
                                     <div class="tab-content" id="v-pills-tabContent">
                                         <div class="tab-pane fade shadow rounded bg-white show active p-5"
                                              id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                            <h4 class="font-italic mb-4">Personal information</h4>
-                                            <p class="font-italic text-muted mb-2">Lorem ipsum dolor sit amet,
-                                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                                proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum.</p>
+                                            <h4 class="font-italic mb-4">Rembuk Stunting (Kabupaten)</h4>
+                                            <div class="accordion accordion-border mb-0">
+                                                @foreach($data->where('kategori',1) as $datum)
+                                                    <div class="accordion-header">
+                                                        <div class="accordion-icon">
+                                                            <i class="accordion-closed icon-ok-circle"></i>
+                                                            <i class="accordion-open icon-remove-circle"></i>
+                                                        </div>
+                                                        <div class="accordion-title">
+                                                            {{$datum->judul}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-content">
+                                                        <div class="row">
+                                                            <p>{{$datum->keterangan}}</p>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                   class="text-muted " target="_blank"><i
+                                                                        class="fa fa-download"></i> Unduh file </a>
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                   class="text-muted" target="_blank"><i
+                                                                        class="fa fa-arrow-circle-right"></i> Lihat </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
                                         </div>
 
                                         <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-profile"
                                              role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                            <h4 class="font-italic mb-4">Bookings</h4>
-                                            <p class="font-italic text-muted mb-2">Lorem ipsum dolor sit amet,
-                                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                                                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                                proident, sunt in culpa qui officia deserunt mollit anim id est
-                                                laborum.</p>
+                                            <h4 class="font-italic mb-4">Rembuk Stunting (Desa)</h4>
+                                            <div class="accordion accordion-border mb-0">
+                                                @foreach($data->where('kategori',2) as $datum)
+                                                    <div class="accordion-header">
+                                                        <div class="accordion-icon">
+                                                            <i class="accordion-closed icon-ok-circle"></i>
+                                                            <i class="accordion-open icon-remove-circle"></i>
+                                                        </div>
+                                                        <div class="accordion-title">
+                                                            {{$datum->judul}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-content">
+                                                        <div class="row">
+                                                            <p>{{$datum->keterangan}}</p>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                   class="text-muted " target="_blank"><i
+                                                                        class="fa fa-download"></i> Unduh file </a>
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                   class="text-muted" target="_blank"><i
+                                                                        class="fa fa-arrow-circle-right"></i> Lihat </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

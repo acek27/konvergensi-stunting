@@ -50,6 +50,11 @@ Route::get('/kegiatan/data', [App\Http\Controllers\Admin\KegiatanController::cla
 Route::get('/kegiatan/image/{id}', [App\Http\Controllers\Admin\KegiatanController::class, 'file'])->name('kegiatan.file');
 Route::resource('kegiatan', \App\Http\Controllers\Admin\KegiatanController::class);
 
+    //rembuk stunting
+Route::get('/rembukstunting/data', [App\Http\Controllers\Admin\RembukStuntingController::class, 'anyData'])->name('rembukstunting.data');
+Route::get('/rembukstunting/image/{id}', [App\Http\Controllers\Admin\RembukStuntingController::class, 'file'])->name('rembukstunting.file');
+Route::resource('rembukstunting', \App\Http\Controllers\Admin\RembukStuntingController::class);
+
     //peraturan
 Route::get('/peraturan/data', [App\Http\Controllers\Admin\PeraturanController::class, 'anyData'])->name('peraturan.data');
 Route::get('/peraturan/file/{id}', [App\Http\Controllers\Admin\PeraturanController::class, 'file'])->name('peraturan.file');
