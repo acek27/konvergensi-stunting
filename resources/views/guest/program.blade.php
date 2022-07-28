@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@push('css')
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+@endpush
 @section('content')
     <!-- Content
     ============================================= -->
@@ -15,105 +18,20 @@
                                 </h3>
                             </div>
                             <div class="row justify-content-center col-mb-50">
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="feature-box fbox-plain">
-                                        <div class="fbox-icon">
-                                            <a href="#"><img src="customer.svg" alt="Image"></a>
-                                        </div>
-                                        <div class="fbox-content">
-                                            <h3 class="nott fw-semibold ls0">Responsive Layout</h3>
-                                            <p>Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="feature-box fbox-plain">
-                                        <div class="fbox-icon">
-                                            <a href="#"><img src="customer.svg" alt="Image"></a>
-                                        </div>
-                                        <div class="fbox-content">
-                                            <h3 class="nott fw-semibold ls0">Retina Ready Graphics</h3>
-                                            <p>Looks beautiful &amp; ultra-sharp on Retina Displays with Retina Icons, Fonts &amp; Images.</p>
+                                @foreach($data as $datum)
+                                    <div class="col-sm-6 col-lg-4">
+                                        <div class="feature-box fbox-plain">
+                                            <div class="fbox-icon">
+                                                <a href="#"><img src="{{asset('event.png')}}" alt="Image"></a>
+                                            </div>
+                                            <div class="fbox-content">
+                                                <h3 class="nott fw-semibold ls0">{{$datum->judul}}</h3>
+                                                <p><a href="{{route('kegiatan.file',$datum->id)}}" target="_blank"><i
+                                                            class="fa fa-download"></i> Unduh file</a></p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="feature-box fbox-plain">
-                                        <div class="fbox-icon">
-                                            <a href="#"><img src="customer.svg" alt="Image"></a>
-                                        </div>
-                                        <div class="fbox-content">
-                                            <h3 class="nott fw-semibold ls0">Powerful Performance</h3>
-                                            <p>Optimized code that are completely customizable and deliver unmatched fast performance.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="feature-box fbox-plain">
-                                        <div class="fbox-icon">
-                                            <a href="#"><img src="customer.svg" alt="Image"></a>
-                                        </div>
-                                        <div class="fbox-content">
-                                            <h3 class="nott fw-semibold ls0">HTML5 Video</h3>
-                                            <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width Background.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="feature-box fbox-plain">
-                                        <div class="fbox-icon">
-                                            <a href="#"><img src="customer.svg" alt="Image"></a>
-                                        </div>
-                                        <div class="fbox-content">
-                                            <h3 class="nott fw-semibold ls0">Parallax Support</h3>
-                                            <p>Display your Content attractively using Parallax Sections that have unlimited customizable areas.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="feature-box fbox-plain">
-                                        <div class="fbox-icon">
-                                            <a href="#"><img src="customer.svg" alt="Image"></a>
-                                        </div>
-                                        <div class="fbox-content">
-                                            <h3 class="nott fw-semibold ls0">Endless Possibilities</h3>
-                                            <p>Complete control on each &amp; every element that provides endless customization possibilities.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="feature-box fbox-plain">
-                                        <div class="fbox-icon">
-                                            <a href="#"><img src="customer.svg" alt="Image"></a>
-                                        </div>
-                                        <div class="fbox-content">
-                                            <h3 class="nott fw-semibold ls0">Light &amp; Dark Color Schemes</h3>
-                                            <p>Change your Website's Primary Scheme instantly by simply adding the dark class to the body.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="feature-box fbox-plain">
-                                        <div class="fbox-icon">
-                                            <a href="#"><img src="customer.svg" alt="Image"></a>
-                                        </div>
-                                        <div class="fbox-content">
-                                            <h3 class="nott fw-semibold ls0">Boxed &amp; Wide Layouts</h3>
-                                            <p>Stretch your Website to the Full Width or make it boxed to surprise your visitors.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-lg-4">
-                                    <div class="feature-box fbox-plain">
-                                        <div class="fbox-icon">
-                                            <a href="#"><img src="customer.svg" alt="Image"></a>
-                                        </div>
-                                        <div class="fbox-content">
-                                            <h3 class="nott fw-semibold ls0">Extensive Documentation</h3>
-                                            <p>We have covered each &amp; everything in our Documentation including Videos &amp; Screenshots.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                         </div>
                     </div>

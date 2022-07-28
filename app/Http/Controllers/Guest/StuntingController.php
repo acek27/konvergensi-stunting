@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
+use App\Models\Stunting;
 use Illuminate\Http\Request;
 
 class StuntingController extends Controller
@@ -14,7 +15,8 @@ class StuntingController extends Controller
      */
     public function index()
     {
-        return view('guest.stunting');
+        $data = Stunting::all();
+        return view('guest.stunting', compact('data'));
     }
 
     /**

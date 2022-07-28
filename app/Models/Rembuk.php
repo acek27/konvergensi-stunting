@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rembuk extends Model
 {
-    use HasFactory;
+    protected $fillable = ['judul', 'kategori', 'keterangan','path'];
 }

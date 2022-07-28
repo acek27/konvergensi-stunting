@@ -104,7 +104,7 @@ class PostController extends Controller
         $data = Post::findOrFail($id);
         $file = storage_path('app/' . $data->image);
         unlink($file);
-        Post::destroy($id);
+        $data::destroy($id);
     }
 
     public function anyData()

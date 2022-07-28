@@ -31,12 +31,24 @@ Route::resource('media', \App\Http\Controllers\Guest\MediaController::class);
     //legalitas
 Route::resource('legalitas', \App\Http\Controllers\Guest\LegalitasController::class);
 
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //admin
     //beranda
 Route::get('/posts/data', [App\Http\Controllers\Admin\PostController::class, 'anyData'])->name('posts.data');
 Route::get('/posts/image/{id}', [App\Http\Controllers\Admin\PostController::class, 'file'])->name('posts.file');
 Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
+
+    //Data Stunting
+Route::get('/datastunting/data', [App\Http\Controllers\Admin\DataStuntingController::class, 'anyData'])->name('datastunting.data');
+Route::get('/datastunting/image/{id}', [App\Http\Controllers\Admin\DataStuntingController::class, 'file'])->name('datastunting.file');
+Route::resource('datastunting', \App\Http\Controllers\Admin\DataStuntingController::class);
+
+    //kegiatan
+Route::get('/kegiatan/data', [App\Http\Controllers\Admin\KegiatanController::class, 'anyData'])->name('kegiatan.data');
+Route::get('/kegiatan/image/{id}', [App\Http\Controllers\Admin\KegiatanController::class, 'file'])->name('kegiatan.file');
+Route::resource('kegiatan', \App\Http\Controllers\Admin\KegiatanController::class);
 
     //peraturan
 Route::get('/peraturan/data', [App\Http\Controllers\Admin\PeraturanController::class, 'anyData'])->name('peraturan.data');

@@ -92,7 +92,7 @@ class GaleriController extends Controller
         $data = Galeri::findOrFail($id);
         $file = storage_path('app/' . $data->path);
         unlink($file);
-        Galeri::destroy($id);
+        $data::destroy($id);
     }
 
     public function file($id)

@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-12 form-group">
                         <label>Editor:</label>
-                        <input type="text" name="editor" id="freelance-quote-email"
+                        <input type="text" name="editor" id="freelance-quote-email" value="Administrator"
                                class="form-control" required>
                     </div>
 

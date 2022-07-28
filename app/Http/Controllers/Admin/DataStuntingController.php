@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Peraturan;
-use App\Models\Post;
+use App\Models\Stunting;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
-class PeraturanController extends Controller
+class DataStuntingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class PeraturanController extends Controller
      */
     public function index()
     {
-        return view('admin.peraturan.index');
+        return view('admin.datastunting.index');
     }
 
     /**
@@ -27,7 +27,7 @@ class PeraturanController extends Controller
      */
     public function create()
     {
-        return view('admin.peraturan.create');
+        return view('admin.datastunting.create');
     }
 
     /**
@@ -41,10 +41,10 @@ class PeraturanController extends Controller
         $data = $request->all();
         $filename = uniqid() . '-' . uniqid() . '.' . $request->path->
             getClientOriginalExtension();
-        $path = $request->path->storeAs('path', $filename);
+        $path = $request->path->storeAs('stunting', $filename);
         $data['path'] = $path;
-        Peraturan::create($data);
-        return redirect()->route('peraturan.index');
+        Stunting::create($data);
+        return redirect()->route('datastunting.index');
     }
 
     /**
@@ -89,7 +89,7 @@ class PeraturanController extends Controller
      */
     public function destroy($id)
     {
-        $data = Peraturan::findOrFail($id);
+        $data = Stunting::findOrFail($id);
         $file = storage_path('app/' . $data->path);
         unlink($file);
         $data::destroy($id);
@@ -97,7 +97,7 @@ class PeraturanController extends Controller
 
     public function file($id)
     {
-        $poster = Peraturan::find($id);
+        $poster = Stunting::find($id);
         $file = storage_path('app/' . $poster->path);
         return response()
             ->file($file, [
@@ -109,7 +109,7 @@ class PeraturanController extends Controller
 
     public function anyData()
     {
-        return DataTables::of(Peraturan::query())
+        return DataTables::of(Stunting::query())
             ->addColumn('action', function ($data) {
                 $edit = '<a href="#"><i class="fa fa-edit text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
