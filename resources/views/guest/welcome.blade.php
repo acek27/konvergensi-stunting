@@ -15,41 +15,10 @@
                                 <h3 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;">Apa itu <span>Stuntig</span>
                                     ?</h3>
                             </div>
-                            <p class="mb-5">Monotonectally pursue intuitive catalysts for change for extensible
-                                materials intrinsicly fabricate.</p>
-
-                            <div class="feature-box fbox-plain bottommargin-sm">
-                                <div class="fbox-icon">
-                                    <i class="icon-line-circle-check text-primary"></i>
-                                </div>
-                                <div class="fbox-content">
-                                    <h3 class="fw-normal nott">Classes Every Week.</h3>
-                                    <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width
-                                        Background.</p>
-                                </div>
-                            </div>
-
-                            <div class="feature-box fbox-plain bottommargin-sm">
-                                <div class="fbox-icon">
-                                    <i class="icon-line-circle-check text-warning"></i>
-                                </div>
-                                <div class="fbox-content">
-                                    <h3 class="fw-normal nott">10+ Years Experienced.</h3>
-                                    <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width
-                                        Background.</p>
-                                </div>
-                            </div>
-
-                            <div class="feature-box fbox-plain">
-                                <div class="fbox-icon">
-                                    <i class="icon-line-circle-check text-info"></i>
-                                </div>
-                                <div class="fbox-content">
-                                    <h3 class="fw-normal nott">2100+ Members Active.</h3>
-                                    <p>Canvas provides support for Native HTML5 Videos that can be added to a Full Width
-                                        Background.</p>
-                                </div>
-                            </div>
+                            <p class="mb-5">Kondisi dimana seseorang kekurangan gizi kronis (dalam jangka waktu yang
+                                lama) Terutama pada Seribu Hari Pertama Kehidupan (1000 HPK) ibu hamil (270 hari) sampai
+                                anak usia 2 tahun (730 hari) Sehingga tinggi badannya dibanding usia nya terlihat LEBIH
+                                PENDEK dari SEBAYA nya.</p>
                         </div>
                     </div>
 
@@ -82,9 +51,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 mb-5 mb-md-0">
                             <div class="yoga-video position-relative">
-                                <img src="canvas/demos/yoga/images/yoga-video.svg" alt="Yoga Image">
-                                <a href="https://www.youtube.com/watch?v=P3Huse9K6Xs" data-lightbox="iframe"
-                                   class="play-icon"><i class="icon-play1"></i></a>
+                                <img src="{{asset('8aksi.png')}}" alt="Yoga Image">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -95,9 +62,9 @@
                                 <h2 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;">8 Aksi
                                     Konvergensi</h2>
                             </div>
-                            <p class="mb-5 lead mb-0" style="line-height: 1.7;">Monotonectally pursue intuitive
-                                catalysts for change for extensible materials. Intrinsicly fabricate principle-centered
-                                web-readiness with virtual.</p>
+                            <p class="mb-5 lead mb-0" style="line-height: 1.7;">Instrument dalam bentuk kegiatan
+                                Pemerintah Kabupaten/Kota untuk memperbaiki manajemen penyelenggaraan pelayanan dasar
+                                agar lebih terpadu dan tepat sasaran.</p>
                         </div>
                     </div>
                 </div>
