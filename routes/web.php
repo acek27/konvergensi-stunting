@@ -30,6 +30,8 @@ Route::resource('rembuk', \App\Http\Controllers\Guest\RembukController::class);
 Route::resource('media', \App\Http\Controllers\Guest\MediaController::class);
     //legalitas
 Route::resource('legalitas', \App\Http\Controllers\Guest\LegalitasController::class);
+    //agenda
+Route::resource('event', \App\Http\Controllers\Guest\EventController::class);
 
 
 
@@ -60,7 +62,11 @@ Route::get('/peraturan/data', [App\Http\Controllers\Admin\PeraturanController::c
 Route::get('/peraturan/file/{id}', [App\Http\Controllers\Admin\PeraturanController::class, 'file'])->name('peraturan.file');
 Route::resource('peraturan', \App\Http\Controllers\Admin\PeraturanController::class);
 
-//galeri
+    //galeri
 Route::get('/galeri/data', [App\Http\Controllers\Admin\GaleriController::class, 'anyData'])->name('galeri.data');
 Route::get('/galeri/file/{id}', [App\Http\Controllers\Admin\GaleriController::class, 'file'])->name('galeri.file');
 Route::resource('galeri', \App\Http\Controllers\Admin\GaleriController::class);
+
+    //agenda
+Route::get('/agenda/data', [App\Http\Controllers\Admin\AgendaController::class, 'anyData'])->name('agenda.data');
+Route::resource('agenda', \App\Http\Controllers\Admin\AgendaController::class);

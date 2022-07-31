@@ -24,7 +24,8 @@
     <link rel="stylesheet" href="{{asset('canvas/css/animate.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{asset('canvas/css/magnific-popup.css')}}" type="text/css"/>
 
-    <link rel="stylesheet" href="css/custom.css" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('canvas/css/calendar.css')}}" type="text/css"/>
+    <link rel="stylesheet" href="{{asset('canvas/css/custom.css')}}" type="text/css"/>
     @stack('css')
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <style>
@@ -150,7 +151,7 @@
                             <li class="menu-item"><a class="menu-link" href="{{route('legalitas.index')}}">
                                     <div>Legalitas/Peraturan</div>
                                 </a></li>
-                            <li class="menu-item"><a class="menu-link" href="demo-yoga-contact-us.html">
+                            <li class="menu-item"><a class="menu-link" href="{{route('event.index')}}">
                                     <div>Agenda</div>
                                 </a></li>
                         </ul>
