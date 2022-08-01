@@ -13,7 +13,7 @@
                             <h2 class="fw-bold mb-2 nott" style="font-size: 42px; letter-spacing: -1px">Galeri</h2>
                                                         <p class="lead mb-0">Media & Dokumentasi Kegiatan.</p>
                         </div>
-                        <img src="{{asset('galeri.png')}}" alt="Yoga Image"
+                        <img src="{{asset('gebyar1.png')}}" alt="Yoga Image"
                              class="d-none d-sm-flex" width="300">
                     </div>
                         <hr>

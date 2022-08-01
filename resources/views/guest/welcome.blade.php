@@ -20,13 +20,13 @@
                                 anak usia 2 tahun (730 hari) Sehingga tinggi badannya dibanding usia nya terlihat LEBIH
                                 PENDEK dari SEBAYA nya.</p>
                         </div>
+                        <div class="col-lg-4 py-5">
+                            <img src="{{asset('info.jpeg')}}" alt="">
+                        </div>
                     </div>
 
                 </div>
-                {{--                <div class="section-img"--}}
-                {{--                     style="background: radial-gradient(ellipse at center, rgba(255,221,148,.7),rgba(255,221,148,1)), url('/canvas/demos/yoga/images/yoga-about.jpg') no-repeat center center / cover">--}}
-                {{--                    <img class="section-img-sm" src="canvas/demos/yoga/images/yoga-about-sm.jpg" alt="Section Img">--}}
-                {{--                </div>--}}
+
             </div>
             <div id="section-contact" class="page-section pt-0"
                  data-onepage-settings="{&quot;offset&quot;:65,&quot;speed&quot;:&quot;1250&quot;,&quot;easing&quot;:&quot;easeInOutExpo&quot;}"

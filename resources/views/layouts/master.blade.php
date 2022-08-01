@@ -62,27 +62,27 @@
                     ============================================= -->
                     <div id="logo" class="order-lg-2 col-auto px-0 me-lg-0">
                         <a href="#" class="standard-logo"
-                           data-dark-logo="{{asset('canvas/demos/yoga/images/logo-dark.png')}}"><img
-                                src="{{asset('canvas/demos/yoga/images/logo.png')}}" alt="Canvas Logo"></a>
+                           data-dark-logo="{{asset('Sibesti-01.png')}}"><img
+                                src="{{asset('Sibesti-01.png')}}" alt="Canvas Logo"></a>
                         <a href="#" class="retina-logo"
-                           data-dark-logo="{{asset('canvas/demos/yoga/images/logo-dark@2x.png')}}"><img
-                                src="{{asset('canvas/demos/yoga/images/logo@2x.png')}}" alt="Canvas Logo"></a>
+                           data-dark-logo="{{asset('Sibesti-01.png')}}"><img
+                                src="{{asset('Sibesti-01.png')}}" alt="Canvas Logo"></a>
                     </div><!-- #logo end -->
 
-                    <div class="header-misc order-lg-3 col-auto col-lg-2 px-0 justify-content-end">
-                        <a href="{{route('login')}}" class="button-link">
-                            <div>Login</div>
-                        </a>
-                        <a href="https://www.facebook.com/semicolonweb/" target="_blank"
-                           class="social-icon si-facebook si-small si-light mb-0"><i class="icon-facebook"></i><i
-                                class="icon-facebook"></i></a>
-                        <a href="https://www.instagram.com/semicolonweb/" target="_blank"
-                           class="social-icon si-instagram si-small si-light mb-0"><i class="icon-instagram"></i><i
-                                class="icon-instagram"></i></a>
-                        <a href="https://twitter.com/__SemiColon" target="_blank"
-                           class="social-icon si-paypal si-small si-light mb-0"><i class="icon-paypal"></i><i
-                                class="icon-paypal"></i></a>
-                    </div>
+{{--                    <div class="header-misc order-lg-3 col-auto col-lg-2 px-0 justify-content-end">--}}
+{{--                        <a href="{{route('login')}}" class="button-link">--}}
+{{--                            <div>Login</div>--}}
+{{--                        </a>--}}
+{{--                        <a href="https://www.facebook.com/semicolonweb/" target="_blank"--}}
+{{--                           class="social-icon si-facebook si-small si-light mb-0"><i class="icon-facebook"></i><i--}}
+{{--                                class="icon-facebook"></i></a>--}}
+{{--                        <a href="https://www.instagram.com/semicolonweb/" target="_blank"--}}
+{{--                           class="social-icon si-instagram si-small si-light mb-0"><i class="icon-instagram"></i><i--}}
+{{--                                class="icon-instagram"></i></a>--}}
+{{--                        <a href="https://twitter.com/__SemiColon" target="_blank"--}}
+{{--                           class="social-icon si-paypal si-small si-light mb-0"><i class="icon-paypal"></i><i--}}
+{{--                                class="icon-paypal"></i></a>--}}
+{{--                    </div>--}}
 
                     <div id="primary-menu-trigger">
                         <svg class="svg-trigger" viewBox="0 0 100 100">
