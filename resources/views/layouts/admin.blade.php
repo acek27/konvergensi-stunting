@@ -228,13 +228,13 @@
                             <li class="nav-item">
                                 <a href="{{route('galeri.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Gambar/Video</p>
+                                    <p>Gambar</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('galeri.create')}}" class="nav-link">
+                                <a href="{{route('video.index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Buat Baru</p>
+                                    <p>Video</p>
                                 </a>
                             </li>
                         </ul>

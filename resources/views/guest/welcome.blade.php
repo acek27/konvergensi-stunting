@@ -106,6 +106,41 @@
                     </div>
                 </div>
             </div>
+            <div class="divider divider-center"><i class="icon-circle"></i></div>
+            <div class="container clearfix">
+                <h4>Video Konvergensi Stunting:</h4>
+                <div id="related-portfolio" class="owl-carousel portfolio-carousel carousel-widget" data-margin="20"
+                     data-nav="false" data-autoplay="5000" data-items-xs="1" data-items-sm="2" data-items-md="3"
+                     data-items-xl="4">
+                    @foreach($videos as $video)
+                        <div class="oc-item">
+                            <div class="portfolio-item">
+                                <div class="portfolio-image">
+                                    <a href="portfolio-single-video.html">
+                                        <img src="http://img.youtube.com/vi/{{$video->thumbnail}}/maxresdefault.jpg"
+                                             alt="Backpack Contents">
+                                    </a>
+                                    <div class="bg-overlay">
+                                        <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
+                                            <a href="{{$video->url}}"
+                                               class="overlay-trigger-icon bg-light text-dark"
+                                               data-hover-animate="fadeInDownSmall"
+                                               data-hover-animate-out="fadeOutUpSmall"
+                                               data-hover-speed="350" data-lightbox="iframe"><i
+                                                    class="icon-line-play"></i></a>
+                                        </div>
+                                        <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
+                                    </div>
+                                </div>
+                                <div class="portfolio-desc">
+                                    <h3>{{$video->judul}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
         </div>
     </section><!-- #content end -->
 @endsection

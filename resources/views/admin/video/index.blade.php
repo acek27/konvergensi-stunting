@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Tabel Berita/Informasi</h3>
-                    <a href="{{route('galeri.create')}}" class="btn btn-info float-right">Buat Baru</a>
+                    <a href="{{route('video.create')}}" class="btn btn-info float-right">Buat Baru</a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body table-responsive">
@@ -13,7 +13,8 @@
                         <thead>
                         <tr>
                             <th>Judul</th>
-                            <th>Kategori</th>
+                            <th>URL</th>
+                            <th>ID Thumbnail</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
@@ -33,10 +34,11 @@
             var dt = $('#posts').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{route('galeri.data')}}',
+                ajax: '{{route('video.data')}}',
                 columns: [
                     {data: 'judul', name: 'judul'},
-                    {data: 'kategori', name: 'kategori'},
+                    {data: 'url', name: 'url'},
+                    {data: 'thumbnail', name: 'thumbnail'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],
             });
@@ -52,7 +54,7 @@
                 }).then(
                     function (result) {
                         $.ajax({
-                            url: "{{route('galeri.index')}}/" + id,
+                            url: "{{route('video.index')}}/" + id,
                             method: "DELETE",
                         }).done(function (msg) {
                             dt.ajax.reload();

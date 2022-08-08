@@ -70,3 +70,7 @@ Route::resource('galeri', \App\Http\Controllers\Admin\GaleriController::class);
     //agenda
 Route::get('/agenda/data', [App\Http\Controllers\Admin\AgendaController::class, 'anyData'])->name('agenda.data');
 Route::resource('agenda', \App\Http\Controllers\Admin\AgendaController::class);
+
+    //video
+Route::get('/video/data', [App\Http\Controllers\Admin\VideoController::class, 'anyData'])->name('video.data');
+Route::resource('video', \App\Http\Controllers\Admin\VideoController::class);
