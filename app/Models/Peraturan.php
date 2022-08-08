@@ -25,6 +25,8 @@ class Peraturan extends Model
             $jenis = "BKKBN";
         } elseif ($this->kategori == 4) {
             $jenis = "PERBUP";
+        }elseif ($this->kategori == 5) {
+            $jenis = "SK";
         }
         return $jenis;
     }

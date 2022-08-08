@@ -34,6 +34,7 @@
                                 <option value="2">Perka</option>
                                 <option value="3">BKKBN</option>
                                 <option value="4">Perbup</option>
+                                <option value="5">SK</option>
                             </select>
                         </div>
                         <div class="col-12 form-group">
