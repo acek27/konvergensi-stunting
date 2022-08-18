@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 //
 //Route::get('/', function () {
-//    return view('welcome');
-//})->name('landing.page');
+//    return view('layouts.master');
+//});
 Route::get('/', [\App\Http\Controllers\Guest\DashboardController::class,'index'])->name('index');
 Auth::routes();
 
