@@ -79,7 +79,7 @@
 
     <!-- Header
     ============================================= -->
-    <header id="header" class="header-size-sm" data-sticky-shrink="false">
+    <header id="header" class="header-size-sm" data-sticky-shrink="false" style="background: #9ADCFF">
         <div class="container">
             <div class="header-row justify-content-between">
 
@@ -133,7 +133,7 @@
                     <nav class="primary-menu order-lg-1 col-lg-12 px-0">
 
                         <!-- Menu Left -->
-                        <ul class="menu-container">
+                        <ul class="menu-container" style="background: #FFF89A">
                             <li class="current menu-item"><a class="menu-link" href="{{route('index')}}">
                                     <div>Beranda</div>
                                 </a></li>

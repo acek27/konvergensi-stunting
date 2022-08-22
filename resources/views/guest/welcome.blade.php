@@ -24,7 +24,7 @@
 
                         <!-- Tab Menu
                         ============================================= -->
-                        <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <nav class="navbar navbar-expand-lg navbar-light p-0" style="background: #ECA6A6">
                             <h4 class="mb-0 pe-2 ls1 text-uppercase fw-bold">Pengertian Stunting</h4>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
                                 <i class="icon-line-menu"></i>
@@ -71,7 +71,7 @@
                             <!-- Sidebar Widget 1
                             ============================================= -->
                             <div class="widget clearfix">
-                                <h4 class="mb-2 ls1 text-uppercase fw-bold">Informasi Stunting</h4>
+                                <h4 class="mb-2 ls1 text-uppercase fw-bold" style="background: #C4DFAA">Informasi Stunting</h4>
                                 <div class="line line-xs line-market"></div>
                                 <div class="row center mt-4 clearfix">
                                     <img src="{{asset('info.jpeg')}}" alt="">
@@ -109,7 +109,7 @@
                         <!-- Gallery Slider
                         ============================================= -->
                         <div class="clearfix">
-                            <h4 class="mb-2 ls1 text-uppercase fw-bold">BERITA/INFORMASI</h4>
+                            <h4 style="background: #9ADCFF" class="mb-2 ls1 text-uppercase fw-bold">BERITA/INFORMASI</h4>
                             <div class="line line-xs line-market"></div>
                             <!-- Flex Thumbs Slider
                             ============================================= -->
@@ -148,7 +148,7 @@
                             <!-- Sidebar Widget 3
                             ============================================= -->
                             <div class="widget clearfix">
-                                <h4 class="mb-2 ls1 text-uppercase fw-bold">Video</h4>
+                                <h4 style="background: #FFB2A6" class="mb-2 ls1 text-uppercase fw-bold">Video</h4>
                                 <div class="line line-xs line-travel"></div>
 
                                 <div class="owl-carousel fixed-nav carousel-widget posts-md" data-margin="0" data-nav="true" data-pagi="false" data-items="1">
