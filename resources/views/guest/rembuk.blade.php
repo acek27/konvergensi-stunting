@@ -93,12 +93,12 @@
                                                         <div class="row">
                                                             <p>{{$datum->keterangan}}</p>
                                                             <div class="col-lg-2">
-                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                <a href="{{route('rembukstnting.file', $datum->id)}}"
                                                                    class="text-muted " target="_blank"><i
                                                                         class="fa fa-download"></i> Unduh file </a>
                                                             </div>
                                                             <div class="col-lg-2">
-                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                <a href="{{route('rembukstunting.file', $datum->id)}}"
                                                                    class="text-muted" target="_blank"><i
                                                                         class="fa fa-arrow-circle-right"></i> Lihat </a>
                                                             </div>
@@ -126,12 +126,12 @@
                                                         <div class="row">
                                                             <p>{{$datum->keterangan}}</p>
                                                             <div class="col-lg-2">
-                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                <a href="{{route('rembukstunting.file', $datum->id)}}"
                                                                    class="text-muted " target="_blank"><i
                                                                         class="fa fa-download"></i> Unduh file </a>
                                                             </div>
                                                             <div class="col-lg-2">
-                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                <a href="{{route('rembukstunting.file', $datum->id)}}"
                                                                    class="text-muted" target="_blank"><i
                                                                         class="fa fa-arrow-circle-right"></i> Lihat </a>
                                                             </div>
