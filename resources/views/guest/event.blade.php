@@ -12,7 +12,7 @@
 
                     <div class="events-calendar">
                         <div class="events-calendar-header clearfix">
-                            <h2>Events Overview</h2>
+                            <h2>Agenda Stuntig</h2>
                             <h3 class="calendar-month-year">
                                 <span id="calendar-month" class="calendar-month"></span>
                                 <span id="calendar-year" class="calendar-year"></span>

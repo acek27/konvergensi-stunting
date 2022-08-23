@@ -13,8 +13,8 @@ class Agenda extends Model
     public function setTglMulaiAttribute($value)
     {
         $date = $value;
-        $dt = str_replace('/', '-', $date);
-        $tanggal = date("Y-m-d H:i", strtotime($dt));
+        $time = strtotime($date);
+        $tanggal = date("Y-m-d", $time);
         $this->attributes['tgl_mulai'] = $tanggal;
     }
 
@@ -30,8 +30,8 @@ class Agenda extends Model
     public function setTglSelesaiAttribute($value)
     {
         $date = $value;
-        $dt = str_replace('/', '-', $date);
-        $tanggal = date("Y-m-d H:i", strtotime($dt));
+        $time = strtotime($date);
+        $tanggal = date("Y-m-d", $time);
         $this->attributes['tgl_selesai'] = $tanggal;
     }
 
