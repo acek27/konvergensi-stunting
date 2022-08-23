@@ -7,7 +7,7 @@
             max-height: 200px;
             width: auto;
             height: auto;
-            object-fit: cover!important;
+            object-fit: cover !important;
         }
     </style>
 @endpush
@@ -26,7 +26,9 @@
                         ============================================= -->
                         <nav class="navbar navbar-expand-lg navbar-light p-0" style="background: #ECA6A6">
                             <h4 class="mb-0 pe-2 ls1 text-uppercase fw-bold">Pengertian Stunting</h4>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarToggler1" aria-controls="navbarToggler1"
+                                    aria-expanded="false" aria-label="Toggle navigation">
                                 <i class="icon-line-menu"></i>
                             </button>
                         </nav>
@@ -47,13 +49,15 @@
                         <div class="row align-items-center mt-5">
                             <div class="col-md-12">
                                 <div class="heading-block border-bottom-0 bottommargin-sm">
-                                    <div class="fancy-title title-border mb-3"><h5 class="fw-normal color font-body text-uppercase ls1">8 Aksi Konvergensi</h5>
+                                    <div class="fancy-title title-border mb-3"><h5
+                                            class="fw-normal color font-body text-uppercase ls1">8 Aksi Konvergensi</h5>
                                     </div>
                                     <h2 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;">8 Aksi
                                         Konvergensi</h2>
                                 </div>
                                 <p class="mb-5 lead mb-0" style="line-height: 1.7;">Instrument dalam bentuk kegiatan
-                                    Pemerintah Kabupaten/Kota untuk memperbaiki manajemen penyelenggaraan pelayanan dasar
+                                    Pemerintah Kabupaten/Kota untuk memperbaiki manajemen penyelenggaraan pelayanan
+                                    dasar
                                     agar lebih terpadu dan tepat sasaran.</p>
                             </div>
                             <div class="col-md-12 mb-12 mb-md-0">
@@ -71,7 +75,8 @@
                             <!-- Sidebar Widget 1
                             ============================================= -->
                             <div class="widget clearfix">
-                                <h4 class="mb-2 ls1 text-uppercase fw-bold" style="background: #C4DFAA">Informasi Stunting</h4>
+                                <h4 class="mb-2 ls1 text-uppercase fw-bold" style="background: #C4DFAA">Informasi
+                                    Stunting</h4>
                                 <div class="line line-xs line-market"></div>
                                 <div class="row center mt-4 clearfix">
                                     <img src="{{asset('info.jpeg')}}" alt="">
@@ -95,7 +100,20 @@
                     <!-- Owl Carousel
                     ============================================= -->
                     <div class="col-lg-12 col-md-12 d-none d-md-block px-0">
-                        <img src="{{route('map.file',$map->id)}}" alt="">
+                        <div class="col-3 form-group">
+                            <label>Lihat sebaran berdasarkan tahun</label>
+                            <select class="form-select required valid" name="event-registration-interests" id="maplist">
+                                <option value="">-- Pilih Tahun --</option>
+                                @php
+                                    $tahun = date('Y')+1;
+                                    do{
+                                       $tahun--;
+                                       echo '<option value="'.$tahun.'">'.$tahun.'</option>';
+                                    }while ($tahun > 2020)
+                                @endphp
+                            </select>
+                        </div>
+                        <img id="map" src="{{route('map.file',$map->id)}}" alt="">
                     </div>
                 </div>
             </div> <!-- Container End -->
@@ -109,32 +127,40 @@
                         <!-- Gallery Slider
                         ============================================= -->
                         <div class="clearfix">
-                            <h4 style="background: #9ADCFF" class="mb-2 ls1 text-uppercase fw-bold">BERITA/INFORMASI</h4>
+                            <h4 style="background: #9ADCFF" class="mb-2 ls1 text-uppercase fw-bold">
+                                BERITA/INFORMASI</h4>
                             <div class="line line-xs line-market"></div>
                             <!-- Flex Thumbs Slider
                             ============================================= -->
                             <div class="row col-mb-50 mb-0">
                                 @foreach($posts as $post)
-                                <div class="col-md-6 mt-0">
-                                    <!-- Post Article -->
-                                    <div class="posts-md">
-                                        <div class="entry">
-                                            <div class="entry-image">
-                                                <a href="#"><img class="img-fit" src="{{route('posts.file', $post->id)}}" alt="Image 3"></a>
-                                                <div class="entry-categories"><a href="#" class="bg-lifestyle">berita</a></div>
-                                            </div>
-                                            <div class="entry-title title-sm nott">
-                                                <h3 class="mb-0"><a href="{{route('berita.show', $post->id)}}">{{$post->title}}</a></h3>
-                                            </div>
-                                            <div class="entry-meta">
-                                                <ul>
-                                                    <li><span>penyunting: </span> <a href="#">{{$post->editor}}</a></li>
-                                                    <li><i class="icon-time"></i><a href="#">{{$post->created_at}}</a></li>
-                                                </ul>
+                                    <div class="col-md-6 mt-0">
+                                        <!-- Post Article -->
+                                        <div class="posts-md">
+                                            <div class="entry">
+                                                <div class="entry-image">
+                                                    <a href="#"><img class="img-fit"
+                                                                     src="{{route('posts.file', $post->id)}}"
+                                                                     alt="Image 3"></a>
+                                                    <div class="entry-categories"><a href="#" class="bg-lifestyle">berita</a>
+                                                    </div>
+                                                </div>
+                                                <div class="entry-title title-sm nott">
+                                                    <h3 class="mb-0"><a
+                                                            href="{{route('berita.show', $post->id)}}">{{$post->title}}</a>
+                                                    </h3>
+                                                </div>
+                                                <div class="entry-meta">
+                                                    <ul>
+                                                        <li><span>penyunting: </span> <a href="#">{{$post->editor}}</a>
+                                                        </li>
+                                                        <li><i class="icon-time"></i><a
+                                                                href="#">{{$post->created_at}}</a></li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
                                 @endforeach
                             </div>
                         </div>
@@ -151,7 +177,8 @@
                                 <h4 style="background: #FFB2A6" class="mb-2 ls1 text-uppercase fw-bold">Video</h4>
                                 <div class="line line-xs line-travel"></div>
 
-                                <div class="owl-carousel fixed-nav carousel-widget posts-md" data-margin="0" data-nav="true" data-pagi="false" data-items="1">
+                                <div class="owl-carousel fixed-nav carousel-widget posts-md" data-margin="0"
+                                     data-nav="true" data-pagi="false" data-items="1">
                                     <div class="oc-item">
                                         <div class="portfolio-item">
                                             <div class="portfolio-image">
@@ -182,11 +209,13 @@
                                             <div class="portfolio-item">
                                                 <div class="portfolio-image">
                                                     <a href="portfolio-single-video.html">
-                                                        <img src="http://img.youtube.com/vi/{{$video->thumbnail}}/maxresdefault.jpg"
-                                                             alt="Backpack Contents">
+                                                        <img
+                                                            src="http://img.youtube.com/vi/{{$video->thumbnail}}/maxresdefault.jpg"
+                                                            alt="Backpack Contents">
                                                     </a>
                                                     <div class="bg-overlay">
-                                                        <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
+                                                        <div class="bg-overlay-content dark"
+                                                             data-hover-animate="fadeIn">
                                                             <a href="{{$video->url}}"
                                                                class="overlay-trigger-icon bg-light text-dark"
                                                                data-hover-animate="fadeInDownSmall"
@@ -194,7 +223,8 @@
                                                                data-hover-speed="350" data-lightbox="iframe"><i
                                                                     class="icon-line-play"></i></a>
                                                         </div>
-                                                        <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
+                                                        <div class="bg-overlay-bg dark"
+                                                             data-hover-animate="fadeIn"></div>
                                                     </div>
                                                 </div>
                                                 <div class="portfolio-desc">
@@ -215,3 +245,11 @@
         </div>
     </section><!-- #content end -->
 @endsection
+@push('js')
+    <script>
+        $('#maplist').change(function () {
+            var id = $(this).val();
+            document.getElementById("map").src = "{{url('peta/sebaran')}}/"+id;
+        });
+    </script>
+@endpush

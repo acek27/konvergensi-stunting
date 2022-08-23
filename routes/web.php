@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::get('/', [\App\Http\Controllers\Guest\DashboardController::class,'index'])->name('index');
 Route::get('/berita/{id}', [\App\Http\Controllers\Guest\DashboardController::class,'show'])->name('berita.show');
+Route::get('/peta/sebaran/{id}', [\App\Http\Controllers\Guest\DashboardController::class,'peta']);
 Auth::routes();
 
 //guest

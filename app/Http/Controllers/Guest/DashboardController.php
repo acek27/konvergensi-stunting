@@ -90,4 +90,16 @@ class DashboardController extends Controller
     {
         //
     }
+
+    public function peta($id)
+    {
+        $poster = Map::where('tahun', $id)->first();
+        $file = storage_path('app/' . $poster->path);
+        return response()
+            ->file($file, [
+                'Cache-Control' => 'no-cache, no-store, must-revalidate',
+                'Pragma' => 'no-cache',
+                'Expires' => '0'
+            ]);
+    }
 }
