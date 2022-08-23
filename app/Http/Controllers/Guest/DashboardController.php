@@ -19,8 +19,8 @@ class DashboardController extends Controller
     {
         $posts = Post::all();
         $videos = Video::all();
-        $map = Map::orderBy('tahun','DESC')->first();
-        return view('guest.welcome', compact('posts', 'videos','map'));
+        $map = Map::orderBy('tahun', 'DESC')->first();
+        return view('guest.welcome', compact('posts', 'videos', 'map'));
     }
 
     /**
@@ -30,13 +30,13 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,18 +47,20 @@ class DashboardController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $posts = Post::all();
+        return view('guest.post', compact('post', 'posts'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -69,8 +71,8 @@ class DashboardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -81,7 +83,7 @@ class DashboardController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

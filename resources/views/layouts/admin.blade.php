@@ -151,6 +151,14 @@
                         </ul>
                     </li>
                     <li class="nav-item ">
+                        <a href="{{route('kpmadm.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>
+                                KPM
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
                         <a href="{{route('map.index')}}" class="nav-link">
                             <i class="nav-icon fas fa-map"></i>
                             <p>

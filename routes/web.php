@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 //    return view('layouts.master');
 //});
 Route::get('/', [\App\Http\Controllers\Guest\DashboardController::class,'index'])->name('index');
+Route::get('/berita/{id}', [\App\Http\Controllers\Guest\DashboardController::class,'show'])->name('berita.show');
 Auth::routes();
 
 //guest
@@ -38,6 +39,7 @@ Route::resource('event', \App\Http\Controllers\Guest\EventController::class);
 Route::get('/tpps/kabupaten', [\App\Http\Controllers\Guest\TppsController::class,'kabupaten'])->name('tpps.kab');
 Route::get('/tpps/kecamatan', [\App\Http\Controllers\Guest\TppsController::class,'kecamatan'])->name('tpps.kec');
 Route::get('/tpps/desa', [\App\Http\Controllers\Guest\TppsController::class,'desa'])->name('tpps.desa');
+Route::get('/kpm/data', [\App\Http\Controllers\Guest\KpmController::class,'index'])->name('kpm.data');
 
 
 
@@ -47,6 +49,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/posts/data', [App\Http\Controllers\Admin\PostController::class, 'anyData'])->name('posts.data');
 Route::get('/posts/image/{id}', [App\Http\Controllers\Admin\PostController::class, 'file'])->name('posts.file');
 Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
+
+    //kpm
+Route::get('/kpmadm/data', [App\Http\Controllers\Admin\KpmadmController::class, 'anyData'])->name('kpmadm.data');
+Route::get('/kpmadm/file/{id}', [App\Http\Controllers\Admin\KpmadmController::class, 'file'])->name('kpmadm.file');
+Route::resource('kpmadm', \App\Http\Controllers\Admin\KpmadmController::class);
 
     //Data Stunting
 Route::get('/datastunting/data', [App\Http\Controllers\Admin\DataStuntingController::class, 'anyData'])->name('datastunting.data');

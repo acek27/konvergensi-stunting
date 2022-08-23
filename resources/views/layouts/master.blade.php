@@ -134,7 +134,7 @@
                             <li class="current menu-item"><a class="menu-link" href="{{route('index')}}">
                                     <div>Beranda</div>
                                 </a></li>
-                            <li class="menu-item"><a class="menu-link" href="#">
+                            <li class="menu-item"><a class="menu-link" href="{{route('kpm.data')}}">
                                     <div>KPM</div>
                                 </a></li>
                             <li class="menu-item"><a class="menu-link" href="#">

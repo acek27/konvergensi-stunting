@@ -124,7 +124,7 @@
                                                 <div class="entry-categories"><a href="#" class="bg-lifestyle">berita</a></div>
                                             </div>
                                             <div class="entry-title title-sm nott">
-                                                <h3 class="mb-0"><a href="#">{{$post->title}}</a></h3>
+                                                <h3 class="mb-0"><a href="{{route('berita.show', $post->id)}}">{{$post->title}}</a></h3>
                                             </div>
                                             <div class="entry-meta">
                                                 <ul>

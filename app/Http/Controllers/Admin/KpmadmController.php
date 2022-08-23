@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Kecamatan;
+use App\Models\Kpm;
 use App\Models\Rembuk;
 use App\Models\Tppsdesa;
-use App\Models\Tppskec;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
-class TppsdesaController extends Controller
+class KpmadmController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class TppsdesaController extends Controller
      */
     public function index()
     {
-        return view('admin.tpps.desa.index');
+        return view('admin.kpm.index');
     }
 
     /**
@@ -30,7 +30,7 @@ class TppsdesaController extends Controller
     public function create()
     {
         $kecamatan = Kecamatan::all();
-        return view('admin.tpps.desa.create', compact('kecamatan'));
+        return view('admin.kpm.create', compact('kecamatan'));
     }
 
     /**
@@ -44,10 +44,10 @@ class TppsdesaController extends Controller
         $data = $request->all();
         $filename = uniqid() . '-' . uniqid() . '.' . $request->path->
             getClientOriginalExtension();
-        $path = $request->path->storeAs('tppsdesa', $filename);
+        $path = $request->path->storeAs('kpm', $filename);
         $data['path'] = $path;
-        Tppsdesa::create($data);
-        return redirect()->route('tppsdesa.index');
+        Kpm::create($data);
+        return redirect()->route('kpmadm.index');
     }
 
     /**
@@ -92,7 +92,7 @@ class TppsdesaController extends Controller
      */
     public function destroy($id)
     {
-        $data = Tppsdesa::findOrFail($id);
+        $data = Kpm::findOrFail($id);
         $file = storage_path('app/' . $data->path);
         unlink($file);
         $data::destroy($id);
@@ -100,7 +100,7 @@ class TppsdesaController extends Controller
 
     public function file($id)
     {
-        $poster = Tppsdesa::find($id);
+        $poster = Kpm::find($id);
         $file = storage_path('app/' . $poster->path);
         return response()
             ->file($file, [
@@ -112,9 +112,9 @@ class TppsdesaController extends Controller
 
     public function anyData()
     {
-        return DataTables::of(Tppsdesa::query())
+        return DataTables::of(Kpm::query())
             ->addColumn('action', function ($data) {
-                $edit = '<a target="_blank" href="'.route('tppsdesa.file',$data->id).'"><i class="fa fa-download text-primary"></i></a>';
+                $edit = '<a target="_blank" href="'.route('kpmadm.file',$data->id).'"><i class="fa fa-download text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
                 return $edit . '&nbsp' . $del;
             })
