@@ -31,6 +31,9 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{asset('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
     <!-- Bootstrap File Upload CSS -->
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/select2/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('adminlte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+
     <link rel="stylesheet" href="{{asset('canvas/css/components/bs-filestyle.css')}}" type="text/css"/>
     <link rel="stylesheet" href="{{url('https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css')}}">
     <link href="{{asset('adminlte/plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
@@ -126,9 +129,9 @@
                          with font-awesome or any other icon font library -->
                     <li class="nav-item ">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-newspaper"></i>
                             <p>
-                                BERITA/INFORMASI
+                                Berita/Informasi
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -148,10 +151,41 @@
                         </ul>
                     </li>
                     <li class="nav-item ">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <a href="{{route('map.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-map"></i>
                             <p>
-                                DATA STUNTING
+                                Peta dan Capaian
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-archive"></i>
+                            <p>
+                                TPPS
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav- item">
+                                <a href="{{route('tppskec.index')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Kecamatan</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('tppsdesa.index')}}" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Desa</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-book"></i>
+                            <p>
+                                Data Stunting
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -172,9 +206,9 @@
                     </li>
                     <li class="nav-item ">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-bookmark"></i>
                             <p>
-                                AKSI KONVERGENSI
+                                Aksi Konvergensi
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -195,9 +229,9 @@
                     </li>
                     <li class="nav-item ">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-trophy"></i>
                             <p>
-                                LEGALITAS/PERATURAN
+                                Legalitas/Peraturan
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -218,7 +252,7 @@
                     </li>
                     <li class="nav-item ">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-image"></i>
                             <p>
                                 Galeri
                                 <i class="right fas fa-angle-left"></i>
@@ -240,8 +274,16 @@
                         </ul>
                     </li>
                     <li class="nav-item ">
+                        <a href="{{route('paparan.index')}}" class="nav-link">
+                            <i class="nav-icon fas fa-file-powerpoint"></i>
+                            <p>
+                                Materi Paparan
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
                         <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="nav-icon fas fa-calendar-alt"></i>
                             <p>
                                 Agenda
                                 <i class="right fas fa-angle-left"></i>
@@ -284,12 +326,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Dashboard</h1>
+                        @yield('header')
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v1</li>
+                            <li class="breadcrumb-item"><a href="#">Sibesti</a></li>
+                            <li class="breadcrumb-item active">{{date('Y')}}</li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->

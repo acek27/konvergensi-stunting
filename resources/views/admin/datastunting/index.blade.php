@@ -1,10 +1,13 @@
 @extends('layouts.admin')
+@section('header')
+    <h1 class="m-0">Data Stunting</h1>
+@endsection
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tabel Berita/Informasi</h3>
+                    <h3 class="card-title">Tabel Data Stunting</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body table-responsive">

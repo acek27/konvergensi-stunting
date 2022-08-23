@@ -1,10 +1,13 @@
 @extends('layouts.admin')
+@section('header')
+    <h1 class="m-0">Program Kegiatan</h1>
+@endsection
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Program Kegiatan</h3>
+                    <h3 class="card-title">Tabel Program Kegiatan</h3>
                     <a href="{{route('kegiatan.create')}}" class="btn btn-info float-right">Buat Baru</a>
                 </div>
                 <!-- /.card-header -->

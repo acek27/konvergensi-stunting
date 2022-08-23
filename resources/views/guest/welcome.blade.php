@@ -95,7 +95,7 @@
                     <!-- Owl Carousel
                     ============================================= -->
                     <div class="col-lg-12 col-md-12 d-none d-md-block px-0">
-                        <img src="{{asset('map.png')}}" alt="">
+                        <img src="{{route('map.file',$map->id)}}" alt="">
                     </div>
                 </div>
             </div> <!-- Container End -->

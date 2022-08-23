@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section('header')
+    <h1 class="m-0">Buat Video Baru</h1>
+@endsection
 @section('content')
     <div class="container clearfix">
         <div class="form-widget">

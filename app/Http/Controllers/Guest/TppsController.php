@@ -3,83 +3,42 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tppsdesa;
+use App\Models\Tppskec;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class TppsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function kabupaten()
     {
-        //
+        return view('guest.tpps.kabupaten');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function kecamatan(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            return DataTables::of(Tppskec::query())
+                ->addColumn('action', function ($data) {
+                    $edit = '<a target="_blank" href="' . route('tppskec.file', $data->id) . '"><i class="fa fa-download text-primary"></i> Download</a>';
+                    return $edit;
+                })
+                ->make(true);
+        }
+        return view('guest.tpps.kecamatan');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function desa(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        if ($request->ajax()) {
+            return DataTables::of(Tppsdesa::query())
+                ->addColumn('action', function ($data) {
+                    $edit = '<a target="_blank" href="' . route('tppsdesa.file', $data->id) . '"><i class="fa fa-download text-primary"></i> Download</a>';
+                    return $edit;
+                })
+                ->make(true);
+        }
+        return view('guest.tpps.desa');
     }
 }

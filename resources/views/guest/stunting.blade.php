@@ -75,6 +75,13 @@
                                             <i class="fa fa-star mr-2"></i>
                                             <span
                                                 class="font-weight-bold small text-uppercase">Lokus Stunting</span></a>
+
+                                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-risiko-tab" data-toggle="pill"
+                                           href="#v-pills-risiko" role="tab" aria-controls="v-pills-risiko"
+                                           aria-selected="false">
+                                            <i class="fa fa-users mr-2"></i>
+                                            <span
+                                                class="font-weight-bold small text-uppercase">Keluarga Berisiko Stunting</span></a>
                                     </div>
                                 </div>
                                 <div class="col-md-9">
@@ -151,6 +158,39 @@
                                             <h4 class="font-italic mb-4">Lokus Stunting</h4>
                                             <div class="accordion accordion-border mb-0">
                                                 @foreach($data->where('kategori',3) as $datum)
+                                                    <div class="accordion-header">
+                                                        <div class="accordion-icon">
+                                                            <i class="accordion-closed icon-ok-circle"></i>
+                                                            <i class="accordion-open icon-remove-circle"></i>
+                                                        </div>
+                                                        <div class="accordion-title">
+                                                            {{$datum->judul}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-content">
+                                                        <p>{{$datum->keterangan}}</p>
+                                                        <div class="row">
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                   class="text-muted " target="_blank"><i
+                                                                        class="fa fa-download"></i> Unduh file </a>
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                   class="text-muted" target="_blank"><i
+                                                                        class="fa fa-arrow-circle-right"></i> Lihat </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-risiko"
+                                             role="tabpanel" aria-labelledby="v-pills-risiko-tab">
+                                            <h4 class="font-italic mb-4">Keluarga Berisiko Stunting</h4>
+                                            <div class="accordion accordion-border mb-0">
+                                                @foreach($data->where('kategori',4) as $datum)
                                                     <div class="accordion-header">
                                                         <div class="accordion-icon">
                                                             <i class="accordion-closed icon-ok-circle"></i>

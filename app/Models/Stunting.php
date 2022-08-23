@@ -17,8 +17,10 @@ class Stunting extends Model
             $jenis = "Jumlah dan Preverensi Stunting";
         } elseif ($this->kategori == 2) {
             $jenis = "Capaian Indikator";
-        } else{
+        } elseif ($this->kategori == 3){
             $jenis = "Lokus Stunting";
+        } else{
+            $jenis = "Keluarga Berisiko Stunting";
         }
         return $jenis;
     }

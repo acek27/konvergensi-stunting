@@ -1,14 +1,12 @@
 @extends('layouts.admin')
-@section('header')
-    <h1 class="m-0">Buat Berita/Informasi Baru</h1>
-@endsection
+
 @section('content')
 <div class="container clearfix">
     <div class="form-widget">
         <div class="form-result"></div>
         <div class="row">
             <div class="col-lg-10">
-                <form class="row" action="{{route('posts.store')}}" method="post"
+                <form class="row" action="{{route('map.store')}}" method="post"
                       enctype="multipart/form-data">
                     @csrf
                     <div class="form-process">
@@ -17,27 +15,30 @@
                         </div>
                     </div>
                     <div class="col-12 form-group">
-                        <label>Judul:</label>
-                        <input type="text" name="title" id="freelance-quote-name"
-                               class="form-control" required>
+                        <label>Pilih Tahun:</label>
+                        <select name="tahun" id="tahun" class="form-control">
+                            <option value="">--pilih tahun --</option>
+                            @php
+                                $tahun = date('Y')+1;
+                                do{
+                                   $tahun--;
+                                   echo '<option value="'.$tahun.'">'.$tahun.'</option>';
+                                }while ($tahun > 2020)
+                            @endphp
+                        </select>
                     </div>
                     <div class="col-12 form-group">
-                        <label>Editor:</label>
-                        <input type="text" name="editor" id="freelance-quote-email" value="Administrator"
+                        <label>Nama Peta/Capaian:</label>
+                        <input type="text" name="nama_map" id="freelance-quote-name"
                                class="form-control" required>
                     </div>
 
                     <div class="col-12 form-group">
                         <label>Upload Gambar:</label>
-                        <input type="file" accept=".png,.jpg, .jpeg" id="image" name="image"
+                        <input type="file" accept=".png,.jpg, .jpeg" id="image" name="path"
                                class="file-loading" data-show-preview="true" required>
                     </div>
 
-                    <div class="col-12 form-group">
-                        <label>Konten:</label>
-                        <textarea name="content" id="content-editor"
-                                  class="form-control" cols="30" rows="8" required></textarea>
-                    </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-secondary">Simpan
                         </button>

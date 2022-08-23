@@ -30,8 +30,14 @@ Route::resource('rembuk', \App\Http\Controllers\Guest\RembukController::class);
 Route::resource('media', \App\Http\Controllers\Guest\MediaController::class);
     //legalitas
 Route::resource('legalitas', \App\Http\Controllers\Guest\LegalitasController::class);
+    //materi
+Route::resource('materi', \App\Http\Controllers\Guest\MateriController::class);
     //agenda
 Route::resource('event', \App\Http\Controllers\Guest\EventController::class);
+    //TPPS
+Route::get('/tpps/kabupaten', [\App\Http\Controllers\Guest\TppsController::class,'kabupaten'])->name('tpps.kab');
+Route::get('/tpps/kecamatan', [\App\Http\Controllers\Guest\TppsController::class,'kecamatan'])->name('tpps.kec');
+Route::get('/tpps/desa', [\App\Http\Controllers\Guest\TppsController::class,'desa'])->name('tpps.desa');
 
 
 
@@ -46,6 +52,15 @@ Route::resource('posts', \App\Http\Controllers\Admin\PostController::class);
 Route::get('/datastunting/data', [App\Http\Controllers\Admin\DataStuntingController::class, 'anyData'])->name('datastunting.data');
 Route::get('/datastunting/image/{id}', [App\Http\Controllers\Admin\DataStuntingController::class, 'file'])->name('datastunting.file');
 Route::resource('datastunting', \App\Http\Controllers\Admin\DataStuntingController::class);
+
+    //TPPS
+Route::get('/tppskec/data', [App\Http\Controllers\Admin\TppskecamatanController::class, 'anyData'])->name('tppskec.data');
+Route::get('/tppskec/file/{id}', [App\Http\Controllers\Admin\TppskecamatanController::class, 'file'])->name('tppskec.file');
+Route::get('/tppskec/loaddesa/{id}', [App\Http\Controllers\Admin\TppskecamatanController::class, 'loaddesa'])->name('tppskec.desa');
+Route::resource('tppskec', \App\Http\Controllers\Admin\TppskecamatanController::class);
+Route::get('/tppsdesa/data', [App\Http\Controllers\Admin\TppsdesaController::class, 'anyData'])->name('tppsdesa.data');
+Route::get('/tppsdesa/file/{id}', [App\Http\Controllers\Admin\TppsdesaController::class, 'file'])->name('tppsdesa.file');
+Route::resource('tppsdesa', \App\Http\Controllers\Admin\TppsdesaController::class);
 
     //kegiatan
 Route::get('/kegiatan/data', [App\Http\Controllers\Admin\KegiatanController::class, 'anyData'])->name('kegiatan.data');
@@ -67,6 +82,11 @@ Route::get('/galeri/data', [App\Http\Controllers\Admin\GaleriController::class, 
 Route::get('/galeri/file/{id}', [App\Http\Controllers\Admin\GaleriController::class, 'file'])->name('galeri.file');
 Route::resource('galeri', \App\Http\Controllers\Admin\GaleriController::class);
 
+    //paparan
+Route::get('/paparan/data', [App\Http\Controllers\Admin\PaparanController::class, 'anyData'])->name('paparan.data');
+Route::get('/paparan/file/{id}', [App\Http\Controllers\Admin\PaparanController::class, 'file'])->name('paparan.file');
+Route::resource('paparan', \App\Http\Controllers\Admin\PaparanController::class);
+
     //agenda
 Route::get('/agenda/data', [App\Http\Controllers\Admin\AgendaController::class, 'anyData'])->name('agenda.data');
 Route::resource('agenda', \App\Http\Controllers\Admin\AgendaController::class);
@@ -74,3 +94,8 @@ Route::resource('agenda', \App\Http\Controllers\Admin\AgendaController::class);
     //video
 Route::get('/video/data', [App\Http\Controllers\Admin\VideoController::class, 'anyData'])->name('video.data');
 Route::resource('video', \App\Http\Controllers\Admin\VideoController::class);
+
+    //map
+Route::get('/map/data', [App\Http\Controllers\Admin\MapController::class, 'anyData'])->name('map.data');
+Route::get('/map/file/{id}', [App\Http\Controllers\Admin\MapController::class, 'file'])->name('map.file');
+Route::resource('map', \App\Http\Controllers\Admin\MapController::class);

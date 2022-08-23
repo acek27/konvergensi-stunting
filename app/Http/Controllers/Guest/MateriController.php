@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
-use App\Models\Map;
-use App\Models\Post;
-use App\Models\Video;
+use App\Models\Paparan;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class MateriController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +15,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
-        $videos = Video::all();
-        $map = Map::orderBy('tahun','DESC')->first();
-        return view('guest.welcome', compact('posts', 'videos','map'));
+        $data = Paparan::all();
+        return view('guest.materi', compact('data'));
     }
 
     /**
