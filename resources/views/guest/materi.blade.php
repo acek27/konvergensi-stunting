@@ -31,6 +31,8 @@
                         @endforeach
                     </li>
                 </ul>
+                {{ $data->links('guest.paginate') }}
+
             </div>
         </div>
 

@@ -100,7 +100,7 @@
                     <!-- Owl Carousel
                     ============================================= -->
                     <div class="col-lg-12 col-md-12 d-none d-md-block px-0">
-                        <div class="col-3 form-group">
+                        <div class="col-3 form-group" style="float: right">
                             <label>Lihat sebaran berdasarkan tahun</label>
                             <select class="form-select required valid" name="event-registration-interests" id="maplist">
                                 <option value="">-- Pilih Tahun --</option>

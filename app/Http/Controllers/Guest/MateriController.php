@@ -15,7 +15,7 @@ class MateriController extends Controller
      */
     public function index()
     {
-        $data = Paparan::all();
+        $data = Paparan::paginate(4);
         return view('guest.materi', compact('data'));
     }
 
