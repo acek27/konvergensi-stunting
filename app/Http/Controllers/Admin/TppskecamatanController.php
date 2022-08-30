@@ -17,6 +17,11 @@ class TppskecamatanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['anyData', 'file']);
+    }
+
     public function index()
     {
         return view('admin.tpps.kecamatan.index');
@@ -120,7 +125,7 @@ class TppskecamatanController extends Controller
     {
         return DataTables::of(Tppskec::query())
             ->addColumn('action', function ($data) {
-                $edit = '<a target="_blank" href="'.route('tppskec.file',$data->id).'"><i class="fa fa-download text-primary"></i></a>';
+                $edit = '<a target="_blank" href="' . route('tppskec.file', $data->id) . '"><i class="fa fa-download text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
                 return $edit . '&nbsp' . $del;
             })

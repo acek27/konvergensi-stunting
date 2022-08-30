@@ -17,6 +17,12 @@ class KpmadmController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['anyData', 'file']);
+    }
+
     public function index()
     {
         return view('admin.kpm.index');
@@ -36,7 +42,7 @@ class KpmadmController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -53,7 +59,7 @@ class KpmadmController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -64,7 +70,7 @@ class KpmadmController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -75,8 +81,8 @@ class KpmadmController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -87,7 +93,7 @@ class KpmadmController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -114,7 +120,7 @@ class KpmadmController extends Controller
     {
         return DataTables::of(Kpm::query())
             ->addColumn('action', function ($data) {
-                $edit = '<a target="_blank" href="'.route('kpmadm.file',$data->id).'"><i class="fa fa-download text-primary"></i></a>';
+                $edit = '<a target="_blank" href="' . route('kpmadm.file', $data->id) . '"><i class="fa fa-download text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
                 return $edit . '&nbsp' . $del;
             })

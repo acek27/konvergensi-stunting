@@ -15,6 +15,10 @@ class AgendaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['anyData']);
+    }
     public function index()
     {
         return view('admin.agenda.index');
