@@ -1,35 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>@yield('title')</title>
+    <meta content="Admin Dashboard" name="description"/>
+    <meta content="Mannatthemes" name="author"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('adminlte/plugins/fontawesome-free/css/all.min.css')}}">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
 
-    <link rel="stylesheet" href="{{asset('canvas/css/font-icons.css')}}" type="text/css"/>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet"
-          href="{{asset('adminlte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css')}}">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="{{asset('adminlte/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="{{asset('adminlte/plugins/jqvmap/jqvmap.min.css')}}}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{{asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{asset('adminlte/plugins/daterangepicker/daterangepicker.css')}}">
-    <!-- summernote -->
-    <link rel="stylesheet" href="{{asset('adminlte/plugins/summernote/summernote-bs4.min.css')}}">
+    <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
     <!-- Bootstrap File Upload CSS -->
     <link rel="stylesheet" href="{{asset('adminlte/plugins/select2/css/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('adminlte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
@@ -39,380 +23,389 @@
     <link href="{{asset('adminlte/plugins/sweet-alert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css">
     @stack('css')
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
 
-    <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="{{asset('preloader.png')}}" alt="AdminLTELogo" height="80" width="60">
+
+<body class="fixed-left">
+
+<!-- Loader -->
+<div id="preloader">
+    <div id="status">
+        <div class="spinner"></div>
     </div>
+</div>
 
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<!-- Begin page -->
+<div id="wrapper">
 
-        <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
-            <!-- Navbar Search -->
-            <li class="nav-item">
-                <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                    <i class="fas fa-search"></i>
-                </a>
-                <div class="navbar-search-block">
-                    <form class="form-inline">
-                        <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                   aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="btn btn-navbar" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </li>
-            <!-- Notifications Dropdown Menu -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-user"></i>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <span class="dropdown-item dropdown-header">Administator</span>
-                    <div class="dropdown-divider"></div>
-                    <a href="{{route('logout')}}" class="dropdown-item dropdown-footer"
-                       onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                          style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                    <i class="fas fa-expand-arrows-alt"></i>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <!-- /.navbar -->
+    <!-- ========== Left Sidebar Start ========== -->
+    <div class="left side-menu">
+        <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+            <i class="ion-close"></i>
+        </button>
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
-            <img src="{{asset('preloader.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                 style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
-        </a>
-
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="{{asset('admin.png')}}" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block">Administrator</a>
-                </div>
+        <!-- LOGO -->
+        <div class="topbar-left">
+            <div class="text-center bg-logo">
+                <a href="#" class="logo"><img src="{{asset('sibesti.png')}}" height="50" alt="logo"></a>
             </div>
+        </div>
+        <div class="sidebar-user">
+            <img src="{{asset('admin.png')}}" alt="user" class="rounded-circle img-thumbnail mb-1">
+            <h6 class="">Administrator </h6>
+            <ul class="list-unstyled list-inline mb-0 mt-2">
+                <li class="list-inline-item">
+                    <a href="#" class="" data-toggle="tooltip" data-placement="top" title="Profile"><i
+                            class="dripicons-user text-purple"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="" data-toggle="tooltip" data-placement="top" title="Settings"><i
+                            class="dripicons-gear text-dark"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#" class="" data-toggle="tooltip" data-placement="top" title="Log out"><i
+                            class="dripicons-power text-danger"></i></a>
+                </li>
+            </ul>
+        </div>
 
-            <!-- Sidebar Menu -->
-            <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-                         with font-awesome or any other icon font library -->
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-newspaper"></i>
-                            <p>
-                                Berita/Informasi
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
+        <div class="sidebar-inner slimscrollleft">
+
+            <div id="sidebar-menu">
+                <ul>
+                    <li class="menu-title">UTAMA</li>
+
+                    <li>
+                        <a href="{{route('index')}}" class="waves-effect" target="_blank">
+                            <i class="dripicons-device-desktop"></i>
+                            <span> Lihat Website</span>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('posts.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Kelola Data</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('posts.create')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Buat Baru</p>
-                                </a>
-                            </li>
+                    </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-to-do"></i> <span> Berita/Informasi </span>
+                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('posts.index')}}">Data Berita/Informasi</a></li>
+                            <li><a href="{{route('posts.create')}}">Buat Baru</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ">
-                        <a href="{{route('kpmadm.index')}}" class="nav-link">
-                            <i class="nav-icon fas fa-file"></i>
-                            <p>
-                                KPM
-                            </p>
+                    <li>
+                        <a href="{{route('map.index')}}" class="waves-effect">
+                            <i class="dripicons-map"></i>
+                            <span> Peta</span>
                         </a>
                     </li>
-                    <li class="nav-item ">
-                        <a href="{{route('map.index')}}" class="nav-link">
-                            <i class="nav-icon fas fa-map"></i>
-                            <p>
-                                Peta dan Capaian
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-archive"></i>
-                            <p>
-                                TPPS
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav- item">
-                                <a href="{{route('tppskec.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Kecamatan</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('tppsdesa.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Desa</p>
-                                </a>
-                            </li>
+
+                    <li class="menu-title">KOMPONEN</li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i>
+                            <span> KPM </span>
+                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('kpmadm.index')}}">SK KPM</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-book"></i>
-                            <p>
-                                Data Stunting
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav- item">
-                                <a href="{{route('datastunting.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Data Stunting</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('datastunting.create')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Buat Baru</p>
-                                </a>
-                            </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-document"></i>
+                            <span> TPPS </span>
+                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('tppskec.index')}}">TPPS Kecamatan</a></li>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('tppsdesa.index')}}">TPPS Desa</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-bookmark"></i>
-                            <p>
-                                Aksi Konvergensi
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('kegiatan.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Program Kegiatan</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('rembukstunting.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Rembuk Stunting</p>
-                                </a>
-                            </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-archive"></i>
+                            <span> Data Stunting </span>
+                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('datastunting.index')}}">SK Data Stunting</a></li>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('datastunting.create')}}">Buat Baru</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-trophy"></i>
-                            <p>
-                                Legalitas/Peraturan
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('peraturan.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Data Legalitas/Peraturan</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('peraturan.create')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Buat Baru</p>
-                                </a>
-                            </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-id"></i>
+                            <span> Aksi Konvergensi </span>
+                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('kegiatan.index')}}">Program Kegiatan</a></li>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('rembukstunting.index')}}">Rembuk Stunting</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-image"></i>
-                            <p>
-                                Galeri
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('galeri.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Gambar</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('video.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Video</p>
-                                </a>
-                            </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-image"></i>
+                            <span> Galeri </span>
+                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('galeri.index')}}">Gambar</a></li>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('video.index')}}">Video</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item ">
-                        <a href="{{route('paparan.index')}}" class="nav-link">
-                            <i class="nav-icon fas fa-file-powerpoint"></i>
-                            <p>
-                                Materi Paparan
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-calendar-alt"></i>
-                            <p>
-                                Agenda
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('agenda.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Data Agenda</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('agenda.create')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Buat Baru</p>
-                                </a>
-                            </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-trophy"></i>
+                            <span> Legalitas/Peraturan </span>
+                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('peraturan.index')}}">Data Legalitas/Peraturan</a></li>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('peraturan.create')}}">Buat Baru</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{route('index')}}" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
-                            <p>
-                                Lihat Website
-                            </p>
+                    <li>
+                        <a href="{{route('paparan.index')}}" class="waves-effect">
+                            <i class="fa fa-file-powerpoint"></i>
+                            <span> Paparan</span>
                         </a>
+                    </li>
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-calendar"></i>
+                            <span> Agenda </span>
+                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('agenda.index')}}">Data Agenda</a></li>
+                        </ul>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('agenda.create')}}">Buat Baru</a></li>
+                        </ul>
                     </li>
                 </ul>
-            </nav>
-            <!-- /.sidebar-menu -->
-        </div>
-        <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        @yield('header')
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Sibesti</a></li>
-                            <li class="breadcrumb-item active">{{date('Y')}}</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content-header -->
-
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                @yield('content')
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+            </div>
+            <div class="clearfix"></div>
+        </div> <!-- end sidebarinner -->
     </div>
-    <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-            <b>Version</b> 3.2.0
-        </div>
-    </footer>
+    <!-- Left Sidebar End -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+    <!-- Start right Content here -->
+
+    <div class="content-page">
+        <!-- Start content -->
+        <div class="content">
+
+            <!-- Top Bar Start -->
+            <div class="topbar">
+
+                <nav class="navbar-custom">
+
+                    <ul class="list-inline float-right mb-0">
+                        <!-- language-->
+                        <li class="list-inline-item dropdown notification-list hide-phone">
+                            <a class="nav-link dropdown-toggle arrow-none waves-effect text-white"
+                               data-toggle="dropdown" href="#" role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                English <img src="assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt=""/>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right language-switch">
+                                <a class="dropdown-item" href="#"><img src="assets/images/flags/italy_flag.jpg" alt=""
+                                                                       height="16"/><span> Italian </span></a>
+                                <a class="dropdown-item" href="#"><img src="assets/images/flags/french_flag.jpg" alt=""
+                                                                       height="16"/><span> French </span></a>
+                                <a class="dropdown-item" href="#"><img src="assets/images/flags/spain_flag.jpg" alt=""
+                                                                       height="16"/><span> Spanish </span></a>
+                                <a class="dropdown-item" href="#"><img src="assets/images/flags/russia_flag.jpg" alt=""
+                                                                       height="16"/><span> Russian </span></a>
+                            </div>
+                        </li>
+                        <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#"
+                               role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-mail noti-icon"></i>
+                                <span class="badge badge-danger noti-icon-badge">5</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5><span class="badge badge-danger float-right">745</span>Messages</h5>
+                                </div>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon"><img src="assets/images/users/avatar-2.jpg" alt="user-img"
+                                                                  class="img-fluid rounded-circle"/></div>
+                                    <p class="notify-details"><b>Charles M. Jones</b><small class="text-muted">Dummy
+                                            text of the printing and typesetting industry.</small></p>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon"><img src="assets/images/users/avatar-3.jpg" alt="user-img"
+                                                                  class="img-fluid rounded-circle"/></div>
+                                    <p class="notify-details"><b>Thomas J. Mimms</b><small class="text-muted">You have
+                                            87 unread messages</small></p>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon"><img src="assets/images/users/avatar-4.jpg" alt="user-img"
+                                                                  class="img-fluid rounded-circle"/></div>
+                                    <p class="notify-details"><b>Luis M. Konrad</b><small class="text-muted">It is a
+                                            long established fact that a reader will</small></p>
+                                </a>
+
+                                <!-- All-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item border-top">
+                                    View All
+                                </a>
+
+                            </div>
+                        </li>
+
+                        <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#"
+                               role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                <i class="dripicons-bell noti-icon"></i>
+                                <span class="badge badge-success noti-icon-badge">2</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5><span class="badge badge-danger float-right">87</span>Notification</h5>
+                                </div>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-primary"><i class="mdi mdi-cart-outline"></i></div>
+                                    <p class="notify-details"><b>Your order is placed</b><small class="text-muted">Dummy
+                                            text of the printing and typesetting industry.</small></p>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-success"><i class="mdi mdi-message"></i></div>
+                                    <p class="notify-details"><b>New Message received</b><small class="text-muted">You
+                                            have 87 unread messages</small></p>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                    <div class="notify-icon bg-warning"><i class="mdi mdi-glass-cocktail"></i></div>
+                                    <p class="notify-details"><b>Your item is shipped</b><small class="text-muted">It is
+                                            a long established fact that a reader will</small></p>
+                                </a>
+
+                                <!-- All-->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item border-top">
+                                    View All
+                                </a>
+
+                            </div>
+                        </li>
+
+                        <li class="list-inline-item dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown"
+                               href="#" role="button"
+                               aria-haspopup="false" aria-expanded="false">
+                                <img src="{{asset('admin.png')}}" alt="user" class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                <!-- item-->
+                                <div class="dropdown-item noti-title">
+                                    <h5>Welcome</h5>
+                                </div>
+                                <a class="dropdown-item" href="#"><i
+                                        class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5 text-muted"></i> My
+                                    Wallet</a>
+                                <a class="dropdown-item" href="#"><span class="badge badge-success float-right">5</span><i
+                                        class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
+                                <a class="dropdown-item" href="#"><i
+                                        class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Lock screen</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="list-inline menu-left mb-0">
+                        <li class="float-left">
+                            <button class="button-menu-mobile open-left waves-light waves-effect">
+                                <i class="mdi mdi-menu"></i>
+                            </button>
+                        </li>
+                        <li class="hide-phone app-search">
+                            <form role="search" class="">
+                                <input type="text" placeholder="Search..." class="form-control">
+                                <a href=""><i class="fas fa-search"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+
+                    <div class="clearfix"></div>
+                </nav>
+            </div>
+            <!-- Top Bar End -->
+
+            <div class="page-content-wrapper ">
+
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-title-box">
+                                <div class="btn-group float-right">
+                                    <ol class="breadcrumb hide-phone p-0 m-0">
+                                        @yield('breadcrum')
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">@yield('header')</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title end breadcrumb -->
+                    @yield('content')
+                    <!-- end row -->
+
+                </div><!-- container -->
+
+            </div> <!-- Page content Wrapper -->
+
+        </div> <!-- content -->
+
+        <footer class="footer">
+            © {{date('Y')}} Programmer - Dinas Kominfo Situbondo.
+        </footer>
+
+    </div>
+    <!-- End Right content here -->
+
 </div>
-<!-- ./wrapper -->
+<!-- END wrapper -->
 
-<!-- jQuery -->
-<script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{asset('adminlte/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="{{asset('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<!-- ChartJS -->
-<script src="{{asset('adminlte/plugins/chart.js/Chart.min.js')}}"></script>
-<!-- Sparkline -->
-<script src="{{asset('adminlte/plugins/sparklines/sparkline.js')}}"></script>
-<!-- JQVMap -->
-<script src="{{asset('adminlte/plugins/jqvmap/jquery.vmap.min.js')}}"></script>
-<script src="{{asset('adminlte/plugins/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{asset('adminlte/plugins/jquery-knob/jquery.knob.min.js')}}"></script>
-<!-- daterangepicker -->
-<script src="{{asset('adminlte/plugins/moment/moment.min.js')}}"></script>
-<script src="{{asset('adminlte/plugins/daterangepicker/daterangepicker.js')}}"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="{{asset('adminlte/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js')}}"></script>
-<!-- Summernote -->
-<script src="{{asset('adminlte/plugins/summernote/summernote-bs4.min.js')}}"></script>
-<!-- overlayScrollbars -->
-<script src="{{asset('adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
-<!-- AdminLTE App -->
-<script src="{{asset('adminlte/dist/js/adminlte.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+
+<!-- jQuery  -->
+<script src="{{asset('assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/popper.min.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('assets/js/modernizr.min.js')}}"></script>
+<script src="{{asset('assets/js/detect.js')}}"></script>
+<script src="{{asset('assets/js/fastclick.js')}}"></script>
+<script src="{{asset('assets/js/jquery.slimscroll.js')}}"></script>
+<script src="{{asset('assets/js/jquery.blockUI.js')}}"></script>
+<script src="{{asset('assets/js/waves.js')}}"></script>
+<script src="{{asset('assets/js/jquery.nicescroll.js')}}"></script>
+<script src="{{asset('assets/js/jquery.scrollTo.min.js')}}"></script>
+
+<script src="{{asset('assets/plugins/chart.js/chart.min.js')}}"></script>
+<script src="{{asset('assets/pages/dashboard.js')}}"></script>
+<!-- Bootstrap File Upload Plugin -->
 <script src="{{asset('adminlte/plugins/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
-
-<!-- Bootstrap File Upload Plugin -->
 <script src="{{asset('canvas/js/components/bs-filestyle.js')}}"></script>
 
 <!-- TinyMCE Plugin -->
 <script src="{{asset('canvas/js/components/tinymce/tinymce.min.js')}}"></script>
 <script src="{{asset('adminlte/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
 <script src="{{url('https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js')}}"></script>
+
 <script>
     $.ajaxSetup({
         headers: {
@@ -423,6 +416,9 @@
         $('.select2').select2();
     });
 </script>
+<!-- App js -->
+<script src="{{asset('assets/js/app.js')}}"></script>
 @stack('js')
+
 </body>
 </html>
