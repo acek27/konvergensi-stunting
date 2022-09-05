@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-    <h1 class="m-0">Buat TPPS Desa Baru</h1>
+    <h4 class="m-0">Buat TPPS Desa Baru</h4>
 @endsection
 @push('css')
     <link rel="stylesheet"

@@ -1,5 +1,7 @@
 @extends('layouts.admin')
-
+@section('header')
+    <h4 class="m-0">Buat Peta atau Capaian</h4>
+@endsection
 @section('content')
 <div class="container clearfix">
     <div class="form-widget">

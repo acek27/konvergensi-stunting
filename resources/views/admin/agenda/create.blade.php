@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-    <h1 class="m-0">Buat Agenda Baru</h1>
+    <h4 class="m-0">Buat Agenda Baru</h4>
 @endsection
 @push('css')
     <link rel="stylesheet" href="{{url('https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.9/datepicker.min.css')}}">

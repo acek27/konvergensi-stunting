@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-    <h1 class="m-0">Peta atau Capaian</h1>
+    <h4 class="m-0">Peta atau Capaian</h4>
 @endsection
 @section('content')
     <div class="row">

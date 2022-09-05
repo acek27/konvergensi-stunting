@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('header')
+    <h4 class="m-0">Buat Data Stunting</h4>
+@endsection
 @push('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
 @endpush

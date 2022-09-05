@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('header')
-    <h1 class="m-0">Buat Galeri Baru</h1>
+    <h4 class="m-0">Buat Galeri Baru</h4>
 @endsection
 @section('content')
     <div class="container clearfix">

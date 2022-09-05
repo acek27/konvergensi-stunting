@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <title>@yield('title')</title>
@@ -72,6 +73,14 @@
 
             <div id="sidebar-menu">
                 <ul>
+                    <li class="menu-title">ADMIN</li>
+
+                    <li>
+                        <a href="{{route('index')}}" class="waves-effect" target="_blank">
+                            <i class="dripicons-user"></i>
+                            <span> Kelola Pengguna </span>
+                        </a>
+                    </li>
                     <li class="menu-title">UTAMA</li>
 
                     <li>
