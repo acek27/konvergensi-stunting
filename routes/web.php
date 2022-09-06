@@ -25,6 +25,10 @@ Auth::routes([
     'verify' => false, // Email Verification Routes...
 ]);
 
+//super
+Route::get('/super/data', [App\Http\Controllers\Super\UserController::class, 'anyData'])->name('super.data');
+Route::resource('super', \App\Http\Controllers\Super\UserController::class);
+
 //guest
 //stunting
 Route::resource('stunting', \App\Http\Controllers\Guest\StuntingController::class);

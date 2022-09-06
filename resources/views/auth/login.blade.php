@@ -42,8 +42,8 @@
 						Log in
 					</span>
 
-                <div class="wrap-input100 validate-input" data-validate = "Masukkan Email">
-                    <input class="input100" type="text" value="{{old('email')}}" name="email" placeholder="email" autofocus>
+                <div class="wrap-input100 validate-input" data-validate = "Masukkan Username">
+                    <input class="input100" type="text" value="{{old('username')}}" name="username" placeholder="Username" autofocus>
                     <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
 

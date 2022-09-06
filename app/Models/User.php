@@ -23,6 +23,7 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    protected $appends = ['all_roles'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -34,6 +35,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
+
     /**
      * The attributes that should be cast.
      *
@@ -42,4 +48,53 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static $rulesCreate = [
+        'name' => 'required',
+        'username' => 'required|unique:users',
+        'email' => 'required|unique:users',
+        'password' => 'required',
+    ];
+
+    public static function rulesEdit(User $data)
+    {
+        return [
+            'name' => 'required',
+            'username' => 'required|unique:users',
+            'email' => 'required|unique:users',
+        ];
+    }
+
+    public function isHasRole($role)
+    {
+        foreach ($this->roles as $r) {
+            if ($role == $r->name)
+                return true;
+        }
+        return false;
+    }
+
+    public function getAllRolesAttribute()
+    {
+        $a = "";
+        foreach ($this->roles as $role) {
+            $a .= $role->name . ", ";
+        }
+        return ($a == "") ? "" : substr($a, 0, strlen($a) - 2);
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function hasRole($name)
+    {
+        foreach ($this->roles as $role) {
+            if ($role->name == $name)
+                return true;
+        }
+        return false;
+    }
+
 }

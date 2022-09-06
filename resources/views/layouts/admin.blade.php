@@ -63,8 +63,13 @@
                             class="dripicons-gear text-dark"></i></a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#" class="" data-toggle="tooltip" data-placement="top" title="Log out"><i
-                            class="dripicons-power text-danger"></i></a>
+                    <a href="{{ route('logout') }}" class="" data-toggle="tooltip" data-placement="top" title="Log out"
+                       onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                        <i class="dripicons-power text-danger"></i></a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </li>
             </ul>
         </div>
@@ -73,14 +78,16 @@
 
             <div id="sidebar-menu">
                 <ul>
-                    <li class="menu-title">ADMIN</li>
+                    @can('admin')
+                        <li class="menu-title">ADMIN</li>
 
-                    <li>
-                        <a href="{{route('index')}}" class="waves-effect" target="_blank">
-                            <i class="dripicons-user"></i>
-                            <span> Kelola Pengguna </span>
-                        </a>
-                    </li>
+                        <li>
+                            <a href="{{route('super.index')}}" class="waves-effect">
+                                <i class="dripicons-user"></i>
+                                <span> Kelola Pengguna </span>
+                            </a>
+                        </li>
+                    @endcan
                     <li class="menu-title">UTAMA</li>
 
                     <li>
@@ -322,14 +329,8 @@
                                 </div>
                                 <a class="dropdown-item" href="#"><i
                                         class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5 text-muted"></i> My
-                                    Wallet</a>
-                                <a class="dropdown-item" href="#"><span class="badge badge-success float-right">5</span><i
-                                        class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
                                 <a class="dropdown-item" href="#"><i
-                                        class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Lock screen</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
+                                        class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
                             </div>
                         </li>
                     </ul>
