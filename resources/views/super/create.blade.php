@@ -91,8 +91,8 @@
                                 <h6>BAPPEDA</h6>
                             </div>
                             <div class="body">
-                                <p>Mengelola berita/informasi, mengelola galeri, mengelola KPM,
-                                    mengelola agenda, mengelola TPPS, mengelola data stunting, mengelola aksi
+                                <p>Mengelola berita/informasi, mengelola galeri, mengelola KPM, mengelola peta sebaran &
+                                    capaian mengelola agenda, mengelola TPPS, mengelola data stunting, mengelola aksi
                                     konvergensi, mengelola legalitas/peraturan, mengelola materi paparan
                                 </p>
                             </div>

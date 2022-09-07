@@ -24,6 +24,8 @@ Auth::routes([
     'reset' => false, // Password Reset Routes...
     'verify' => false, // Email Verification Routes...
 ]);
+Route::get('/reset/show/{id}', [App\Http\Controllers\HomeController::class, 'reset'])->name('reset.pass');
+Route::put('/reset/submit/{id}', [App\Http\Controllers\HomeController::class, 'submit'])->name('reset.submit');
 
 //super
 Route::put('/super/addrole/{id}', [App\Http\Controllers\Super\UserController::class, 'addrole'])->name('super.addRole');

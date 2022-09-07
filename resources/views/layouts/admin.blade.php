@@ -59,7 +59,8 @@
                             class="dripicons-user text-purple"></i></a>
                 </li>
                 <li class="list-inline-item">
-                    <a href="#" class="" data-toggle="tooltip" data-placement="top" title="Settings"><i
+                    <a href="{{route('reset.pass', Auth::user()->id)}}" class="" data-toggle="tooltip"
+                       data-placement="top" title="Settings"><i
                             class="dripicons-gear text-dark"></i></a>
                 </li>
                 <li class="list-inline-item">
