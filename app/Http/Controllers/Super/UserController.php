@@ -106,6 +106,7 @@ class UserController extends Controller
         }
         $data = User::findOrFail($id);
         $data->update($request->all());
+        return redirect()->back();
     }
 
     /**

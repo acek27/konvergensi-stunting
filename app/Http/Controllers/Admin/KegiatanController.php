@@ -18,7 +18,7 @@ class KegiatanController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['anyData', 'file']);
+        $this->middleware('can:aksi')->except(['anyData', 'file']);
     }
 
     public function index()

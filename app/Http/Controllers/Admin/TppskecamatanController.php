@@ -19,7 +19,7 @@ class TppskecamatanController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['anyData', 'file']);
+        $this->middleware('can:tpps')->except(['anyData', 'file']);
     }
 
     public function index()

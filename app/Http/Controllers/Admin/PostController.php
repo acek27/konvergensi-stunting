@@ -17,7 +17,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['anyData', 'file']);
+        $this->middleware('can:berita')->except(['anyData', 'file']);
     }
 
     public function index()

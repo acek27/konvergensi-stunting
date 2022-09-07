@@ -18,7 +18,7 @@ class GaleriController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['anyData', 'file']);
+        $this->middleware('can:galeri')->except(['anyData', 'file']);
     }
 
     public function index()

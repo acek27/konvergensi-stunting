@@ -89,109 +89,116 @@
                         </li>
                     @endcan
                     <li class="menu-title">UTAMA</li>
-
                     <li>
                         <a href="{{route('index')}}" class="waves-effect" target="_blank">
                             <i class="dripicons-device-desktop"></i>
                             <span> Lihat Website</span>
                         </a>
                     </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-to-do"></i> <span> Berita/Informasi </span>
-                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('posts.index')}}">Data Berita/Informasi</a></li>
-                            <li><a href="{{route('posts.create')}}">Buat Baru</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{route('map.index')}}" class="waves-effect">
-                            <i class="dripicons-map"></i>
-                            <span> Peta</span>
-                        </a>
-                    </li>
-
+                    @can('berita')
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-to-do"></i> <span> Berita/Informasi </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('posts.index')}}">Data Berita/Informasi</a></li>
+                                <li><a href="{{route('posts.create')}}">Buat Baru</a></li>
+                            </ul>
+                        </li>
+                    @endcan
+                    @can('peta')
+                        <li>
+                            <a href="{{route('map.index')}}" class="waves-effect">
+                                <i class="dripicons-map"></i>
+                                <span> Peta</span>
+                            </a>
+                        </li>
+                    @endcan
                     <li class="menu-title">KOMPONEN</li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i>
-                            <span> KPM </span>
-                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('kpmadm.index')}}">SK KPM</a></li>
-                        </ul>
-                    </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-document"></i>
-                            <span> TPPS </span>
-                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('tppskec.index')}}">TPPS Kecamatan</a></li>
-                        </ul>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('tppsdesa.index')}}">TPPS Desa</a></li>
-                        </ul>
-                    </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-archive"></i>
-                            <span> Data Stunting </span>
-                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('datastunting.index')}}">SK Data Stunting</a></li>
-                        </ul>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('datastunting.create')}}">Buat Baru</a></li>
-                        </ul>
-                    </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-id"></i>
-                            <span> Aksi Konvergensi </span>
-                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('kegiatan.index')}}">Program Kegiatan</a></li>
-                        </ul>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('rembukstunting.index')}}">Rembuk Stunting</a></li>
-                        </ul>
-                    </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-image"></i>
-                            <span> Galeri </span>
-                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('galeri.index')}}">Gambar</a></li>
-                        </ul>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('video.index')}}">Video</a></li>
-                        </ul>
-                    </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-trophy"></i>
-                            <span> Legalitas/Peraturan </span>
-                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('peraturan.index')}}">Data Legalitas/Peraturan</a></li>
-                        </ul>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('peraturan.create')}}">Buat Baru</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{route('paparan.index')}}" class="waves-effect">
-                            <i class="fa fa-file-powerpoint"></i>
-                            <span> Paparan</span>
-                        </a>
-                    </li>
-                    <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-calendar"></i>
-                            <span> Agenda </span>
-                            <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('agenda.index')}}">Data Agenda</a></li>
-                        </ul>
-                        <ul class="list-unstyled">
-                            <li><a href="{{route('agenda.create')}}">Buat Baru</a></li>
-                        </ul>
-                    </li>
+                    @canany(['kpm','tpps','stunting','aksi','legalitas','paparan'])
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i>
+                                <span> KPM </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('kpmadm.index')}}">SK KPM</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-document"></i>
+                                <span> TPPS </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('tppskec.index')}}">TPPS Kecamatan</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('tppsdesa.index')}}">TPPS Desa</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-archive"></i>
+                                <span> Data Stunting </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('datastunting.index')}}">SK Data Stunting</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('datastunting.create')}}">Buat Baru</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-id"></i>
+                                <span> Aksi Konvergensi </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('kegiatan.index')}}">Program Kegiatan</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('rembukstunting.index')}}">Rembuk Stunting</a></li>
+                            </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-trophy"></i>
+                                <span> Legalitas/Peraturan </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('peraturan.index')}}">Data Legalitas/Peraturan</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('peraturan.create')}}">Buat Baru</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{route('paparan.index')}}" class="waves-effect">
+                                <i class="fa fa-file-powerpoint"></i>
+                                <span> Paparan</span>
+                            </a>
+                        </li>
+                    @endcanany
+                    @canany(['galeri','agenda'])
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-image"></i>
+                                <span> Galeri </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('galeri.index')}}">Gambar</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('video.index')}}">Video</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-calendar"></i>
+                                <span> Agenda </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('agenda.index')}}">Data Agenda</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('agenda.create')}}">Buat Baru</a></li>
+                            </ul>
+                        </li>
+                    @endcanany
                 </ul>
             </div>
             <div class="clearfix"></div>
