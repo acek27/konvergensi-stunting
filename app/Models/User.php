@@ -21,9 +21,11 @@ class User extends Authenticatable
         'name',
         'username',
         'email',
+        'opd_id',
         'password',
     ];
     protected $appends = ['all_roles'];
+    protected $with = ['opds'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -47,6 +49,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'opd_id' => 'string',
     ];
 
     public static $rulesCreate = [
@@ -54,6 +57,7 @@ class User extends Authenticatable
         'username' => 'required|unique:users',
         'email' => 'required|unique:users',
         'password' => 'required',
+        'opd_id' => 'required',
     ];
 
     public static function rulesEdit(User $data)
@@ -62,6 +66,7 @@ class User extends Authenticatable
             'name' => 'required',
             'username' => 'required|unique:users',
             'email' => 'required|unique:users',
+            'opd_id' => 'required',
         ];
     }
 
@@ -97,4 +102,8 @@ class User extends Authenticatable
         return false;
     }
 
+    public function opds()
+    {
+        return $this->belongsTo(Opd::class, 'opd_id', 'kode');
+    }
 }

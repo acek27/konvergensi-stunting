@@ -26,6 +26,8 @@ Auth::routes([
 ]);
 
 //super
+Route::put('/super/addrole/{id}', [App\Http\Controllers\Super\UserController::class, 'addrole'])->name('super.addRole');
+Route::delete('/super/delrole/{id}', [App\Http\Controllers\Super\UserController::class, 'delrole'])->name('super.delRole');
 Route::get('/super/data', [App\Http\Controllers\Super\UserController::class, 'anyData'])->name('super.data');
 Route::resource('super', \App\Http\Controllers\Super\UserController::class);
 

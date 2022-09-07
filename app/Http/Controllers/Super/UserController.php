@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Super;
 
 use App\Http\Controllers\Controller;
 use App\Models\Agenda;
+use App\Models\Opd;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -34,7 +35,8 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::all();
-        return view('super.create', compact('roles'));
+        $opds = Opd::all();
+        return view('super.create', compact('roles', 'opds'));
     }
 
     /**
@@ -49,6 +51,20 @@ class UserController extends Controller
         $data = User::create($request->all());
         $data->roles()->syncWithoutDetaching($request->role_id);
         return redirect()->route('super.index');
+    }
+
+    public function addrole(Request $request, $id)
+    {
+        $data = User::findOrFail($id);
+        $data->roles()->syncWithoutDetaching($request->role_id);
+        return redirect()->back();
+    }
+
+    public function delrole(Request $request, $id)
+    {
+        $data = User::findOrFail($id);
+        $data->roles()->detach($request->role_id);
+        return redirect()->back();
     }
 
     /**
@@ -70,7 +86,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = User::findOrFail($id);
+        $roles = Role::all();
+        $opds = Opd::all();
+        return view('super.edit', compact('data', 'roles', 'opds'));
     }
 
     /**
@@ -82,7 +101,11 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($request->password == '') {
+            unset($request['password']);
+        }
+        $data = User::findOrFail($id);
+        $data->update($request->all());
     }
 
     /**

@@ -19,6 +19,7 @@
                             <th>Nama</th>
                             <th>Username</th>
                             <th>Email</th>
+                            <th>OPD</th>
                             <th>Role(s)</th>
                             <th>Aksi</th>
                         </tr>
@@ -44,6 +45,7 @@
                     {data: 'name', name: 'name'},
                     {data: 'username', name: 'username'},
                     {data: 'email', name: 'email'},
+                    {data: 'opds.singkatan', name: 'opds.singkatan'},
                     {data: 'all_roles', name: 'all_roles', orderable: false, searchable: false, align: 'center'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],
