@@ -12,17 +12,25 @@ class Post extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['title', 'image', 'editor', 'content', 'slug'];
+    protected $fillable = ['title', 'image', 'editor', 'content', 'slug', 'opd_id'];
     protected $attributes = [
         'slug' => 1
     ];
+    protected $with = ['opds'];
 
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;
-        $this->attributes['slug'] = Str::slug($value.'-'.uniqid(), '-');
+        $this->attributes['slug'] = Str::slug($value . '-' . uniqid(), '-');
     }
-    public function getCreatedAtAttribute($value){
+
+    public function getCreatedAtAttribute($value)
+    {
         return Carbon::parse($value)->isoFormat('D MMMM Y');
+    }
+
+    public function opds()
+    {
+        return $this->belongsTo(Opd::class, 'opd_id', 'kode');
     }
 }

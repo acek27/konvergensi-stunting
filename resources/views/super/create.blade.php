@@ -57,6 +57,8 @@
                                             <option value="{{$role->id}}">{{$role->name}}</option>
                                         @endforeach
                                     </select>
+                                    <p class="text-danger mb-4 font-13">Pembagian Role/Hak Akses dapat dilihat pada
+                                        penjelasan di samping. </p>
                                 </div>
                                 <div class="mt-3">
                                     <button type="submitF" class="btn btn-primary btn-block">Simpan</button>

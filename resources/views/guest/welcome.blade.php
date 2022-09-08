@@ -142,7 +142,8 @@
                                                     <a href="#"><img class="img-fit"
                                                                      src="{{route('posts.file', $post->id)}}"
                                                                      alt="Image 3"></a>
-                                                    <div class="entry-categories"><a href="#" class="bg-lifestyle">berita</a>
+                                                    <div class="entry-categories"><a href="#" class="bg-lifestyle">berita
+                                                            - {{$post->opds->singkatan}}</a>
                                                     </div>
                                                 </div>
                                                 <div class="entry-title title-sm nott">
@@ -249,7 +250,7 @@
     <script>
         $('#maplist').change(function () {
             var id = $(this).val();
-            document.getElementById("map").src = "{{url('peta/sebaran')}}/"+id;
+            document.getElementById("map").src = "{{url('peta/sebaran')}}/" + id;
         });
     </script>
 @endpush

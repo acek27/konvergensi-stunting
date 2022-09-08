@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Opd;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
 
 class PostController extends Controller
@@ -32,7 +34,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $opds = Opd::all();
+        return view('admin.posts.create', compact('opds'));
     }
 
     /**
@@ -43,6 +46,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->merge(['opd_id' => Auth::user()->opd_id]);
         $data = $request->all();
         $filename = uniqid() . '-' . uniqid() . '.' . $request->image->
             getClientOriginalExtension();
@@ -115,7 +119,7 @@ class PostController extends Controller
 
     public function anyData()
     {
-        return DataTables::of(Post::query())
+        return DataTables::of(Post::where('opd_id', Auth::user()->opd_id))
             ->addColumn('action', function ($data) {
                 $edit = '<a href="#"><i class="fa fa-edit text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
