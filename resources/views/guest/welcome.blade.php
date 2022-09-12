@@ -163,6 +163,7 @@
                                         </div>
                                     </div>
                                 @endforeach
+                                {{ $posts->links('guest.paginate') }}
                             </div>
                         </div>
                     </div>

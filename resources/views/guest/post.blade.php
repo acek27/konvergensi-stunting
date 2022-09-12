@@ -7,7 +7,7 @@
             max-height: 200px;
             width: auto;
             height: auto;
-            object-fit: cover!important;
+            object-fit: cover !important;
         }
     </style>
 @endpush
@@ -26,7 +26,9 @@
                         ============================================= -->
                         <nav class="navbar navbar-expand-lg navbar-light p-0" style="background: #ECA6A6">
                             <h4 class="mb-0 pe-2 ls1 text-uppercase fw-bold">Baca Berita</h4>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler1" aria-controls="navbarToggler1" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarToggler1" aria-controls="navbarToggler1"
+                                    aria-expanded="false" aria-label="Toggle navigation">
                                 <i class="icon-line-menu"></i>
                             </button>
                         </nav>
@@ -50,7 +52,7 @@
 
                             <div class="entry-content mt-0">
 
-                              {!! $post->content !!}
+                                {!! $post->content !!}
                             </div>
 
                         </div>
@@ -63,7 +65,8 @@
                             <!-- Sidebar Widget 1
                             ============================================= -->
                             <div class="widget clearfix">
-                                <h4 class="mb-2 ls1 text-uppercase fw-bold" style="background: #C4DFAA">Informasi Stunting</h4>
+                                <h4 class="mb-2 ls1 text-uppercase fw-bold" style="background: #C4DFAA">Informasi
+                                    Stunting</h4>
                                 <div class="line line-xs line-market"></div>
                                 <div class="row center mt-4 clearfix">
                                     <img src="{{asset('info.jpeg')}}" alt="">
@@ -86,7 +89,8 @@
                         <!-- Gallery Slider
                         ============================================= -->
                         <div class="clearfix">
-                            <h4 style="background: #9ADCFF" class="mb-2 ls1 text-uppercase fw-bold">BERITA/INFORMASI</h4>
+                            <h4 style="background: #9ADCFF" class="mb-2 ls1 text-uppercase fw-bold">
+                                BERITA/INFORMASI</h4>
                             <div class="line line-xs line-market"></div>
                             <!-- Flex Thumbs Slider
                             ============================================= -->
@@ -97,22 +101,29 @@
                                         <div class="posts-md">
                                             <div class="entry">
                                                 <div class="entry-image">
-                                                    <a href="#"><img class="img-fit" src="{{route('posts.file', $post->id)}}" alt="Image 3"></a>
-                                                    <div class="entry-categories"><a href="#" class="bg-lifestyle">berita</a></div>
+                                                    <a href="#"><img class="img-fit"
+                                                                     src="{{route('posts.file', $post->id)}}"
+                                                                     alt="Image 3"></a>
+                                                    <div class="entry-categories"><a href="#" class="bg-lifestyle">berita
+                                                         - {{$post->opds->singkatan}}</a>
+                                                    </div>
                                                 </div>
                                                 <div class="entry-title title-sm nott">
                                                     <h3 class="mb-0"><a href="#">{{$post->title}}</a></h3>
                                                 </div>
                                                 <div class="entry-meta">
                                                     <ul>
-                                                        <li><span>penyunting: </span> <a href="#">{{$post->editor}}</a></li>
-                                                        <li><i class="icon-time"></i><a href="#">{{$post->created_at}}</a></li>
+                                                        <li><span>penyunting: </span> <a href="#">{{$post->editor}}</a>
+                                                        </li>
+                                                        <li><i class="icon-time"></i><a
+                                                                href="#">{{$post->created_at}}</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 @endforeach
+                                {{ $posts->links('guest.paginate') }}
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(2);
         $videos = Video::all();
         $map = Map::orderBy('tahun', 'DESC')->first();
         return view('guest.welcome', compact('posts', 'videos', 'map'));
@@ -53,7 +53,7 @@ class DashboardController extends Controller
     public function show($id)
     {
         $post = Post::findOrFail($id);
-        $posts = Post::all();
+        $posts = Post::paginate(2);
         return view('guest.post', compact('post', 'posts'));
     }
 
