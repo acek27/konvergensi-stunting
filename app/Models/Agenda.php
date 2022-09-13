@@ -20,12 +20,12 @@ class Agenda extends Model
 
     public function getTglMulaiAttribute($value)
     {
-        return date("d-m-Y", strtotime($value));
+        return date("Y-m-d", strtotime($value));
     }
-    public function getStartAttribute()
-    {
-        return date("m-d-Y", strtotime($this->tgl_mulai));
-    }
+//    public function getStartAttribute()
+//    {
+//        return date("m-d-Y", strtotime($this->tgl_mulai));
+//    }
 
     public function setTglSelesaiAttribute($value)
     {
@@ -37,10 +37,10 @@ class Agenda extends Model
 
     public function getTglSelesaiAttribute($value)
     {
-        return date("d-m-Y", strtotime($value));
+        return date("Y-m-d", strtotime($value));
     }
-    public function getFinishAttribute($value)
-    {
-        return date("m-d-Y", strtotime($this->tgl_selesai));
-    }
+//    public function getFinishAttribute($value)
+//    {
+//        return date("m-d-Y", strtotime($this->tgl_selesai));
+//    }
 }
