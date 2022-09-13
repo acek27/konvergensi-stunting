@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Agenda extends Model
 {
-    protected $fillable = ["nama_agenda", "sasaran", "tgl_mulai", "tgl_selesai",  "opd_id"];
+    protected $fillable = ["nama_agenda", "sasaran", "tgl_mulai", "tgl_selesai", "opd_id"];
     protected $appends = ['start', 'finish'];
 
     public function setTglMulaiAttribute($value)
@@ -22,10 +23,7 @@ class Agenda extends Model
     {
         return date("Y-m-d", strtotime($value));
     }
-//    public function getStartAttribute()
-//    {
-//        return date("m-d-Y", strtotime($this->tgl_mulai));
-//    }
+
 
     public function setTglSelesaiAttribute($value)
     {
@@ -39,8 +37,15 @@ class Agenda extends Model
     {
         return date("Y-m-d", strtotime($value));
     }
-//    public function getFinishAttribute($value)
-//    {
-//        return date("m-d-Y", strtotime($this->tgl_selesai));
-//    }
+
+//appends
+    public function getStartAttribute()
+    {
+        return Carbon::parse($this->tgl_mulai)->isoFormat('D MMMM Y');
+    }
+
+    public function getFinishAttribute()
+    {
+        return Carbon::parse($this->tgl_selesai)->isoFormat('D MMMM Y');
+    }
 }
