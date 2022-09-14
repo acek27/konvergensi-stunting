@@ -42,8 +42,8 @@
                 columns: [
                     {data: 'nama_agenda', name: 'nama_agenda'},
                     {data: 'sasaran', name: 'sasaran'},
-                    {data: 'start', name: 'start'},
-                    {data: 'finish', name: 'finish'},
+                    {data: 'start', name: 'start', orderable: false, searchable: false, align: 'center'},
+                    {data: 'finish', name: 'finish', orderable: false, searchable: false, align: 'center'},
                     {data: 'opd_id', name: 'opd_id'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],

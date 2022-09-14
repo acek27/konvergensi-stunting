@@ -18,8 +18,8 @@ class DashboardController extends Controller
     public function index()
     {
         $posts = Post::paginate(2);
-        $videos = Video::all();
-        $map = Map::orderBy('tahun', 'DESC')->first();
+        $videos = Video::latest()->get();
+        $map = Map::latest()->first();
         return view('guest.welcome', compact('posts', 'videos', 'map'));
     }
 
