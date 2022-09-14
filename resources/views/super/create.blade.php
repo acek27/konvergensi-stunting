@@ -24,20 +24,20 @@
                             <form action="{{route('super.store')}}" method="POST">
                                 @csrf
                                 <h6 class=" input-title mt-0">Nama Pengguna</h6>
-                                <input type="text" class="form-control" maxlength="25" name="name" id="name">
+                                <input type="text" class="form-control" name="name" id="name">
                                 <div class="mt-3">
                                     <h6 class=" input-title mt-lg-3">Username</h6>
-                                    <input type="text" maxlength="25" name="username" class="form-control"
+                                    <input type="text" name="username" class="form-control"
                                            id="username" required>
                                 </div>
                                 <div class="mt-3">
                                     <h6 class=" input-title mt-lg-3">E-Mail</h6>
-                                    <input type="email" maxlength="25" name="email" class="form-control"
+                                    <input type="email" name="email" class="form-control"
                                            id="email" required>
                                 </div>
                                 <div class="mt-3">
                                     <h6 class=" input-title">Password</h6>
-                                    <input type="password" class="form-control" maxlength="25" name="password"
+                                    <input type="password" class="form-control" name="password"
                                            id="password" required>
                                 </div>
                                 <div class="mt-3">

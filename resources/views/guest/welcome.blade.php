@@ -181,31 +181,6 @@
 
                                 <div class="owl-carousel fixed-nav carousel-widget posts-md" data-margin="0"
                                      data-nav="true" data-pagi="false" data-items="1">
-                                    <div class="oc-item">
-                                        <div class="portfolio-item">
-                                            <div class="portfolio-image">
-                                                <a href="portfolio-single-video.html">
-                                                    <img src="http://img.youtube.com/vi/Fa_rNR__UV0/maxresdefault.jpg"
-                                                         alt="Backpack Contents">
-                                                </a>
-                                                <div class="bg-overlay">
-                                                    <div class="bg-overlay-content dark" data-hover-animate="fadeIn">
-                                                        <a href="https://www.youtube.com/watch?v=Fa_rNR__UV0"
-                                                           class="overlay-trigger-icon bg-light text-dark"
-                                                           data-hover-animate="fadeInDownSmall"
-                                                           data-hover-animate-out="fadeOutUpSmall"
-                                                           data-hover-speed="350" data-lightbox="iframe"><i
-                                                                class="icon-line-play"></i></a>
-                                                    </div>
-                                                    <div class="bg-overlay-bg dark" data-hover-animate="fadeIn"></div>
-                                                </div>
-                                            </div>
-                                            <div class="portfolio-desc">
-                                                <h3>Wonderland Indonesia 2 : The Sacred Nusantara (Official Video)</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     @foreach($videos as $video)
                                         <div class="oc-item">
                                             <div class="portfolio-item">

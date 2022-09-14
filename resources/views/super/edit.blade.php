@@ -25,24 +25,24 @@
                                 @method('PUT')
                                 @csrf
                                 <h6 class=" input-title mt-0">Nama Pengguna</h6>
-                                <input type="text" class="form-control" maxlength="25" value="{{$data->name}}"
+                                <input type="text" class="form-control" value="{{$data->name}}"
                                        name="name"
                                        id="name">
                                 <div class="mt-3">
                                     <h6 class=" input-title mt-lg-3">Username</h6>
-                                    <input type="text" maxlength="25" name="username" class="form-control"
+                                    <input type="text" name="username" class="form-control"
                                            value="{{$data->username}}"
                                            id="username" required>
                                 </div>
                                 <div class="mt-3">
                                     <h6 class=" input-title mt-lg-3">E-Mail</h6>
-                                    <input type="email" maxlength="25" value="{{$data->email}}" name="email"
+                                    <input type="email" value="{{$data->email}}" name="email"
                                            class="form-control"
                                            id="email" required>
                                 </div>
                                 <div class="mt-3">
                                     <h6 class=" input-title">Password</h6>
-                                    <input type="password" class="form-control" maxlength="25" name="password"
+                                    <input type="password" class="form-control" name="password"
                                            id="password">
                                 </div>
                                 <p class="text-danger mb-4 font-13">Abaikan kolom password jika tidak ingin mengubah
