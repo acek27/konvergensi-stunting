@@ -8,6 +8,26 @@
             margin-top: 10px;
             color: #000;
         }
+
+        .fc-month-button {
+            background-color: #C1EFFF;
+        }
+
+        .fc-basicWeek-button {
+            background-color: #FFB3B3;
+        }
+
+        .fc-basicDay-button {
+            background-color: #FFE9AE;
+        }
+
+        .fc-widget-content {
+            background-color: #CDF0EA;
+        }
+
+        .fc-sun {
+            background-color: #FFB3B3;
+        }
     </style>
 @endpush
 @section('content')
@@ -21,15 +41,15 @@
                         <div class="events-calendar-header clearfix">
                             <h2 class="text-gradient-success">Agenda Stunting</h2>
                         </div>
-                        <div class="card-body">
-                            <h4 class="mt-0 header-title text-black">Keterangan:</h4>
-                            <div class="">
-                                <button class="btn bg-gradient4"></button>
-                                <span class="text-black">Berlangung dalam sehari</span>
-                                <button class="btn bg-gradient2" style="margin-left: 10px!important;"></button>
-                                <span class="text-black">Berlangsung lebih dari sehari</span>
-                            </div>
-                        </div>
+                        {{--                        <div class="card-body">--}}
+                        {{--                            <h4 class="mt-0 header-title text-black">Keterangan:</h4>--}}
+                        {{--                            <div class="">--}}
+                        {{--                                <button class="btn bg-gradient4"></button>--}}
+                        {{--                                <span class="text-black">Berlangung dalam sehari</span>--}}
+                        {{--                                <button class="btn bg-gradient2" style="margin-left: 10px!important;"></button>--}}
+                        {{--                                <span class="text-black">Berlangsung lebih dari sehari</span>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
                         <div id="calendar" class="fc-calendar-container text-muted bold"></div>
                     </div>
                 </div>
@@ -45,7 +65,12 @@
     <script src={{url('https://cdn.jsdelivr.net/npm/fullcalendar@3.10.5/dist/locale-all.min.js')}}></script>
     {{--    <script src="{{asset('assets/pages/calendar-init.js')}}"></script>--}}
     <script>
+        function random_item(items) {
 
+            return items[Math.floor(Math.random() * items.length)];
+        }
+
+        var bg = ['bg-gradient1', 'bg-gradient2', 'bg-gradient3', 'bg-gradient4'];
         $('#calendar').fullCalendar({
             locale: 'id',
             header: {
@@ -64,11 +89,7 @@
                     title: '{{$agenda->nama_agenda}}',
                     start: '{{$agenda->tgl_mulai}}',
                     end: '{{$agenda->tgl_selesai}}',
-                    @if($agenda->tgl_mulai < $agenda->tgl_selesai)
-                    className: 'bg-gradient2',
-                    @else
-                    className: 'bg-gradient4',
-                    @endif
+                    className: random_item(bg),
                 },
                 @endforeach
             ],

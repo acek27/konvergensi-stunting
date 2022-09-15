@@ -81,6 +81,9 @@
                                 <div class="row center mt-4 clearfix">
                                     <img src="{{asset('info.jpeg')}}" alt="">
                                 </div>
+                                <div class="row center mt-4 clearfix">
+                                    <img src="{{asset('info2.jpeg')}}" alt="">
+                                </div>
                             </div>
                         </div>
                     </div> <!-- Sidebar End -->
