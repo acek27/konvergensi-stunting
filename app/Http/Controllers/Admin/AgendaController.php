@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Agenda;
+use App\Models\Opd;
 use App\Models\Stunting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
 
 class AgendaController extends Controller
@@ -31,7 +33,8 @@ class AgendaController extends Controller
      */
     public function create()
     {
-        return view('admin.agenda.create');
+        $opds = Opd::all();
+        return view('admin.agenda.create', compact('opds'));
     }
 
     /**
@@ -93,7 +96,7 @@ class AgendaController extends Controller
 
     public function anyData()
     {
-        return DataTables::of(Agenda::query())
+        return DataTables::of(Agenda::where('opd_id', Auth::user()->opd_id))
             ->addColumn('action', function ($data) {
                 $edit = '<a href="#"><i class="fa fa-edit text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';

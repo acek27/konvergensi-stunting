@@ -18,7 +18,6 @@
                             <th>Sasaran</th>
                             <th>Tanggal Mulai</th>
                             <th>Tanggal Selesai</th>
-                            <th>OPD</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
@@ -44,7 +43,6 @@
                     {data: 'sasaran', name: 'sasaran'},
                     {data: 'start', name: 'start', orderable: false, searchable: false, align: 'center'},
                     {data: 'finish', name: 'finish', orderable: false, searchable: false, align: 'center'},
-                    {data: 'opd_id', name: 'opd_id'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],
             });

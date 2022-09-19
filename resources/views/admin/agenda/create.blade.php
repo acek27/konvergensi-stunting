@@ -37,7 +37,8 @@
                             <label>Agenda Dimulai:</label>
                             <div class="input-group">
                                 <div class="input-group date" id="timepicker" data-target-input="nearest">
-                                    <input type="text" name="tgl_mulai" class="form-control datetimepicker-input" id="tanggal_mulai">
+                                    <input type="text" name="tgl_mulai" class="form-control datetimepicker-input"
+                                           id="tanggal_mulai">
                                     <div class="input-group-append" data-target="#tanggal_mulai"
                                          data-toggle="datetimepicker">
                                         <div class="input-group-text"><i class="far fa-clock"></i></div>
@@ -49,7 +50,8 @@
                             <label>Agenda Selesai:</label>
                             <div class="input-group">
                                 <div class="input-group date" id="timepicker" data-target-input="nearest">
-                                    <input name="tgl_selesai" type="text" class="form-control datetimepicker-input" id="tanggal_selesai">
+                                    <input name="tgl_selesai" type="text" class="form-control datetimepicker-input"
+                                           id="tanggal_selesai">
                                     <div class="input-group-append" data-target="#tanggal_selesai"
                                          data-toggle="datetimepicker">
                                         <div class="input-group-text"><i class="far fa-clock"></i></div>
@@ -61,10 +63,11 @@
 
                         <div class="col-12 form-group">
                             <label>Kategori:</label>
-                            <select class="form-control" name="opd_id" required>
+                            <select class="form-control select2" name="opd_id" required>
                                 <option value="">--pilih OPD--</option>
-                                <option value="1">BAPPEDA</option>
-                                <option value="2">DINAS KESEHATAN</option>
+                                @foreach($opds as $opd)
+                                    <option value="{{$opd->kode}}">{{$opd->nama_opd}}</option>
+                                @endforeach
                             </select>
                         </div>
 
@@ -81,12 +84,13 @@
     </div>
 @endsection
 @push('js')
-    <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>
+    {{--    <script src="{{asset('adminlte/plugins/jquery/jquery.min.js')}}"></script>--}}
     <script src="{{asset('adminlte/plugins/moment/moment.min.js')}}"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
     <script
         src="{{url('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js')}}"></script>
+
     <script>
         $(document).ready(function () {
             $('#tanggal_mulai').datetimepicker({
@@ -96,6 +100,5 @@
                 Format: 'yyyy-mm-dd hh:ii',
             });
         })
-
     </script>
 @endpush

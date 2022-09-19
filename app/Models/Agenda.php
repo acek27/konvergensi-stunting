@@ -10,6 +10,7 @@ class Agenda extends Model
 {
     protected $fillable = ["nama_agenda", "sasaran", "tgl_mulai", "tgl_selesai", "opd_id"];
     protected $appends = ['start', 'finish'];
+    protected $with = ['opds'];
 
     public function setTglMulaiAttribute($value)
     {
@@ -47,5 +48,10 @@ class Agenda extends Model
     public function getFinishAttribute()
     {
         return Carbon::parse($this->tgl_selesai)->isoFormat('D MMMM Y');
+    }
+
+    public function opds()
+    {
+        return $this->belongsTo(Opd::class, 'opd_id', 'kode');
     }
 }
