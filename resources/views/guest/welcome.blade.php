@@ -79,10 +79,15 @@
                                     Stunting</h4>
                                 <div class="line line-xs line-market"></div>
                                 <div class="row center mt-4 clearfix">
-                                    <img src="{{asset('info.jpeg')}}" alt="">
+                                    <img src="{{asset('bupati.png')}}"  data-index="0" alt="Alt 1">
                                 </div>
-                                <div class="row center mt-4 clearfix">
-                                    <img src="{{asset('info2.jpeg')}}" alt="">
+                                <div class="owl-carousel">
+                                    <div class="row center mt-4 clearfix item">
+                                        <img src="{{asset('info.jpeg')}}"  data-index="0" alt="Alt 1">
+                                    </div>
+                                    <div class="row center mt-4 clearfix">
+                                        <img src="{{asset('info2.jpeg')}}"  data-index="1" alt="Alt 2">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -231,5 +236,30 @@
             var id = $(this).val();
             document.getElementById("map").src = "{{url('peta/sebaran')}}/" + id;
         });
+
+        $(document).ready(function() {
+            //show all title in one place..
+            $(".item").each(function(i) {
+                //you can manipulate..this html generated according to your need...
+                //add `<a>` if needed
+                $(".titles ul").append(`<li data-index="${i}">${$(this).find("img").attr("title")}</li>`)
+            })
+            $(".titles ul li:first").addClass("active");
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                loop: true,
+                autoplay: true,
+                items: 1,
+            });
+
+            owl.on('translated.owl.carousel', function(event) {
+                //get data-index..
+                var index_ = $(this).find('.active').find("img").data("index")
+                $(".titles li").removeClass("active")
+                //for making active
+                $("li[data-index=" + index_ + "]").addClass("active");
+
+            });
+        })
     </script>
 @endpush
