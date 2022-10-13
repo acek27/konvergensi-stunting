@@ -113,6 +113,12 @@
                                 <span> Peta</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('sidebar.index')}}" class="waves-effect">
+                                <i class="dripicons-list"></i>
+                                <span> Sidebar</span>
+                            </a>
+                        </li>
                     @endcan
                     <li class="menu-title">KOMPONEN</li>
                     @canany(['kpm','tpps','stunting','aksi','legalitas','paparan'])

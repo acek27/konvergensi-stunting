@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use App\Models\Map;
 use App\Models\Post;
+use App\Models\Sidebar;
 use App\Models\Video;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,8 @@ class DashboardController extends Controller
         $posts = Post::paginate(2);
         $videos = Video::latest()->get();
         $map = Map::latest()->first();
-        return view('guest.welcome', compact('posts', 'videos', 'map'));
+        $sidebar = Sidebar::where('status', 1)->get();
+        return view('guest.welcome', compact('posts', 'videos', 'map', 'sidebar'));
     }
 
     /**

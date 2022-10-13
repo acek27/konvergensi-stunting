@@ -118,3 +118,8 @@ Route::resource('video', \App\Http\Controllers\Admin\VideoController::class);
 Route::get('/map/data', [App\Http\Controllers\Admin\MapController::class, 'anyData'])->name('map.data');
 Route::get('/map/file/{id}', [App\Http\Controllers\Admin\MapController::class, 'file'])->name('map.file');
 Route::resource('map', \App\Http\Controllers\Admin\MapController::class);
+
+//sidebar
+Route::get('/sidebar/data', [App\Http\Controllers\Admin\SidebarController::class, 'anyData'])->name('sidebar.data');
+Route::get('/sidebar/file/{id}', [App\Http\Controllers\Admin\SidebarController::class, 'file'])->name('sidebar.file');
+Route::resource('sidebar', \App\Http\Controllers\Admin\SidebarController::class);

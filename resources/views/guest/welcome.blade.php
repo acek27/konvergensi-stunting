@@ -75,19 +75,26 @@
                             <!-- Sidebar Widget 1
                             ============================================= -->
                             <div class="widget clearfix">
-                                <h4 class="mb-2 ls1 text-uppercase fw-bold" style="background: #C4DFAA">Informasi
+                                <div class="row center clearfix">
+                                    <img src="{{asset('bupati.png')}}" data-index="0" alt="Alt 1">
+                                </div>
+                                <h4 class="mt-4 mb-2 ls1 text-uppercase fw-bold" style="background: #C4DFAA">Informasi
                                     Stunting</h4>
                                 <div class="line line-xs line-market"></div>
-                                <div class="row center mt-4 clearfix">
-                                    <img src="{{asset('bupati.png')}}"  data-index="0" alt="Alt 1">
-                                </div>
+
                                 <div class="owl-carousel">
-                                    <div class="row center mt-4 clearfix item">
-                                        <img src="{{asset('info.jpeg')}}"  data-index="0" alt="Alt 1">
-                                    </div>
-                                    <div class="row center mt-4 clearfix">
-                                        <img src="{{asset('info2.jpeg')}}"  data-index="1" alt="Alt 2">
-                                    </div>
+                                    @php
+                                        $alt = 1;
+                                    @endphp
+                                    @foreach($sidebar as $bar)
+                                        <div class="row center mt-4 clearfix item">
+                                            <img src="{{route('sidebar.file',$bar->id)}}" data-index="{{$alt-1}}"
+                                                 alt="Alt {{$alt}}">
+                                        </div>
+                                        @php
+                                            $alt++
+                                        @endphp
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -237,9 +244,9 @@
             document.getElementById("map").src = "{{url('peta/sebaran')}}/" + id;
         });
 
-        $(document).ready(function() {
+        $(document).ready(function () {
             //show all title in one place..
-            $(".item").each(function(i) {
+            $(".item").each(function (i) {
                 //you can manipulate..this html generated according to your need...
                 //add `<a>` if needed
                 $(".titles ul").append(`<li data-index="${i}">${$(this).find("img").attr("title")}</li>`)
@@ -252,7 +259,7 @@
                 items: 1,
             });
 
-            owl.on('translated.owl.carousel', function(event) {
+            owl.on('translated.owl.carousel', function (event) {
                 //get data-index..
                 var index_ = $(this).find('.active').find("img").data("index")
                 $(".titles li").removeClass("active")
