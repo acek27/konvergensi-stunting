@@ -31,5 +31,6 @@
                 </div>
             </div>
         </div>
+         {{ $data->links('guest.paginate') }}
     </section><!-- #content end -->
 @endsection

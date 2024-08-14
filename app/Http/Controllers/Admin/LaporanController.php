@@ -3,28 +3,26 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Opd;
-use App\Models\Post;
+use App\Models\Kecamatan;
+use App\Models\Laporan;
+use App\Models\Renja;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
 
-class PostController extends Controller
+class LaporanController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
     public function __construct()
     {
-        $this->middleware('can:berita')->except(['anyData', 'file']);
+        $this->middleware('auth')->except(['anyData', 'file']);
     }
-
     public function index()
     {
-        return view('admin.posts.index');
+        return view('admin.tpps.laporan.index');
     }
 
     /**
@@ -34,8 +32,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $opds = Opd::all();
-        return view('admin.posts.create', compact('opds'));
+        $kecamatan = Kecamatan::all();
+        return view('admin.tpps.laporan.create', compact('kecamatan'));
     }
 
     /**
@@ -46,28 +44,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->merge(['opd_id' => Auth::user()->opd_id]);
+        $request->validate([
+            "path" => "required|mimes:pdf|max:4096"
+        ]);
         $data = $request->all();
-        $filename = uniqid() . '-' . uniqid() . '.' . $request->image->
+        $filename = uniqid() . '-' . uniqid() . '.' . $request->path->
             getClientOriginalExtension();
-        $path = $request->image->storeAs('images', $filename);
-        $data['image'] = $path;
-        Post::create($data);
-        return redirect()->route('posts.index');
+        $path = $request->path->storeAs('laporan', $filename);
+        $data['path'] = $path;
+        Laporan::create($data);
+        return redirect()->route('laporan.index');
     }
-
-    public function file($id)
-    {
-        $poster = Post::find($id);
-        $file = storage_path('app/' . $poster->image);
-        return response()
-            ->file($file, [
-                'Cache-Control' => 'no-cache, no-store, must-revalidate',
-                'Pragma' => 'no-cache',
-                'Expires' => '0'
-            ]);
-    }
-
 
     /**
      * Display the specified resource.
@@ -88,9 +75,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $data = Post::findOrFail($id);
-        $opds = Opd::all();
-        return view('admin.posts.edit', compact('opds', 'data'));
+        //
     }
 
     /**
@@ -102,11 +87,7 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->merge(['opd_id' => Auth::user()->opd_id]);
-        $data = $request->all();
-        $post = Post::findOrFail($id);
-        $post->update($data);
-        return redirect()->route('posts.index');
+        //
     }
 
     /**
@@ -117,22 +98,43 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $data = Post::findOrFail($id);
-        $file = storage_path('app/' . $data->image);
+        $data = Laporan::findOrFail($id);
+        $file = storage_path('app/' . $data->path);
         unlink($file);
         $data::destroy($id);
     }
 
+    public function file($id)
+    {
+        $poster = Laporan::find($id);
+        $file = storage_path('app/' . $poster->path);
+        return response()
+            ->file($file, [
+                'Cache-Control' => 'no-cache, no-store, must-revalidate',
+                'Pragma' => 'no-cache',
+                'Expires' => '0'
+            ]);
+    }
+
     public function anyData()
     {
-        return DataTables::of(Post::where('opd_id', Auth::user()->opd_id))
+        return DataTables::of(Laporan::query())
+            ->addColumn('kecamatan', function ($data) {
+                $instansi = $data->kec_id == NULL ? 'Kabupaten' : $data->kecamatan->kecamatan;
+                $level = '';
+                if ($data->level == 1) {
+                    $level = 'Renja Kabupaten';
+                } elseif ($data->level == 2) {
+                    $level = 'Renja Kecamatan';
+                } else {
+                    $level = 'Renja Desa';
+                }
+                return $level . ' - (' . $instansi . ')';
+            })
             ->addColumn('action', function ($data) {
-                $edit = '<a href="' . route('posts.edit', $data->id) . '"><i class="fa fa-edit text-primary"></i></a>';
+                $edit = '<a target="_blank" href="' . route('laporan.file', $data->id) . '"><i class="fa fa-download text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
                 return $edit . '&nbsp' . $del;
-            })
-            ->addColumn('content', function ($data) {
-                return $data->content;
             })
             ->make(true);
     }

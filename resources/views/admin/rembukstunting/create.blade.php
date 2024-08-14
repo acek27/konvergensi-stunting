@@ -29,6 +29,7 @@
                             <select class="form-control" name="kategori" id="kategori" required>
                                 <option value="">--pilih kategori--</option>
                                 <option value="1">Kabupaten</option>
+                                <option value="3">Kecamatan</option>
                                 <option value="2">Desa</option>
                             </select>
                         </div>

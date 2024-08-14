@@ -61,7 +61,7 @@
                                            aria-controls="v-pills-home" aria-selected="true">
                                             <i class="fa fa-user-circle-o mr-2"></i>
                                             <span
-                                                class="font-weight-bold small text-uppercase">Jumlah & Pereverensi Stunting</span></a>
+                                                class="font-weight-bold small text-uppercase">Jumlah & Prevalensi Stunting</span></a>
 
                                         <a class="nav-link mb-3 p-3 shadow" id="v-pills-profile-tab" data-toggle="pill"
                                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
@@ -89,7 +89,7 @@
                                     <div class="tab-content" id="v-pills-tabContent">
                                         <div class="tab-pane fade shadow rounded bg-white show active p-5"
                                              id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                            <h4 class="font-italic mb-4">Jumlah & Pereverensi Stunting</h4>
+                                            <h4 class="font-italic mb-4">Jumlah & Prevalensi Stunting</h4>
                                             <div class="accordion accordion-border mb-0">
                                                 @foreach($data->where('kategori',1) as $datum)
                                                     <div class="accordion-header">

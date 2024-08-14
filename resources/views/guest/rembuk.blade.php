@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @push('css')
-{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">--}}
+    {{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">--}}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .nav-pills-custom .nav-link {
@@ -62,7 +62,11 @@
                                             <i class="fa fa-user-circle-o mr-2"></i>
                                             <span
                                                 class="font-weight-bold small text-uppercase">Kabupaten</span></a>
-
+                                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-profile-tab" data-toggle="pill"
+                                           href="#v-pills-kecamatan" role="tab" aria-controls="v-pills-kecamatan"
+                                           aria-selected="false">
+                                            <i class="fa fa-calendar-minus-o mr-2"></i>
+                                            <span class="font-weight-bold small text-uppercase">Kecamatan</span></a>
                                         <a class="nav-link mb-3 p-3 shadow" id="v-pills-profile-tab" data-toggle="pill"
                                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
                                            aria-selected="false">
@@ -108,6 +112,38 @@
                                             </div>
                                         </div>
 
+                                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-kecamatan"
+                                             role="tabpanel" aria-labelledby="v-pills-kecamatan-tab">
+                                            <h4 class="font-italic mb-4">Rembuk Kecamatan (Kecamatan)</h4>
+                                            <div class="accordion accordion-border mb-0">
+                                                @foreach($data->where('kategori',3) as $datum)
+                                                    <div class="accordion-header">
+                                                        <div class="accordion-icon">
+                                                            <i class="accordion-closed icon-ok-circle"></i>
+                                                            <i class="accordion-open icon-remove-circle"></i>
+                                                        </div>
+                                                        <div class="accordion-title">
+                                                            {{$datum->judul}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-content">
+                                                        <div class="row">
+                                                            <p>{{$datum->keterangan}}</p>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('rembukstunting.file', $datum->id)}}"
+                                                                   class="text-muted " target="_blank"><i
+                                                                        class="fa fa-download"></i> Unduh file </a>
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('rembukstunting.file', $datum->id)}}"
+                                                                   class="text-muted" target="_blank"><i
+                                                                        class="fa fa-arrow-circle-right"></i> Lihat </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
                                         <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-profile"
                                              role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                             <h4 class="font-italic mb-4">Rembuk Stunting (Desa)</h4>

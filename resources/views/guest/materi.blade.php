@@ -21,7 +21,7 @@
                                     <h3 class="mb-0"><a href="#"> {{$datum->nama_paparan}}</a></h3>
                                     <div class="entry-meta mt-1">
                                         <ul>
-                                            <li><a href="#">{{$datum->created_at}}</a></li>
+                                            <li><a href="#">{{$datum->tgl}}</a></li>
                                             <li><a href="#">Admin</a></li>
                                             <li><a href="{{route('paparan.file', $datum->id)}}" class="badge bg-info text-white">Download</a></li>
                                         </ul>

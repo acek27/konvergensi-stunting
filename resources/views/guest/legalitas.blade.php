@@ -59,34 +59,47 @@
                                         <a class="nav-link mb-3 p-3 shadow active" id="v-pills-home-tab"
                                            data-toggle="pill" href="#v-pills-home" role="tab"
                                            aria-controls="v-pills-home" aria-selected="true">
-                                            <i class="fa fa-user-circle-o mr-2"></i>
+                                            <i class="fa fa-file-text mr-2"></i>
                                             <span
                                                 class="font-weight-bold small text-uppercase">PERPRES</span></a>
 
                                         <a class="nav-link mb-3 p-3 shadow" id="v-pills-profile-tab" data-toggle="pill"
                                            href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
                                            aria-selected="false">
-                                            <i class="fa fa-calendar-minus-o mr-2"></i>
+                                            <i class="fa fa-file-text mr-2"></i>
                                             <span class="font-weight-bold small text-uppercase">PERKA</span></a>
 
-                                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill"
-                                           href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                                           aria-selected="false">
-                                            <i class="fa fa-star mr-2"></i>
-                                            <span
-                                                class="font-weight-bold small text-uppercase">BKKBN</span></a>
+                                        <!--<a class="nav-link mb-3 p-3 shadow" id="v-pills-messages-tab" data-toggle="pill"-->
+                                        <!--   href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"-->
+                                        <!--   aria-selected="false">-->
+                                        <!--    <i class="fa fa-file-text mr-2"></i>-->
+                                        <!--    <span-->
+                                        <!--        class="font-weight-bold small text-uppercase">BKKBN</span></a>-->
                                         <a class="nav-link mb-3 p-3 shadow" id="v-pills-settings-tab" data-toggle="pill"
                                            href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
                                            aria-selected="false">
-                                            <i class="fa fa-check mr-2"></i>
+                                            <i class="fa fa-file-text mr-2"></i>
                                             <span
                                                 class="font-weight-bold small text-uppercase">PERBUP</span></a>
                                         <a class="nav-link mb-3 p-3 shadow" id="v-pills-sk-tab" data-toggle="pill"
                                            href="#v-pills-sk" role="tab" aria-controls="v-pills-sk"
                                            aria-selected="false">
-                                            <i class="fa fa-book mr-2"></i>
+                                            <i class="fa fa-file-text mr-2"></i>
                                             <span
                                                 class="font-weight-bold small text-uppercase">SK</span></a>
+                                        <!--<a class="nav-link mb-3 p-3 shadow" id="v-pills-perdes-tab" data-toggle="pill"-->
+                                        <!--   href="#v-pills-perdes" role="tab" aria-controls="v-pills-perdes"-->
+                                        <!--   aria-selected="false">-->
+                                        <!--    <i class="fa fa-file-text mr-2"></i>-->
+                                        <!--    <span-->
+                                        <!--        class="font-weight-bold small text-uppercase">PERDES</span></a>-->
+
+                                        <!--<a class="nav-link mb-3 p-3 shadow" id="v-pills-perkades-tab" data-toggle="pill"-->
+                                        <!--   href="#v-pills-perkades" role="tab" aria-controls="v-pills-perkades"-->
+                                        <!--   aria-selected="false">-->
+                                        <!--    <i class="fa fa-file-text mr-2"></i>-->
+                                        <!--    <span-->
+                                        <!--        class="font-weight-bold small text-uppercase">PERKADES</span></a>-->
                                     </div>
                                 </div>
 
@@ -233,6 +246,74 @@
                                             <h4 class="font-italic mb-4">SK</h4>
                                             <div class="accordion accordion-border mb-0">
                                                 @foreach($data->where('kategori',5) as $datum)
+                                                    <div class="accordion-header">
+                                                        <div class="accordion-icon">
+                                                            <i class="accordion-closed icon-ok-circle"></i>
+                                                            <i class="accordion-open icon-remove-circle"></i>
+                                                        </div>
+                                                        <div class="accordion-title">
+                                                            {{$datum->nama_peraturan}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-content">
+                                                        <div class="row">
+                                                            <p>{{$datum->nama_peraturan}}
+                                                                nomor {{$datum->nomor}} tentang {{$datum->tentang}}</p>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('peraturan.file', $datum->id)}}"
+                                                                   class="text-muted " target="_blank"><i
+                                                                        class="fa fa-download"></i> Unduh file </a>
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('peraturan.file', $datum->id)}}"
+                                                                   class="text-muted" target="_blank"><i
+                                                                        class="fa fa-arrow-circle-right"></i> Lihat </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-perdes"
+                                             role="tabpanel" aria-labelledby="v-pills-sk-tab">
+                                            <h4 class="font-italic mb-4">PERDES</h4>
+                                            <div class="accordion accordion-border mb-0">
+                                                @foreach($data->where('kategori',6) as $datum)
+                                                    <div class="accordion-header">
+                                                        <div class="accordion-icon">
+                                                            <i class="accordion-closed icon-ok-circle"></i>
+                                                            <i class="accordion-open icon-remove-circle"></i>
+                                                        </div>
+                                                        <div class="accordion-title">
+                                                            {{$datum->nama_peraturan}}
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-content">
+                                                        <div class="row">
+                                                            <p>{{$datum->nama_peraturan}}
+                                                                nomor {{$datum->nomor}} tentang {{$datum->tentang}}</p>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('peraturan.file', $datum->id)}}"
+                                                                   class="text-muted " target="_blank"><i
+                                                                        class="fa fa-download"></i> Unduh file </a>
+                                                            </div>
+                                                            <div class="col-lg-2">
+                                                                <a href="{{route('peraturan.file', $datum->id)}}"
+                                                                   class="text-muted" target="_blank"><i
+                                                                        class="fa fa-arrow-circle-right"></i> Lihat </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+
+                                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-perkades"
+                                             role="tabpanel" aria-labelledby="v-pills-sk-tab">
+                                            <h4 class="font-italic mb-4">PERKADES</h4>
+                                            <div class="accordion accordion-border mb-0">
+                                                @foreach($data->where('kategori',7) as $datum)
                                                     <div class="accordion-header">
                                                         <div class="accordion-icon">
                                                             <i class="accordion-closed icon-ok-circle"></i>

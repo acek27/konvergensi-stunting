@@ -25,8 +25,12 @@ class Peraturan extends Model
             $jenis = "BKKBN";
         } elseif ($this->kategori == 4) {
             $jenis = "PERBUP";
-        }elseif ($this->kategori == 5) {
+        } elseif ($this->kategori == 5) {
             $jenis = "SK";
+        } elseif ($this->kategori == 6) {
+            $jenis = "PERDES";
+        } elseif ($this->kategori == 7) {
+            $jenis = "PERKADES";
         }
         return $jenis;
     }

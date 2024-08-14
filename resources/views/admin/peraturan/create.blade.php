@@ -38,6 +38,8 @@
                                 <option value="3">BKKBN</option>
                                 <option value="4">Perbup</option>
                                 <option value="5">SK</option>
+                                <option value="6">PERDES</option>
+                                <option value="7">PERKADES</option>
                             </select>
                         </div>
                         <div class="col-12 form-group">

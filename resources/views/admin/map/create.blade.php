@@ -16,6 +16,14 @@
                             <div class="css3-spinner-scaler"></div>
                         </div>
                     </div>
+                     <div class="col-12 form-group">
+                        <label>Pilih Periode:</label>
+                        <select name="periode" id="periode" class="form-control">
+                            <option value="">-- pilih periode --</option>
+                            <option value="1">Pertama</option>
+                            <option value="2">Kedua</option>
+                        </select>
+                    </div>
                     <div class="col-12 form-group">
                         <label>Pilih Tahun:</label>
                         <select name="tahun" id="tahun" class="form-control">

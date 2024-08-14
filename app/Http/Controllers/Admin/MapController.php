@@ -115,6 +115,16 @@ class MapController extends Controller
     public function anyData()
     {
         return DataTables::of(Map::query())
+         ->addColumn('periode', function ($data) {
+                if ($data->periode == 1) {
+                    $periode = 'Pertama';
+                } elseif ($data->periode == 2) {
+                    $periode = 'Kedua';
+                } else {
+                    $periode = '-';
+                }
+                return $periode;
+            })
             ->addColumn('action', function ($data) {
                 $edit = '<a href="#"><i class="fa fa-edit text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';

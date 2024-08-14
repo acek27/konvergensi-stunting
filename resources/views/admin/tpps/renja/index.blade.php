@@ -1,22 +1,23 @@
 @extends('layouts.admin')
 @section('header')
-    <h4 class="m-0">Rembuk Stunting</h4>
+    <h4 class="m-0">Renja</h4>
 @endsection
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tabel Rembuk Stunting</h3>
-                    <a href="{{route('rembukstunting.create')}}" class="btn btn-info float-right">Buat Baru</a>
+                    <h3 class="card-title">Tabel Renja</h3>
+                    <a href="{{route('renja.create')}}" class="btn btn-info float-right">Buat Baru</a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body table-responsive">
                     <table class="table table-head-fixed text-nowrap" id="posts">
                         <thead>
                         <tr>
-                            <th>Rembuk Stunting</th>
-                            <th>Kategori</th>
+                            <th>Instansi</th>
+                            <th>Renja</th>
+                            <th>Tahun</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
@@ -36,10 +37,11 @@
             var dt = $('#posts').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{route('rembukstunting.data')}}',
+                ajax: '{{route('renja.data')}}',
                 columns: [
-                    {data: 'judul', name: 'judul'},
-                    {data: 'jenis', name: 'jenis',orderable: false, searchable: false, align: 'center'},
+                    {data: 'kecamatan', name: 'kecamatan', orderable: false, searchable: false, align: 'center'},
+                    {data: 'renja', name: 'renja'},
+                    {data: 'tahun', name: 'tahun'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],
             });
@@ -55,7 +57,7 @@
                 }).then(
                     function (result) {
                         $.ajax({
-                            url: "{{route('rembukstunting.index')}}/" + id,
+                            url: "{{route('renja.index')}}/" + id,
                             method: "DELETE",
                         }).done(function (msg) {
                             dt.ajax.reload();

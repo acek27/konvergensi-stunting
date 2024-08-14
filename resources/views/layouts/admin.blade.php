@@ -140,7 +140,9 @@
                             <ul class="list-unstyled">
                                 <li><a href="{{route('tppsdesa.index')}}">TPPS Desa</a></li>
                             </ul>
+
                         </li>
+
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-archive"></i>
                                 <span> Data Stunting </span>
@@ -204,6 +206,33 @@
                             <ul class="list-unstyled">
                                 <li><a href="{{route('agenda.create')}}">Buat Baru</a></li>
                             </ul>
+                        </li>
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-lightbulb"></i>
+                                <span> Inovasi </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('inovasi.index')}}">Data Inovasi</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('inovasi.create')}}">Buat Baru</a></li>
+                            </ul>
+                        </li>
+                    @endcanany
+                    @canany(['renja','kecamatan'])
+                        <li>
+                            <a href="{{route('renja.index')}}" class="waves-effect">
+                                <i class="fas fa-file-archive"></i>
+                                <span> Renja</span>
+                            </a>
+                        </li>
+                    @endcanany
+                    @canany(['laporan','kecamatan'])
+                        <li>
+                            <a href="{{route('laporan.index')}}" class="waves-effect">
+                                <i class="fas fa-file-archive"></i>
+                                <span> Laporan</span>
+                            </a>
                         </li>
                     @endcanany
                 </ul>

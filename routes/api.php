@@ -17,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/berita', [\App\Http\Controllers\API\BeritaController::class, 'index']);
+Route::get('/berita/file/{id}', [\App\Http\Controllers\API\BeritaController::class, 'file']);

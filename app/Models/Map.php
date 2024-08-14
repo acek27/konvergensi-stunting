@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Map extends Model
 {
-    protected $fillable = ['nama_map', 'tahun', 'path'];
+    protected $fillable = ['nama_map','periode', 'tahun', 'path'];
 }

@@ -16,6 +16,7 @@
                         <thead>
                         <tr>
                             <th>Tahun</th>
+                             <th>Periode</th>
                             <th>Nama Peta/Capaian</th>
                             <th>Aksi</th>
                         </tr>
@@ -39,6 +40,7 @@
                 ajax: '{{route('map.data')}}',
                 columns: [
                     {data: 'tahun', name: 'tahun'},
+                    {data: 'periode', name: 'periode'},
                     {data: 'nama_map', name: 'nama_map'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],

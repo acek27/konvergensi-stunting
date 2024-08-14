@@ -15,7 +15,7 @@ class MediaController extends Controller
      */
     public function index()
     {
-        $data = Galeri::all();
+        $data = Galeri::orderBy('created_at','DESC')->paginate(12);
         return view('guest.media', compact('data'));
     }
 

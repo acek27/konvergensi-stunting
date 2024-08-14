@@ -9,9 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Paparan extends Model
 {
     protected $fillable = ['nama_paparan', 'path'];
+      protected $appends = ['tgl'];
 
-    public function getCreatedAtAttribute($value)
-    {
-        return Carbon::parse($value)->isoFormat('D MMMM Y');
-    }
+    public function getTglAttribute()
+{
+     return Carbon::parse($this->created_ay)->isoFormat('D MMMM Y');
+}
 }

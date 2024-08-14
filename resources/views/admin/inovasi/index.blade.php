@@ -1,22 +1,23 @@
 @extends('layouts.admin')
 @section('header')
-    <h4 class="m-0">Rembuk Stunting</h4>
+    <h4 class="m-0">Berita/Informasi</h4>
 @endsection
 @section('content')
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tabel Rembuk Stunting</h3>
-                    <a href="{{route('rembukstunting.create')}}" class="btn btn-info float-right">Buat Baru</a>
+                    <h3 class="card-title">Tabel Berita/Informasi</h3>
+                    <a class="btn btn-primary" href="{{route('inovasi.create')}}">Tambah baru</a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body table-responsive">
                     <table class="table table-head-fixed text-nowrap" id="posts">
                         <thead>
                         <tr>
-                            <th>Rembuk Stunting</th>
-                            <th>Kategori</th>
+                            <th>Tanggal</th>
+                            <th>Nama Inovasi</th>
+                            <th>OPD</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
@@ -36,10 +37,11 @@
             var dt = $('#posts').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: '{{route('rembukstunting.data')}}',
+                ajax: '{{route('inovasi.data')}}',
                 columns: [
-                    {data: 'judul', name: 'judul'},
-                    {data: 'jenis', name: 'jenis',orderable: false, searchable: false, align: 'center'},
+                    {data: 'created_at', name: 'created_at', orderable: false, searchable: false, visible: false,},
+                    {data: 'nama_inovasi', name: 'nama_inovasi'},
+                    {data: 'opd.nama_opd', name: 'opd.nama_opd'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],
             });
@@ -55,7 +57,7 @@
                 }).then(
                     function (result) {
                         $.ajax({
-                            url: "{{route('rembukstunting.index')}}/" + id,
+                            url: "{{route('inovasi.index')}}/" + id,
                             method: "DELETE",
                         }).done(function (msg) {
                             dt.ajax.reload();

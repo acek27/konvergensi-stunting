@@ -15,7 +15,7 @@ class MateriController extends Controller
      */
     public function index()
     {
-        $data = Paparan::paginate(4);
+        $data = Paparan::orderBy('created_at', 'DESC')->paginate(4);
         return view('guest.materi', compact('data'));
     }
 

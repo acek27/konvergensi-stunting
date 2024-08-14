@@ -89,10 +89,10 @@
                 ============================================= -->
                 <div id="logo" class="col-auto ms-auto ms-mb-0 me-mb-0 order-md-2">
                     <a href="/" class="standard-logo"><img class="mx-auto"
-                                                                        src="{{asset('sibesti.png')}}"
-                                                                        alt="Canvas Logo"></a>
+                                                           src="{{asset('sibesti.png')}}"
+                                                           alt="Canvas Logo"></a>
                     <a href="/" class="retina-logo"><img class="mx-auto" src="{{asset('sibesti.png')}}"
-                                                                      alt="Canvas Logo"></a>
+                                                         alt="Canvas Logo"></a>
                 </div><!-- #logo end -->
 
                 <div class="w-100 d-block d-md-none"></div>
@@ -126,7 +126,13 @@
             <div class="container">
                 <div class="header-row justify-content-between flex-row-reverse flex-lg-row">
                     <div id="primary-menu-trigger">
-                        <svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>
+                        <svg class="svg-trigger" viewBox="0 0 100 100">
+                            <path
+                                d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path>
+                            <path d="m 30,50 h 40"></path>
+                            <path
+                                d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path>
+                        </svg>
                     </div>
 
                     <!-- Primary Navigation
@@ -134,26 +140,84 @@
                     <nav class="primary-menu order-lg-1 col-lg-12 px-0">
 
                         <!-- Menu Left -->
-                        <ul class="menu-container navbar navbar-expand-md navbar-fixed-top main-nav" style="background: #FFF89A">
+                        <ul class="menu-container navbar navbar-expand-md navbar-fixed-top main-nav"
+                            style="background: #FFF89A">
                             <li class="current menu-item"><a class="menu-link" href="{{route('index')}}">
                                     <div>Beranda</div>
                                 </a></li>
-{{--                            <li class="menu-item"><a class="menu-link" href="{{route('kpm.data')}}">--}}
-{{--                                    <div>KPM</div>--}}
-{{--                                </a></li>--}}
+                            {{--                            <li class="menu-item"><a class="menu-link" href="{{route('kpm.data')}}">--}}
+                            {{--                                    <div>KPM</div>--}}
+                            {{--                                </a></li>--}}
                             <li class="menu-item"><a class="menu-link" href="#">
                                     <div>TPPS</div>
                                 </a>
                                 <ul class="sub-menu-container">
-                                    <li class="menu-item"><a class="menu-link" href="{{route('tpps.kab')}}">
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#">
                                             <div>Kabupaten</div>
-                                        </a></li>
-                                    <li class="menu-item"><a class="menu-link" href="{{route('tpps.kec')}}">
+                                        </a>
+                                        <ul class="sub-menu-container">
+                                            <li class="menu-item">
+                                                <a class="menu-link" href="{{route('tpps.kab')}}">
+                                                    <div>SK TPPS</div>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a class="menu-link" href="{{route('renja.tpps', ['id' => 1])}}">
+                                                    <div>Rencana Kerja</div>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a class="menu-link" href="{{route('laporan.tpps', ['id' => 1])}}">
+                                                    <div>Laporan</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#">
                                             <div>Kecamatan</div>
-                                        </a></li>
-                                    <li class="menu-item"><a class="menu-link" href="{{route('tpps.desa')}}">
+                                        </a>
+                                        <ul class="sub-menu-container">
+                                            <li class="menu-item">
+                                                <a class="menu-link" href="{{route('tpps.kec')}}">
+                                                    <div>SK TPPS</div>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a class="menu-link" href="{{route('renja.tpps', ['id' => 2])}}">
+                                                    <div>Rencana Kerja</div>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a class="menu-link" href="{{route('laporan.tpps', ['id' => 2])}}">
+                                                    <div>Laporan</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a class="menu-link" href="#">
                                             <div>Desa</div>
-                                        </a></li>
+                                        </a>
+                                        <ul class="sub-menu-container">
+                                            <li class="menu-item">
+                                                <a class="menu-link" href="{{route('tpps.desa')}}">
+                                                    <div>SK TPPS</div>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a class="menu-link" href="{{route('renja.tpps', ['id' => 3])}}">
+                                                    <div>Rencana Kerja</div>
+                                                </a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a class="menu-link" href="{{route('laporan.tpps', ['id' => 3])}}">
+                                                    <div>Laporan</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="menu-item"><a class="menu-link" href="{{route('stunting.index')}}">
@@ -187,13 +251,19 @@
                                     <div>Galeri</div>
                                 </a></li>
                             <li class="menu-item"><a class="menu-link" href="{{route('legalitas.index')}}">
-                                    <div>Legalitas/Peraturan</div>
+                                    <div>Legalitas</div>
                                 </a></li>
                             <li class="menu-item"><a class="menu-link" href="{{route('materi.index')}}">
-                                    <div>Materi Paparan</div>
+                                    <div>Materi</div>
                                 </a></li>
                             <li class="menu-item"><a class="menu-link" href="{{route('event.index')}}">
                                     <div>Agenda</div>
+                                </a></li>
+                            <li class="menu-item"><a class="menu-link" href="{{route('innovation.index')}}">
+                                    <div>Inovasi</div>
+                                </a></li>
+                                 <li class="menu-item"><a class="menu-link" href="{{route('statistik.index')}}">
+                                    <div>Statistik</div>
                                 </a></li>
                         </ul>
                     </nav><!-- #primary-menu end -->

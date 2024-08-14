@@ -18,6 +18,9 @@ class Rembuk extends Model
         } elseif ($this->kategori == 2) {
             $jenis = "Desa";
         }
+        elseif ($this->kategori == 3) {
+            $jenis = "Kecamatan";
+        }
         return $jenis;
     }
 }
