@@ -119,13 +119,18 @@
                             <label>Lihat sebaran berdasarkan tahun</label>
                             <select class="form-select required valid" name="event-registration-interests" id="maplist">
                                 <option value="">-- Pilih Tahun --</option>
-                                @php
-                                    $tahun = date('Y')+1;
-                                    do{
-                                       $tahun--;
-                                       echo '<option value="'.$tahun.'">'.$tahun.'</option>';
-                                    }while ($tahun > 2020)
-                                @endphp
+                                @php($periode = '')
+                                @foreach($peta as $sebaran)
+                                    <option value="{{$sebaran->id}}">{{$sebaran->tahun}}
+                                        @if($sebaran->periode == 1)
+                                            @php($periode = ' - Periode Pertama')
+                                        @elseif($sebaran->periode == 2)
+                                            @php($periode = ' - Periode Kedua')
+                                        @else
+                                            @php($periode = '')
+                                        @endif
+                                        {{$periode}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <img id="map" src="{{route('map.file',$map->id)}}" alt="">

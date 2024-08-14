@@ -235,6 +235,12 @@
                             </a>
                         </li>
                     @endcanany
+                    <li>
+                        <a href="{{route('qna.index')}}" class="waves-effect">
+                            <i class="fas fa-question"></i>
+                            <span> Q&A</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="clearfix"></div>

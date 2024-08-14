@@ -8,8 +8,11 @@
     <div class="content-wrap">
         <div class="container">
             <div class="row justify-content-center text-center mb-5">
-                <div class="col-xl-12 col-lg-12">
-                    <h4 class="display-3 fw-bolder">Statistik Prevalensi Stunting</h6>
+                <div class="heading-block border-bottom-0 bottommargin-sm">
+                    <div class="fancy-title title-border mb-3"><h5 class="fw-normal color font-body">
+                            STATISTIK</h5></div>
+                    <h3 class="fw-bold nott" style="font-size: 42px; letter-spacing: -1px;"><span>Statistik Prevalensi Stunting</span>
+                    </h3>
                 </div>
             </div>
           <div class="row">

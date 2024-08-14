@@ -49,10 +49,17 @@ Route::resource('materi', \App\Http\Controllers\Guest\MateriController::class);
 //agenda
 Route::resource('event', \App\Http\Controllers\Guest\EventController::class);
 //TPPS
+Route::get('/renja/tpps', [\App\Http\Controllers\Guest\TppsController::class, 'renja'])->name('renja.tpps');
+Route::get('/laporan/tpps', [\App\Http\Controllers\Guest\TppsController::class, 'laporan'])->name('laporan.tpps');
 Route::get('/tpps/kabupaten', [\App\Http\Controllers\Guest\TppsController::class, 'kabupaten'])->name('tpps.kab');
 Route::get('/tpps/kecamatan', [\App\Http\Controllers\Guest\TppsController::class, 'kecamatan'])->name('tpps.kec');
 Route::get('/tpps/desa', [\App\Http\Controllers\Guest\TppsController::class, 'desa'])->name('tpps.desa');
 Route::get('/kpm/data', [\App\Http\Controllers\Guest\KpmController::class, 'index'])->name('kpm.data');
+
+//innovation
+Route::get('/innovation/image/{id}', [\App\Http\Controllers\Guest\InnovationController::class, 'image'])->name('innovation.image');
+Route::get('/innovation/file/{id}', [\App\Http\Controllers\Guest\InnovationController::class, 'file'])->name('innovation.file');
+Route::resource('innovation', \App\Http\Controllers\Guest\InnovationController::class);
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -80,6 +87,14 @@ Route::resource('tppskec', \App\Http\Controllers\Admin\TppskecamatanController::
 Route::get('/tppsdesa/data', [App\Http\Controllers\Admin\TppsdesaController::class, 'anyData'])->name('tppsdesa.data');
 Route::get('/tppsdesa/file/{id}', [App\Http\Controllers\Admin\TppsdesaController::class, 'file'])->name('tppsdesa.file');
 Route::resource('tppsdesa', \App\Http\Controllers\Admin\TppsdesaController::class);
+//Admin-Renja
+Route::get('/renja/data', [App\Http\Controllers\Admin\RenjaController::class, 'anyData'])->name('renja.data');
+Route::get('/renja/file/{id}', [App\Http\Controllers\Admin\RenjaController::class, 'file'])->name('renja.file');
+Route::resource('renja', \App\Http\Controllers\Admin\RenjaController::class);
+//Admin-Laporan
+Route::get('/laporan/data', [App\Http\Controllers\Admin\LaporanController::class, 'anyData'])->name('laporan.data');
+Route::get('/laporan/file/{id}', [App\Http\Controllers\Admin\LaporanController::class, 'file'])->name('laporan.file');
+Route::resource('laporan', \App\Http\Controllers\Admin\LaporanController::class);
 
 //kegiatan
 Route::get('/kegiatan/data', [App\Http\Controllers\Admin\KegiatanController::class, 'anyData'])->name('kegiatan.data');
@@ -123,3 +138,19 @@ Route::resource('map', \App\Http\Controllers\Admin\MapController::class);
 Route::get('/sidebar/data', [App\Http\Controllers\Admin\SidebarController::class, 'anyData'])->name('sidebar.data');
 Route::get('/sidebar/file/{id}', [App\Http\Controllers\Admin\SidebarController::class, 'file'])->name('sidebar.file');
 Route::resource('sidebar', \App\Http\Controllers\Admin\SidebarController::class);
+
+//inovasi
+Route::get('/inovasi/data', [App\Http\Controllers\Admin\InovasiController::class, 'anyData'])->name('inovasi.data');
+Route::resource('inovasi', \App\Http\Controllers\Admin\InovasiController::class);
+
+//statistik
+Route::get('/statistik', function () {
+    return view('guest.statistik');
+})->name('statistik.index');
+
+Route::get('/faq', [App\Http\Controllers\FaqController::class, 'create'])->name('faq.index');
+Route::post('/faq', [App\Http\Controllers\FaqController::class, 'store'])->name('faq.store');
+
+Route::get('/qna', [App\Http\Controllers\FaqController::class, 'index'])->name('qna.index');
+Route::put('/qna/{tiket}', [App\Http\Controllers\FaqController::class, 'update'])->name('qna.update');
+Route::get('/qna/show/{tiket}', [App\Http\Controllers\FaqController::class, 'show'])->name('qna.show');

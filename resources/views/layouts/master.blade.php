@@ -262,8 +262,11 @@
                             <li class="menu-item"><a class="menu-link" href="{{route('innovation.index')}}">
                                     <div>Inovasi</div>
                                 </a></li>
-                                 <li class="menu-item"><a class="menu-link" href="{{route('statistik.index')}}">
+                            <li class="menu-item"><a class="menu-link" href="{{route('statistik.index')}}">
                                     <div>Statistik</div>
+                                </a></li>
+                            <li class="menu-item"><a class="menu-link" href="{{route('faq.index')}}">
+                                    <div>Q&A</div>
                                 </a></li>
                         </ul>
                     </nav><!-- #primary-menu end -->
@@ -286,7 +289,154 @@
     ============================================= -->
     <footer id="footer" class="dark" style="background-color: #1f2024;">
 
+        <div class="container">
+            <div class="footer-widgets-wrap" style="padding-top: 20px;padding-bottom: 10px">
+                <h1 class="text-center">Layanan Bantuan <i>(Hotline)</i></h1>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="row col-mb-50">
+                            <div class="col-md-8">
+                                <div class="widget">
+                                    <p class="mb-0">Pemerintah Kabupaten Situbondo</p>
+                                    <h2 class="mt=0">Badan Perencanaan Pembangunan Daerah</h2>
+                                    <div>
+                                        <address>
+                                            <strong>Alamat:</strong><br>
+                                            Jl. Moch Seruji Nomor 3, Patokan, Situbondo, Jawa Timur 68312
+                                        </address>
+                                        <abbr title="Phone Number"><strong>Telepon :</strong></abbr> (0338) 678774<br>
+                                        <abbr title="Fax"><strong>Laman :</strong></abbr> <a
+                                            href="{{url('https://bappeda.situbondokab.go.id')}}">https://bappeda.situbondokab.go.id</a><br>
+                                        <abbr title="Email Address"><strong>Email:</strong></abbr> bappedasit@gmail.com
+                                        <hr>
+                                    </div>
 
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="widget widget_links">
+                                    <h4 class="mb-3 mb-sm-4 text-transform-none ls-0">Dapatkan informasi disini:</h4>
+                                    <ul>
+                                        <li class="menu-item"><a class="menu-link" href="#">
+                                                <div>TPPS</div>
+                                            </a>
+                                            <ul class="sub-menu-container">
+                                                <li class="menu-item">
+                                                    <a class="menu-link" href="#">
+                                                        <div>Kabupaten</div>
+                                                    </a>
+                                                    <ul class="sub-menu-container">
+                                                        <li class="menu-item">
+                                                            <a class="menu-link" href="{{route('tpps.kab')}}">
+                                                                <div>SK TPPS</div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a class="menu-link"
+                                                               href="{{route('renja.tpps', ['id' => 1])}}">
+                                                                <div>Rencana Kerja</div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a class="menu-link"
+                                                               href="{{route('laporan.tpps', ['id' => 1])}}">
+                                                                <div>Laporan</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a class="menu-link" href="#">
+                                                        <div>Kecamatan</div>
+                                                    </a>
+                                                    <ul class="sub-menu-container">
+                                                        <li class="menu-item">
+                                                            <a class="menu-link" href="{{route('tpps.kec')}}">
+                                                                <div>SK TPPS</div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a class="menu-link"
+                                                               href="{{route('renja.tpps', ['id' => 2])}}">
+                                                                <div>Rencana Kerja</div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a class="menu-link"
+                                                               href="{{route('laporan.tpps', ['id' => 2])}}">
+                                                                <div>Laporan</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a class="menu-link" href="#">
+                                                        <div>Desa</div>
+                                                    </a>
+                                                    <ul class="sub-menu-container">
+                                                        <li class="menu-item">
+                                                            <a class="menu-link" href="{{route('tpps.desa')}}">
+                                                                <div>SK TPPS</div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a class="menu-link"
+                                                               href="{{route('renja.tpps', ['id' => 3])}}">
+                                                                <div>Rencana Kerja</div>
+                                                            </a>
+                                                        </li>
+                                                        <li class="menu-item">
+                                                            <a class="menu-link"
+                                                               href="{{route('laporan.tpps', ['id' => 3])}}">
+                                                                <div>Laporan</div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item"><a class="menu-link" href="{{route('stunting.index')}}">
+                                                <div>Data Stunting</div>
+                                            </a>
+                                        </li>
+                                        <li class="menu-item"><a class="menu-link" href="#">
+                                                <div>Aksi Konvergensi</div>
+                                            </a>
+                                            <ul class="sub-menu-container">
+                                                <li class="menu-item"><a class="menu-link"
+                                                                         href="{{route('program.index')}}">
+                                                        <div>Program Kegiatan</div>
+                                                    </a></li>
+                                                <li class="menu-item"><a class="menu-link"
+                                                                         href="{{route('rembuk.index')}}">
+                                                        <div>Rembuk Stunting</div>
+                                                    </a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item"><a class="menu-link" href="{{route('media.index')}}">
+                                                <div>Galeri</div>
+                                            </a></li>
+                                        <li class="menu-item"><a class="menu-link" href="{{route('legalitas.index')}}">
+                                                <div>Legalitas</div>
+                                            </a></li>
+                                        <li class="menu-item"><a class="menu-link" href="{{route('materi.index')}}">
+                                                <div>Materi</div>
+                                            </a></li>
+                                        <li class="menu-item"><a class="menu-link" href="{{route('event.index')}}">
+                                                <div>Agenda</div>
+                                            </a></li>
+                                        <li class="menu-item"><a class="menu-link" href="{{route('innovation.index')}}">
+                                                <div>Inovasi</div>
+                                            </a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Copyrights
         ============================================= -->
         <div id="copyrights">

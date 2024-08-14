@@ -18,11 +18,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(2);
+        $posts = Post::orderBy('created_at','DESC')->paginate(4);
         $videos = Video::latest()->get();
         $map = Map::latest()->first();
         $sidebar = Sidebar::where('status', 1)->get();
-        return view('guest.welcome', compact('posts', 'videos', 'map', 'sidebar'));
+         $peta = Map::orderBy('created_at','DESC')->get();
+        return view('guest.welcome', compact('posts', 'videos', 'map','peta', 'sidebar'));
     }
 
     /**
@@ -95,7 +96,7 @@ class DashboardController extends Controller
 
     public function peta($id)
     {
-        $poster = Map::where('tahun', $id)->first();
+        $poster = Map::find($id);
         $file = storage_path('app/' . $poster->path);
         return response()
             ->file($file, [
