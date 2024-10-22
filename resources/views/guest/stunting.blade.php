@@ -174,7 +174,11 @@
                                                          aria-labelledby="{{$i}}-tabcapaian"
                                                          tabindex="0">
                                                         <div class="accordion accordion-border mb-0">
-                                                            @foreach($data->where('kategori',2)->where('tahun', $i) as $datum)
+                                                            @if($data->where('kategori',2)->where('tahun', $i)->where('jenis_capaian', 1)->count() != 0)
+                                                                <h4 class="text-secondary d-flex justify-content-center mb-0">
+                                                                    Data Cakupan</h4>
+                                                            @endif
+                                                            @foreach($data->where('kategori',2)->where('tahun', $i)->where('jenis_capaian', 1) as $datum)
                                                                 <div class="accordion-header">
                                                                     <div class="accordion-icon">
                                                                         <i class="accordion-closed icon-ok-circle"></i>
@@ -189,8 +193,82 @@
                                                                         <p>{{$datum->keterangan}}</p>
                                                                         <div class="col-lg-2">
                                                                             <a href="{{route('datastunting.file', $datum->id)}}"
-                                                                               class="text-muted " target="_blank"><i
-                                                                                    class="fa fa-download"></i> Unduh
+                                                                               class="text-muted "
+                                                                               target="_blank"><i
+                                                                                    class="fa fa-download"></i>
+                                                                                Unduh
+                                                                                file
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="col-lg-2">
+                                                                            <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                               class="text-muted" target="_blank"><i
+                                                                                    class="fa fa-arrow-circle-right"></i>
+                                                                                Lihat </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                            <hr>
+                                                            @if($data->where('kategori',2)->where('tahun', $i)->where('jenis_capaian', 2)->count() != 0)
+                                                                <h4 class="text-secondary d-flex justify-content-center mb-0">
+                                                                    Data Sasaran</h4>
+                                                            @endif
+                                                            @foreach($data->where('kategori',2)->where('tahun', $i)->where('jenis_capaian', 2) as $datum)
+                                                                <div class="accordion-header">
+                                                                    <div class="accordion-icon">
+                                                                        <i class="accordion-closed icon-ok-circle"></i>
+                                                                        <i class="accordion-open icon-remove-circle"></i>
+                                                                    </div>
+                                                                    <div class="accordion-title">
+                                                                        {{$datum->judul}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="accordion-content">
+                                                                    <div class="row">
+                                                                        <p>{{$datum->keterangan}}</p>
+                                                                        <div class="col-lg-2">
+                                                                            <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                               class="text-muted "
+                                                                               target="_blank"><i
+                                                                                    class="fa fa-download"></i>
+                                                                                Unduh
+                                                                                file
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="col-lg-2">
+                                                                            <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                               class="text-muted" target="_blank"><i
+                                                                                    class="fa fa-arrow-circle-right"></i>
+                                                                                Lihat </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+                                                            <hr>
+                                                            @if($data->where('kategori',2)->where('tahun', $i)->where('jenis_capaian', 3)->count() != 0)
+                                                                <h4 class="text-secondary d-flex justify-content-center mb-0">
+                                                                    Data Supply</h4>
+                                                            @endif
+                                                            @foreach($data->where('kategori',2)->where('tahun', $i)->where('jenis_capaian', 3) as $datum)
+                                                                <div class="accordion-header">
+                                                                    <div class="accordion-icon">
+                                                                        <i class="accordion-closed icon-ok-circle"></i>
+                                                                        <i class="accordion-open icon-remove-circle"></i>
+                                                                    </div>
+                                                                    <div class="accordion-title">
+                                                                        {{$datum->judul}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="accordion-content">
+                                                                    <div class="row">
+                                                                        <p>{{$datum->keterangan}}</p>
+                                                                        <div class="col-lg-2">
+                                                                            <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                               class="text-muted "
+                                                                               target="_blank"><i
+                                                                                    class="fa fa-download"></i>
+                                                                                Unduh
                                                                                 file
                                                                             </a>
                                                                         </div>

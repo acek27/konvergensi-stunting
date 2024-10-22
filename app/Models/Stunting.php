@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stunting extends Model
 {
-    protected $fillable = ['judul', 'kategori', 'keterangan','path','tahun'];
+    protected $fillable = ['judul', 'kategori', 'keterangan', 'path', 'tahun', 'jenis_capaian'];
     protected $appends = ["jenis"];
+    protected $attributes = ['jenis_capaian' => null];
 
     public function getJenisAttribute()
     {
@@ -17,9 +18,9 @@ class Stunting extends Model
             $jenis = "Jumlah dan Preverensi Stunting";
         } elseif ($this->kategori == 2) {
             $jenis = "Capaian Indikator";
-        } elseif ($this->kategori == 3){
+        } elseif ($this->kategori == 3) {
             $jenis = "Lokus Stunting";
-        } else{
+        } else {
             $jenis = "Keluarga Berisiko Stunting";
         }
         return $jenis;

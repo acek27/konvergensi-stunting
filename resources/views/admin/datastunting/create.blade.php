@@ -3,7 +3,8 @@
     <h4 class="m-0">Buat Data Stunting</h4>
 @endsection
 @push('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"/>
 @endpush
 @section('header')
     <h1 class="m-0">Data Stunting</h1>
@@ -37,6 +38,15 @@
                                 <option value="4">Keluarga Berisiko Stunting</option>
                             </select>
                         </div>
+                        <div class="col-12 form-group" id="capaian" style="visibility: hidden">
+                            <label>Capaian indikator:</label>
+                            <select class="form-control" name="jenis_capaian" id="jenis_capaian">
+                                <option value="">-- pilih --</option>
+                                <option value="1">Data Cakupan</option>
+                                <option value="2">Data Sasaran</option>
+                                <option value="3">Data Supply</option>
+                            </select>
+                        </div>
                         <div class="col-12 form-group">
                             <label>Tahun:</label>
                             <select class="form-control" name="tahun" id="tahun" required>
@@ -68,7 +78,8 @@
     </div>
 @endsection
 @push('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script>
         jQuery(document).ready(function () {
             $("#image").fileinput({
@@ -79,10 +90,18 @@
                 removeIcon: "<i class='icon-trash-alt1'></i>",
                 showUpload: false
             });
+            $("#kategori").change(function () {
+                if ($(this).val() == 2) {
+                    $("#capaian").css('visibility', 'visible');
+                } else {
+                    $("#jenis_capaian").val("");
+                    $("#capaian").css('visibility', 'hidden');
+                }
+            });
         })
         $('.datepicker').datepicker({
             format: 'yyyy-m-d',
-            todayHighlight:'TRUE',
+            todayHighlight: 'TRUE',
             autoclose: true,
         });
     </script>

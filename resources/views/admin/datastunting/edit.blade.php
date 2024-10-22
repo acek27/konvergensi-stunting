@@ -29,13 +29,22 @@
                             <input type="text" name="judul" id="freelance-quote-name"
                                    class="form-control" value="{{$data->judul}}" required>
                         </div>
-                        <div class="col-12 form-group">
+                        <div class="col-12 form-group" >
                             <label>Tahun:</label>
                             <select class="form-control" name="tahun" id="tahun" required>
                                 <option value="">--pilih Tahun--</option>
                                 @for($i = 2022;$i<=date('Y');$i++)
-                                    <option value="{{$i}}">{{$i}}</option>
+                                    <option value="{{$i}}" {{$i == $data->tahun ? 'selected' :''}}>{{$i}}</option>
                                 @endfor
+                            </select>
+                        </div>
+                        <div class="col-12 form-group">
+                            <label>Capaian indikator:</label>
+                            <select class="form-control" name="jenis_capaian" id="jenis_capaian">
+                                <option value="">-- pilih --</option>
+                                <option value="1">Data Cakupan</option>
+                                <option value="2">Data Sasaran</option>
+                                <option value="3">Data Supply</option>
                             </select>
                         </div>
                         <div class="col-12">

@@ -87,7 +87,8 @@ class DataStuntingController extends Controller
         $data = Stunting::findOrFail($id);
         $data->update([
             'judul' => $request->judul,
-            'tahun' => $request->tahun
+            'tahun' => $request->tahun,
+            'jenis_capaian' => $request->jenis_capaian
         ]);
         return redirect()->route('datastunting.index');
     }
@@ -125,6 +126,17 @@ class DataStuntingController extends Controller
                 $edit = '<a href="' . route('datastunting.edit', $data->id) . '"><i class="fa fa-edit text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
                 return $edit . '&nbsp' . $del;
+            })
+            ->addColumn('jenis_capaian', function ($data) {
+                if ($data->jenis_capaian == 1) {
+                    return "Data Cakupan";
+                } elseif ($data->jenis_capaian == 2) {
+                    return "Data Sasaran";
+                } elseif ($data->jenis_capaian == 3) {
+                    return "Data Supply";
+                }else{
+                    return "-";
+                }
             })
             ->make(true);
     }

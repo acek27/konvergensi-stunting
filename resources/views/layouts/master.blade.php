@@ -298,7 +298,7 @@
                             <div class="col-md-8">
                                 <div class="widget">
                                     <p class="mb-0">Pemerintah Kabupaten Situbondo</p>
-                                    <h2 class="mt=0">Badan Perencanaan Pembangunan Daerah</h2>
+                                    <h2 class="mt=0">Badan Perencanaan Pembangunan, Riset dan Inovasi Daerah</h2>
                                     <div>
                                         <address>
                                             <strong>Alamat:</strong><br>
