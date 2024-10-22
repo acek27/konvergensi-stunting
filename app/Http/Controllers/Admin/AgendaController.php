@@ -21,6 +21,7 @@ class AgendaController extends Controller
     {
         $this->middleware('can:agenda')->except(['anyData']);
     }
+
     public function index()
     {
         return view('admin.agenda.index');
@@ -68,7 +69,8 @@ class AgendaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Agenda::findOrFail($id);
+        return view('admin.agenda.edit', compact('data'));
     }
 
     /**
@@ -80,7 +82,9 @@ class AgendaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Agenda::findOrFail($id);
+        $data->update($request->all());
+        return redirect()->route('agenda.index');
     }
 
     /**
@@ -96,9 +100,9 @@ class AgendaController extends Controller
 
     public function anyData()
     {
-        return DataTables::of(Agenda::where('opd_id', Auth::user()->opd_id))
+        return DataTables::of(Agenda::query())
             ->addColumn('action', function ($data) {
-                $edit = '<a href="#"><i class="fa fa-edit text-primary"></i></a>';
+                $edit = '<a href="' . route('agenda.edit', $data->id) . '"><i class="fa fa-edit text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
                 return $edit . '&nbsp' . $del;
             })
