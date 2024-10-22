@@ -1,9 +1,13 @@
 @extends('layouts.admin')
+@section('header')
+    <h4 class="m-0">Buat Data Stunting</h4>
+@endsection
 @push('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"/>
 @endpush
 @section('header')
-    <h4 class="m-0">Buat Program Kegiatan Baru</h4>
+    <h1 class="m-0">Data Stunting</h1>
 @endsection
 @section('content')
     <div class="container clearfix">
@@ -11,24 +15,19 @@
             <div class="form-result"></div>
             <div class="row">
                 <div class="col-lg-10">
-                    <form class="row" action="{{route('kegiatan.store')}}" method="post"
+                    <form class="row" action="{{route('datastunting.update', $data->id)}}" method="post"
                           enctype="multipart/form-data">
                         @csrf
+                        @method('put')
                         <div class="form-process">
                             <div class="css3-spinner">
                                 <div class="css3-spinner-scaler"></div>
                             </div>
                         </div>
                         <div class="col-12 form-group">
-                            <label>Nama Kegiatan:</label>
+                            <label>Nama Data Stunting:</label>
                             <input type="text" name="judul" id="freelance-quote-name"
-                                   class="form-control" required>
-                        </div>
-
-                        <div class="col-12 form-group">
-                            <label>Upload Dokumen:</label>
-                            <input type="file" accept=".pdf" id="image" name="path"
-                                   class="file-loading" data-show-preview="false" required>
+                                   class="form-control" value="{{$data->judul}}" required>
                         </div>
                         <div class="col-12 form-group">
                             <label>Tahun:</label>
@@ -38,10 +37,6 @@
                                     <option value="{{$i}}">{{$i}}</option>
                                 @endfor
                             </select>
-                        </div>
-                        <div class="col-12 form-group">
-                            <label>Keterangan:</label>
-                            <textarea name="keterangan" class="form-control" rows="4" required></textarea>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-secondary">Simpan
@@ -56,7 +51,8 @@
     </div>
 @endsection
 @push('js')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script>
         jQuery(document).ready(function () {
             $("#image").fileinput({
@@ -70,7 +66,7 @@
         })
         $('.datepicker').datepicker({
             format: 'yyyy-m-d',
-            todayHighlight:'TRUE',
+            todayHighlight: 'TRUE',
             autoclose: true,
         });
     </script>

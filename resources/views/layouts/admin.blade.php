@@ -121,6 +121,19 @@
                         </li>
                     @endcan
                     <li class="menu-title">KOMPONEN</li>
+                    @canany(['kpm','tpps','stunting','kecamatan'])
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-id"></i>
+                                <span> Aksi Konvergensi </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('kegiatan.index')}}">Program Kegiatan</a></li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('rembukstunting.index')}}">Rembuk Stunting</a></li>
+                            </ul>
+                        </li>
+                    @endcanany
                     @canany(['kpm','tpps','stunting','aksi','legalitas','paparan'])
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i>
@@ -154,17 +167,7 @@
                                 <li><a href="{{route('datastunting.create')}}">Buat Baru</a></li>
                             </ul>
                         </li>
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-id"></i>
-                                <span> Aksi Konvergensi </span>
-                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="{{route('kegiatan.index')}}">Program Kegiatan</a></li>
-                            </ul>
-                            <ul class="list-unstyled">
-                                <li><a href="{{route('rembukstunting.index')}}">Rembuk Stunting</a></li>
-                            </ul>
-                        </li>
+
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-trophy"></i>
                                 <span> Legalitas/Peraturan </span>

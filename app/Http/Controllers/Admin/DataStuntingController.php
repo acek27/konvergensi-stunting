@@ -71,7 +71,8 @@ class DataStuntingController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Stunting::findOrFail($id);
+        return view('admin.datastunting.edit', compact('data'));
     }
 
     /**
@@ -83,7 +84,12 @@ class DataStuntingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Stunting::findOrFail($id);
+        $data->update([
+            'judul' => $request->judul,
+            'tahun' => $request->tahun
+        ]);
+        return redirect()->route('datastunting.index');
     }
 
     /**
@@ -116,7 +122,7 @@ class DataStuntingController extends Controller
     {
         return DataTables::of(Stunting::query())
             ->addColumn('action', function ($data) {
-                $edit = '<a href="#"><i class="fa fa-edit text-primary"></i></a>';
+                $edit = '<a href="' . route('datastunting.edit', $data->id) . '"><i class="fa fa-edit text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
                 return $edit . '&nbsp' . $del;
             })

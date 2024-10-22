@@ -90,66 +90,122 @@
                                         <div class="tab-pane fade shadow rounded bg-white show active p-5"
                                              id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                             <h4 class="font-italic mb-4">Jumlah & Prevalensi Stunting</h4>
-                                            <div class="accordion accordion-border mb-0">
-                                                @foreach($data->where('kategori',1) as $datum)
-                                                    <div class="accordion-header">
-                                                        <div class="accordion-icon">
-                                                            <i class="accordion-closed icon-ok-circle"></i>
-                                                            <i class="accordion-open icon-remove-circle"></i>
-                                                        </div>
-                                                        <div class="accordion-title">
-                                                            {{$datum->judul}}
+                                            <ul class="nav canvas-tabs tabs nav-tabs mb-3" id="canvas-tab"
+                                                role="tablist">
+                                                @for($i = date('Y');$i >=2022;$i--)
+                                                    <li class="nav-item" role="presentation">
+                                                        <button class="nav-link @if($i == date('Y')) active @endif"
+                                                                id="{{$i}}-tab"
+                                                                data-bs-toggle="pill" data-bs-target="#stunting{{$i}}"
+                                                                type="button"
+                                                                role="tab" aria-controls="canvas-home"
+                                                                aria-selected="true">
+                                                            {{$i}}
+                                                        </button>
+                                                    </li>
+                                                @endfor
+                                            </ul>
+                                            <div class="tab-content">
+                                                @for($i = date('Y');$i >=2022;$i--)
+                                                    <div class="tab-pane fade show @if($i == date('Y')) active @endif"
+                                                         id="stunting{{$i}}"
+                                                         role="tabpanel"
+                                                         aria-labelledby="{{$i}}-tab"
+                                                         tabindex="0">
+                                                        <div class="accordion accordion-border mb-0">
+                                                            @foreach($data->where('kategori',1)->where('tahun', $i) as $datum)
+                                                                <div class="accordion-header">
+                                                                    <div class="accordion-icon">
+                                                                        <i class="accordion-closed icon-ok-circle"></i>
+                                                                        <i class="accordion-open icon-remove-circle"></i>
+                                                                    </div>
+                                                                    <div class="accordion-title">
+                                                                        {{$datum->judul}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="accordion-content">
+                                                                    <div class="row">
+                                                                        <p>{{$datum->keterangan}}</p>
+                                                                        <div class="col-lg-2">
+                                                                            <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                               class="text-muted " target="_blank"><i
+                                                                                    class="fa fa-download"></i> Unduh
+                                                                                file
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="col-lg-2">
+                                                                            <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                               class="text-muted" target="_blank"><i
+                                                                                    class="fa fa-arrow-circle-right"></i>
+                                                                                Lihat </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
                                                         </div>
                                                     </div>
-                                                    <div class="accordion-content">
-                                                        <div class="row">
-                                                            <p>{{$datum->keterangan}}</p>
-                                                            <div class="col-lg-2">
-                                                                <a href="{{route('datastunting.file', $datum->id)}}"
-                                                                   class="text-muted " target="_blank"><i
-                                                                        class="fa fa-download"></i> Unduh file </a>
-                                                            </div>
-                                                            <div class="col-lg-2">
-                                                                <a href="{{route('datastunting.file', $datum->id)}}"
-                                                                   class="text-muted" target="_blank"><i
-                                                                        class="fa fa-arrow-circle-right"></i> Lihat </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
+                                                @endfor
                                             </div>
                                         </div>
 
                                         <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-profile"
                                              role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                             <h4 class="font-italic mb-4">Capaian Indikator</h4>
-                                            <div class="accordion accordion-border mb-0">
-                                                @foreach($data->where('kategori',2) as $datum)
-                                                    <div class="accordion-header">
-                                                        <div class="accordion-icon">
-                                                            <i class="accordion-closed icon-ok-circle"></i>
-                                                            <i class="accordion-open icon-remove-circle"></i>
-                                                        </div>
-                                                        <div class="accordion-title">
-                                                            {{$datum->judul}}
+                                            <ul class="nav canvas-tabs tabs nav-tabs mb-3" id="canvas-tab"
+                                                role="tablist">
+                                                @for($i = date('Y');$i >=2022;$i--)
+                                                    <li class="nav-item" role="presentation">
+                                                        <button class="nav-link @if($i == date('Y')) active @endif"
+                                                                id="{{$i}}-tabcapaian"
+                                                                data-bs-toggle="pill" data-bs-target="#capaian{{$i}}"
+                                                                type="button"
+                                                                role="tab" aria-controls="canvas-home"
+                                                                aria-selected="true">
+                                                            {{$i}}
+                                                        </button>
+                                                    </li>
+                                                @endfor
+                                            </ul>
+                                            <div class="tab-content">
+                                                @for($i = date('Y');$i >=2022;$i--)
+                                                    <div class="tab-pane fade show @if($i == date('Y')) active @endif"
+                                                         id="capaian{{$i}}"
+                                                         role="tabpanel"
+                                                         aria-labelledby="{{$i}}-tabcapaian"
+                                                         tabindex="0">
+                                                        <div class="accordion accordion-border mb-0">
+                                                            @foreach($data->where('kategori',2)->where('tahun', $i) as $datum)
+                                                                <div class="accordion-header">
+                                                                    <div class="accordion-icon">
+                                                                        <i class="accordion-closed icon-ok-circle"></i>
+                                                                        <i class="accordion-open icon-remove-circle"></i>
+                                                                    </div>
+                                                                    <div class="accordion-title">
+                                                                        {{$datum->judul}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="accordion-content">
+                                                                    <div class="row">
+                                                                        <p>{{$datum->keterangan}}</p>
+                                                                        <div class="col-lg-2">
+                                                                            <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                               class="text-muted " target="_blank"><i
+                                                                                    class="fa fa-download"></i> Unduh
+                                                                                file
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="col-lg-2">
+                                                                            <a href="{{route('datastunting.file', $datum->id)}}"
+                                                                               class="text-muted" target="_blank"><i
+                                                                                    class="fa fa-arrow-circle-right"></i>
+                                                                                Lihat </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
                                                         </div>
                                                     </div>
-                                                    <div class="accordion-content">
-                                                        <p>{{$datum->keterangan}}</p>
-                                                        <div class="row">
-                                                            <div class="col-lg-2">
-                                                                <a href="{{route('datastunting.file', $datum->id)}}"
-                                                                   class="text-muted " target="_blank"><i
-                                                                        class="fa fa-download"></i> Unduh file </a>
-                                                            </div>
-                                                            <div class="col-lg-2">
-                                                                <a href="{{route('datastunting.file', $datum->id)}}"
-                                                                   class="text-muted" target="_blank"><i
-                                                                        class="fa fa-arrow-circle-right"></i> Lihat </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @endforeach
+                                                @endfor
                                             </div>
                                         </div>
 

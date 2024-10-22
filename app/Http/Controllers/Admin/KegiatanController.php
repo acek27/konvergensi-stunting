@@ -72,7 +72,8 @@ class KegiatanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Program::findOrFail($id);
+        return view('admin.kegiatan.edit', compact('data'));
     }
 
     /**
@@ -84,7 +85,13 @@ class KegiatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = Program::findOrFail($id);
+        $data->update([
+            'judul' => $request->judul,
+            'tahun' => $request->tahun,
+            'keterangan' => $request->keterangan
+        ]);
+        return redirect()->route('kegiatan.index');
     }
 
     /**
@@ -117,7 +124,7 @@ class KegiatanController extends Controller
     {
         return DataTables::of(Program::query())
             ->addColumn('action', function ($data) {
-                $edit = '<a href="#"><i class="fa fa-edit text-primary"></i></a>';
+                $edit = '<a href="' . route('kegiatan.edit', $data->id) . '"><i class="fa fa-edit text-primary"></i></a>';
                 $del = '<a href="#" data-id="' . $data->id . '" class="hapus-data"> <i class="fa fa-trash text-danger"></i></a>';
                 return $edit . '&nbsp' . $del;
             })

@@ -11,9 +11,10 @@
             <div class="form-result"></div>
             <div class="row">
                 <div class="col-lg-10">
-                    <form class="row" action="{{route('kegiatan.store')}}" method="post"
+                    <form class="row" action="{{route('kegiatan.update', $data->id)}}" method="post"
                           enctype="multipart/form-data">
                         @csrf
+                        @method('put')
                         <div class="form-process">
                             <div class="css3-spinner">
                                 <div class="css3-spinner-scaler"></div>
@@ -21,14 +22,8 @@
                         </div>
                         <div class="col-12 form-group">
                             <label>Nama Kegiatan:</label>
-                            <input type="text" name="judul" id="freelance-quote-name"
+                            <input type="text" name="judul" id="freelance-quote-name" value="{{$data->judul}}"
                                    class="form-control" required>
-                        </div>
-
-                        <div class="col-12 form-group">
-                            <label>Upload Dokumen:</label>
-                            <input type="file" accept=".pdf" id="image" name="path"
-                                   class="file-loading" data-show-preview="false" required>
                         </div>
                         <div class="col-12 form-group">
                             <label>Tahun:</label>
@@ -41,7 +36,7 @@
                         </div>
                         <div class="col-12 form-group">
                             <label>Keterangan:</label>
-                            <textarea name="keterangan" class="form-control" rows="4" required></textarea>
+                            <textarea name="keterangan" class="form-control" rows="4" required>{{$data->keterangan}}</textarea>
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-secondary">Simpan

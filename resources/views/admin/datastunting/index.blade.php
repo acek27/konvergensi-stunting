@@ -16,6 +16,7 @@
                         <tr>
                             <th>Data Stunting</th>
                             <th>Kategori</th>
+                            <th>Tahun</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
@@ -38,7 +39,8 @@
                 ajax: '{{route('datastunting.data')}}',
                 columns: [
                     {data: 'judul', name: 'judul'},
-                    {data: 'jenis', name: 'jenis'},
+                    {data: 'jenis', name: 'jenis',orderable: false, searchable: false, align: 'center'},
+                    {data: 'tahun', name: 'tahun',orderable: false, searchable: false, align: 'center'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],
             });

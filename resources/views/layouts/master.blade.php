@@ -4,7 +4,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="author" content="SemiColonWeb"/>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Stylesheets
     ============================================= -->
     <link
@@ -477,22 +477,29 @@
 ============================================= -->
 <script src="{{asset('canvas/js/functions.js')}}"></script>
 
-<!-- SLIDER REVOLUTION 5.x SCRIPTS  -->
-<script src="{{asset('include/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
-<script src="{{asset('include/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+{{--<!-- SLIDER REVOLUTION 5.x SCRIPTS  -->--}}
+{{--<script src="{{asset('include/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>--}}
+{{--<script src="{{asset('include/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>--}}
 
-<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.actions.min.js')}}"></script>
-<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.carousel.min.js')}}"></script>
-<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js')}}"></script>
-<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>
-<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.migration.min.js')}}"></script>
-<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.navigation.min.js')}}"></script>
-<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.parallax.min.js')}}"></script>
-<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js')}}"></script>
-<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.video.min.js')}}"></script>
+{{--<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.actions.min.js')}}"></script>--}}
+{{--<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.carousel.min.js')}}"></script>--}}
+{{--<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js')}}"></script>--}}
+{{--<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js')}}"></script>--}}
+{{--<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.migration.min.js')}}"></script>--}}
+{{--<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.navigation.min.js')}}"></script>--}}
+{{--<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.parallax.min.js')}}"></script>--}}
+{{--<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js')}}"></script>--}}
+{{--<script src="{{asset('include/rs-plugin/js/extensions/revolution.extension.video.min.js')}}"></script>--}}
 <script src="{{asset('adminlte/plugins/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{asset('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 <script src="{{asset('adminlte/plugins/sweet-alert2/sweetalert2.min.js')}}"></script>
+<script !src="">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
 @stack('js')
 <!-- ADD-ONS JS FILES -->
 <script>

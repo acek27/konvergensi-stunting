@@ -38,6 +38,15 @@
                             </select>
                         </div>
                         <div class="col-12 form-group">
+                            <label>Tahun:</label>
+                            <select class="form-control" name="tahun" id="tahun" required>
+                                <option value="">--pilih Tahun--</option>
+                                @for($i = 2022;$i<=date('Y');$i++)
+                                    <option value="{{$i}}">{{$i}}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        <div class="col-12 form-group">
                             <label>Upload Dokumen:</label>
                             <input type="file" accept=".pdf" id="image" name="path"
                                    class="file-loading" data-show-preview="false" required>

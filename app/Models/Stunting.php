@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stunting extends Model
 {
-    protected $fillable = ['judul', 'kategori', 'keterangan','path'];
+    protected $fillable = ['judul', 'kategori', 'keterangan','path','tahun'];
     protected $appends = ["jenis"];
 
     public function getJenisAttribute()

@@ -151,6 +151,14 @@
                                 <p>Mengelola agenda, mengelola galeri, mengelola berita/informasi</p>
                             </div>
                         </div>
+                        <div class="entry">
+                            <div class="title">
+                                <h6>KECAMATAN</h6>
+                            </div>
+                            <div class="body">
+                                <p>Mengelola Aksi Konvergensi</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

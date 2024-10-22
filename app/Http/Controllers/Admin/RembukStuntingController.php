@@ -18,7 +18,7 @@ class RembukStuntingController extends Controller
 
     public function __construct()
     {
-        $this->middleware('can:aksi')->except(['anyData', 'file']);
+        $this->middleware('auth')->except(['anyData', 'file']);
     }
 
     public function index()

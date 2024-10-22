@@ -37,6 +37,8 @@ Route::resource('super', \App\Http\Controllers\Super\UserController::class);
 //stunting
 Route::resource('stunting', \App\Http\Controllers\Guest\StuntingController::class);
 //program kegiatan
+Route::post('listprogram', [\App\Http\Controllers\Guest\ProgramController::class, 'program'])
+    ->name('list.program');
 Route::resource('program', \App\Http\Controllers\Guest\ProgramController::class);
 //rembuk
 Route::resource('rembuk', \App\Http\Controllers\Guest\RembukController::class);
