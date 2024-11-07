@@ -45,7 +45,7 @@
                     {data: 'name', name: 'name'},
                     {data: 'username', name: 'username'},
                     {data: 'email', name: 'email'},
-                    {data: 'opds.singkatan', name: 'opds.singkatan'},
+                    {data: 'opds.singkatan', name: 'opds.singkatan',orderable: false, searchable: false, align: 'center'},
                     {data: 'all_roles', name: 'all_roles', orderable: false, searchable: false, align: 'center'},
                     {data: 'action', name: 'action', orderable: false, searchable: false, align: 'center'},
                 ],

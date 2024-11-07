@@ -134,15 +134,7 @@
                             </ul>
                         </li>
                     @endcanany
-                    @canany(['kpm','tpps','stunting','aksi','legalitas','paparan'])
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i>
-                                <span> KPM </span>
-                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                            <ul class="list-unstyled">
-                                <li><a href="{{route('kpmadm.index')}}">SK KPM</a></li>
-                            </ul>
-                        </li>
+                    @canany(['kpm','tpps','stunting','aksi','legalitas','paparan','kecamatan'])
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-document"></i>
                                 <span> TPPS </span>
@@ -153,7 +145,16 @@
                             <ul class="list-unstyled">
                                 <li><a href="{{route('tppsdesa.index')}}">TPPS Desa</a></li>
                             </ul>
-
+                        </li>
+                    @endcanany
+                    @canany(['kpm','tpps','stunting','aksi','legalitas','paparan'])
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-user-group"></i>
+                                <span> KPM </span>
+                                <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="{{route('kpmadm.index')}}">SK KPM</a></li>
+                            </ul>
                         </li>
 
                         <li class="has_sub">

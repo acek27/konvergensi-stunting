@@ -8,9 +8,11 @@ use App\Models\Topik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
+use App\Traits\Notification;
 
 class FaqController extends Controller
 {
+    use Notification;
 
     public function index(Request $request)
     {
@@ -48,6 +50,11 @@ class FaqController extends Controller
         ]);
         $request->merge(['tiket' => uniqid()]);
         Qna::create($request->all());
+        $admin = "08990531215";
+        $kabid = "082338485551";
+        $message = "Hai Besti - Ada Q&A nih dari " . $request->nama_penanya . "! \r\nPertanyaannya adalah: " . $request->pertanyaan . ", Mohon segera direspon ya, terimakasih.";
+        $this->notification($message, $admin);
+        $this->notification($message, $kabid);
         return redirect()->back()->with('message', 'Pertanyaan berhasil dikirim! Kami akan menghubungi anda melalui kotak yang telah dikirim');
     }
 
