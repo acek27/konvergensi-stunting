@@ -146,6 +146,18 @@
                                 <li><a href="{{route('tppsdesa.index')}}">TPPS Desa</a></li>
                             </ul>
                         </li>
+                            <li>
+                                <a href="{{route('renja.index')}}" class="waves-effect">
+                                    <i class="fas fa-file-archive"></i>
+                                    <span> Renja</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('laporan.index')}}" class="waves-effect">
+                                    <i class="fas fa-file-archive"></i>
+                                    <span> Laporan</span>
+                                </a>
+                            </li>
                     @endcanany
                     @canany(['kpm','tpps','stunting','aksi','legalitas','paparan'])
                         <li class="has_sub">
@@ -221,22 +233,6 @@
                             <ul class="list-unstyled">
                                 <li><a href="{{route('inovasi.create')}}">Buat Baru</a></li>
                             </ul>
-                        </li>
-                    @endcanany
-                    @canany(['renja','kecamatan'])
-                        <li>
-                            <a href="{{route('renja.index')}}" class="waves-effect">
-                                <i class="fas fa-file-archive"></i>
-                                <span> Renja</span>
-                            </a>
-                        </li>
-                    @endcanany
-                    @canany(['laporan','kecamatan'])
-                        <li>
-                            <a href="{{route('laporan.index')}}" class="waves-effect">
-                                <i class="fas fa-file-archive"></i>
-                                <span> Laporan</span>
-                            </a>
                         </li>
                     @endcanany
                     <li>

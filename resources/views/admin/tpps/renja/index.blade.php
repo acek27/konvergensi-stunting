@@ -37,6 +37,7 @@
             var dt = $('#posts').DataTable({
                 processing: true,
                 serverSide: true,
+                order: [[2, 'desc']],
                 ajax: '{{route('renja.data')}}',
                 columns: [
                     {data: 'kecamatan', name: 'kecamatan', orderable: false, searchable: false, align: 'center'},

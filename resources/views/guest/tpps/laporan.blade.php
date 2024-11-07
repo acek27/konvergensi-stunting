@@ -33,6 +33,7 @@
             var dt = $('#posts').DataTable({
                 processing: true,
                 serverSide: true,
+                order: [[2, 'desc']],
                 ajax: '{{route('laporan.tpps', ['id' => Request::get('id')])}}',
                 columns: [
                     {data: 'kecamatan', name: 'kecamatan'},
@@ -42,6 +43,5 @@
                 ],
             });
         });
-
     </script>
 @endpush
